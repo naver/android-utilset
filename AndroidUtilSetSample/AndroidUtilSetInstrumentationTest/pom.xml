@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.nhncorp.utilsettest</groupId>
+		<artifactId>utilset-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>utilset-instrumentation</artifactId>
+	<packaging>apk</packaging>
+	<name>AndroidUtilSet - Instrumentation</name>
+
+	<repositories>
+		<repository>
+			<id>android.support-mvn-repo</id>
+			<url>https://raw.github.com/kmchugh/android.support/mvn-repo</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>project.local</id>
+			<name>project</name>
+			<url>file:${project.basedir}/repo</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.nhncorp.utilset</groupId>
+			<artifactId>utilset</artifactId>
+<!-- 			<version>0.0.1-SNAPSHOT</version> -->
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android-test</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>annotations</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.nhncorp.utilsettest</groupId>
+			<artifactId>utilset-sample</artifactId>
+			<version>${project.version}</version>
+			<type>apk</type>
+		</dependency>
+		<dependency>
+			<groupId>com.nhncorp.utilsettest</groupId>
+			<artifactId>utilset-sample</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.android.robotium</groupId>
+			<artifactId>robotium-solo</artifactId>
+			<version>4.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+				<configuration>
+					<test>
+						<skip>false</skip>
+						<!--<instrumentationPackage>packageName</instrumentationPackage> -->
+
+						<!--<instrumentationRunner>className</instrumentationRunner> -->
+						<!--<debug>true|false</debug> -->
+						<!--<coverage>true|false</coverage> -->
+						<!--<logonly>true|false</logonly> avd -->
+						<!--<testsize>small|medium|large</testsize> -->
+						<createReport>true</createReport>
+						<!-- <classes> -->
+						<!-- <class>InputTestCase</class> -->
+						<!-- <class>ScreenUtilsTestCase</class> -->
+						<!-- </classes> -->
+						<!-- <packages> -->
+						<!-- <package>com.nhncorp.utilsetinstrumentationtest</package> -->
+						<!-- </packages> -->
+					</test>
+				</configuration>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
