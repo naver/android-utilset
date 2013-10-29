@@ -3,13 +3,17 @@ package com.nhncorp.utilsettest;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.nhncorp.utilset.common.UtilSet;
+import com.nhncorp.utilset.network.NetworkUtils;
 import com.nhncorp.utilsettest.common.CommonTestActivity;
 import com.nhncorp.utilsettest.input.InputTestActivity;
+import com.nhncorp.utilsettest.network.NetworkListenerTestActivity;
 import com.nhncorp.utilsettest.network.NetworkTestActivity;
 import com.nhncorp.utilsettest.storage.DiskUtilsTestAcitivity;
 import com.nhncorp.utilsettest.ui.ActivityUtilsTestActivity;
@@ -82,7 +86,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 			
 		case R.id.networkUtilsButton :
-			i = new Intent(this, NetworkTestActivity.class);
+		//	i = new Intent(this, NetworkTestActivity.class);
+			i = new Intent(this, NetworkListenerTestActivity.class);
+			break;
 		}
 
 		startActivity(i);

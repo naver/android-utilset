@@ -38,13 +38,9 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 
-/** Detect network state changes and provide network related information.
- * In order to use this class, following permissions are required.
- * 
- * ACCESS_WIFI_STATE
- * INTERNET
- * CHANGE_WIFI_STATE
- *
+/** This class provides network related methods
+ * In order to use this class, some permissions such as
+ * READ_PHONE_STATE, ACCESS_NETWORK_STATE are required
  */
 public class NetworkUtils {
 	private static final String PHONE_STATER_PREFS = "PHONE_STATER_PREFS";
@@ -195,10 +191,10 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Adds Phone Call Listener.
-	 * This function is called when the device has a phone call.
-	 * @param listener Listener which implements IPhoneCalledListener.
-	 * @return true if already that listener is registered; false otherwise;
+	 * Adds Phone Call Listener<br>
+	 * This function is called when the device has a phone call
+	 * @param listener Listener which implements IPhoneCalledListener
+	 * @return true if already that listener is registered; false otherwise
 	 */
 	public boolean addPhoneCalledListener(IPhoneCalledListener listener) {
 		synchronized (this) {
@@ -210,8 +206,8 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Removes Phone Call Listener
-	 * @param listener Listener to be removed.
+	 * Removes Phone Call Listener<br>
+	 * @param listener Listener to be removed
 	 * @return true if it succeeds to remove listener; false otherwise;
 	 */
 	public boolean removePhoneCalledListener(IPhoneCalledListener listener) {
@@ -238,7 +234,7 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Registers receiver to be notified broadcast event when network connection changes
+	 * Registers receiver to be notified of broadcast event when network connection changes
 	 */
 	private void registerConnectivityReceiver() {
 		IntentFilter intentFilter = new IntentFilter();
@@ -247,7 +243,7 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Remove receiver to be notified broadcast event
+	 * Removes receiver to be notified broadcast event
 	 */
 	private void unregisterConnectivityReceiver() {
 		try {
@@ -257,6 +253,12 @@ public class NetworkUtils {
 		}
 	}
 
+	/**
+	 * Adds WifiStateChangedListener<br>
+	 * This function is called when the device has a phone call
+	 * @param listener Listener which implements IPhoneCalledListener
+	 * @return true if already that listener is registered; false otherwise
+	 */
 	public boolean addWifiStateChangedListener(INetworkStateChangedListener listener) {
 		synchronized (this) {
 			if (listeners.contains(listener)) {
@@ -266,7 +268,13 @@ public class NetworkUtils {
 		}
 	}
 
-	
+
+	/**
+	 * Removes WifiStateChangedListener<br>
+	 * @param listener Listener to be removed
+	 * @return true if it succeeds to remove listener; false otherwise
+	 */
+
 	public boolean removeWifiStateChangedListener(INetworkStateChangedListener listener) {
 		synchronized (this) {
 			if (listeners.size() == 0) {
@@ -283,10 +291,10 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Registers Network Connection Listener.
-	 * Once registered, connection listeners can be alerted when the device comes to have network connection. 
-	 * @param listener Listener which implements INetworkConnectedListener.
-	 * @return true if already that listener is registered; false otherwise;
+	 * Registers Network Connection Listener<br>
+	 * Once registered, connection listeners can be alerted when the device comes to have network connection
+	 * @param listener Listener which implements INetworkConnectedListener
+	 * @return true if already that listener is registered; false otherwise
 	 */
 	public boolean addNetworkConnectedListener(INetworkConnectedListener listener) {
 		synchronized (this) {
@@ -299,8 +307,8 @@ public class NetworkUtils {
 
 	/**
 	 * Removes Phone Call Listener
-	 * @param listener Listener to be removed.
-	 * @return true if it succeeds to remove listener; false otherwise;
+	 * @param listener Listener to be removed
+	 * @return true if it succeeds to remove listener; false otherwise
 	 */
 	public boolean removeNetworkConnectedListener(INetworkConnectedListener listener) {
 		synchronized (this) {
@@ -318,8 +326,8 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Returns WiFi connection state.<br>
-	 * Requires ACCESS_NETWORK_SATE permission<br>
+	 * Returns WiFi connection state<br>
+	 * Requires ACCESS_NETWORK_SATE, READ_PHONE_STATE permissions<br>
 	 * @return true if WiFi is connected; false otherwise
 	 */
 	public boolean isWifiConnected() {
@@ -349,8 +357,8 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Checks if WiFi is turned on.
-	 *
+	 * Checks if WiFi is turned on<br>
+	 * Requires ACCESS_NETWORK_SATE, READ_PHONE_STATE permissions<br>
 	 * @return true if WiFi is turned on; false otherwise
 	 */
 	public boolean isWifiEnabled() {
@@ -369,7 +377,8 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Check if Mobile network is connectecd.
+	 * Check if Mobile network is connected<br>
+	 * Requires ACCESS_NETWORK_SATE, READ_PHONE_STATE permissions<br>
 	 *
 	 * @return true if Mobile network has connection; false otherwise
 	 */
@@ -391,7 +400,8 @@ public class NetworkUtils {
 	}
 	
 	/**
-	 * Checks if Mobile Network is turned on.
+	 * Checks if Mobile Network is turned on<br>
+	 * Requires ACCESS_NETWORK_SATE, READ_PHONE_STATE permissions<br>
 	 *
 	 * @return true if Mobile Network is turned on; false otherwise
 	 */
@@ -413,6 +423,12 @@ public class NetworkUtils {
 		return State.UNKNOWN;
 	}
 	
+	/**
+	 * Returns WiFi State
+	 * Requires ACCESS_NETWORK_SATE, READ_PHONE_STATE permissions<br>
+	 * 
+	 * @return State
+	 */
 	public State getWifiState() {
 		try {
 			if (connMan == null) {
@@ -432,7 +448,8 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Tells if network is currently connected
+	 * Tells if network is currently connected<br>
+	 * Requires ACCESS_NETWORK_SATE, READ_PHONE_STATE permissions<br>
 	 *
 	 * @return true if connected; false otherwise
 	 */
@@ -474,9 +491,8 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Checks if airplane mode is on.
-	 * Requires following permission<br>
-	 * WRITE_SETTINGS
+	 * Checks if airplane mode is on<br>
+	 * Requires ACCESS_NETWORK_SATE, READ_PHONE_STATE permissions<br>
 	 * 
 	 * @return true if airplane mode is on; false otherwise
 	 */
@@ -496,7 +512,8 @@ public class NetworkUtils {
 	}
 
 	/**
-	 * Returns SIM state
+	 * Returns SIM state<br>
+	 * Requires ACCESS_NETWORK_SATE, READ_PHONE_STATE permissions<br>
 	 *
 	 * @return SIM State (Refer DEV Guide, TelephonyManager)
 	 */
@@ -638,12 +655,12 @@ public class NetworkUtils {
 		}
 	}
 	
-	/** Returns IP Address.<br>
-	 * Requires ACCESS_WIFI_STATE, INTERNET permissions<br>
+	/** Returns IP Address<br>
+	 * Requires READ_PHONE_STATE, ACCESS_WIFI_STATE permissions<br>
 	 * 
-	 * @param ipv6 Option to choose IP address type. 
-	 * @return IP address made up of IPv6 if parameter ipv6 is true or IPv4 if parameter ipv6 is false; null if it do not have IP address.
-	 * @throw RuntimeException when it fails due to poor network condition. 
+	 * @param ipv6 Option to choose IP address type
+	 * @return IP address made up of IPv6 if parameter ipv6 is true or IPv4 if parameter ipv6 is false; null if it do not have IP address
+	 * @throw RuntimeException when it fails due to poor network condition
 	 */
 	public String getIpAddress(boolean ipv6) {
 		try {
@@ -669,7 +686,9 @@ public class NetworkUtils {
 	}
 	
 	
-	/** Returns MAC Address of WiFi Adapter<br>
+	/**
+	 * Returns MAC Address of WiFi Adapter<br>
+	 * Requires READ_PHONE_STATE, ACCESS_NETWORK_STATE and ACCESS_WIFI_STATE permissions<br>
 	 * 
 	 * @return String representing MAC Address of WiFi Adapter; Empty String in some cases such as No WiFi Adapter is installed or WiFi is turned off. 
 	 */
@@ -685,7 +704,7 @@ public class NetworkUtils {
 	/**
 	 * Turns on WiFi Adapter<br>
 	 * 
-	 * Requires READ_PHONE_STATE, CHANGE_WIFI_STATE and ACCESS_NETWORK_STATE permissions<br>
+	 * Requires READ_PHONE_STATE, ACCESS_NETWORK_STATE and CHANGE_WIFI_STATE permissions<br>
 	 * 
 	 * @param context
 	 */
@@ -697,7 +716,7 @@ public class NetworkUtils {
 	/**
 	 * Turns off WiFi Adapter<br>
 	 * 
-	 * requires READ_PHONE_STATE, CHANGE_WIFI_STATE and ACCESS_NETWORK_STATE permissions<br>
+	 * Requires READ_PHONE_STATE, ACCESS_NETWORK_STATE and CHANGE_WIFI_STATE permissions<br>
 	 * 
 	 * @param context
 	 */
@@ -706,6 +725,11 @@ public class NetworkUtils {
 		wifiMan.setWifiEnabled(false);
 	}
 	
+	/**
+	 * Check if WiFi currently connected is either rogue or unable to route
+	 * 
+	 * @return true if currently connected WiFi is abnormal; false otherwise
+	 */
 	public boolean isWifiFake() {
 		try {
 			SocketChannel socketChannel = SocketChannel.open();

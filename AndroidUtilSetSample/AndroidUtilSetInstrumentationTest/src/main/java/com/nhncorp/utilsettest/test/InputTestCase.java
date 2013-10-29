@@ -10,7 +10,7 @@ public class InputTestCase extends ActivityInstrumentationTestCase2<InputTestAct
 	private Solo solo; 
 	
 	public InputTestCase() {
-		super("com.nhncorp.utilsettest", InputTestActivity.class);
+		super(InputTestActivity.class);
 	}
 
 	@Override

@@ -74,7 +74,7 @@ public class UtilSet {
 	 * Returns launcher type.
 	 * 
 	 * @param context Context to provide package information
-	 * @Return LauncherType
+	 * @return LauncherType
 	 */
 	public static LauncherType getLauncherType(Context context) {
 		return LauncherTypeDetector.getType(context);

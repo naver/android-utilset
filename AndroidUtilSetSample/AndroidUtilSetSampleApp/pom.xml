@@ -16,28 +16,16 @@
 		<environment>development</environment>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>android.support-mvn-repo</id>
-			<url>https://raw.github.com/kmchugh/android.support/mvn-repo</url>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-			</snapshots>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.nhncorp.utilset</groupId>
 			<artifactId>utilset</artifactId>
-<!-- 			<version>0.0.1-SNAPSHOT</version> -->
+			<!-- <version>0.0.1-SNAPSHOT</version> -->
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>support-v4</artifactId>
-<!-- 			<version>r7</version> -->
 		</dependency>
 
 		<dependency>
@@ -71,6 +59,10 @@
 		<finalName>${project.artifactId}</finalName>
 
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>

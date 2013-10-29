@@ -32,8 +32,6 @@ public class NetworkTestActivity extends Activity {
 		NetworkUtils.destroy();
 	}
 
-
-
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub

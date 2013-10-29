@@ -15,7 +15,7 @@ public class ScreenUtilsTestCase extends
 
 	public ScreenUtilsTestCase() {
 		// TODO Auto-generated constructor stub
-		super("com.nhncorp.utilsettest", MainActivity.class);
+		super(MainActivity.class);
 	}
 
 	@Override
