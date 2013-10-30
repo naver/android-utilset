@@ -67,11 +67,18 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="NetworkUtilsButton" />
+        android:text="NetworkUtilsTest" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/networkChangeListenerButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="NetworkStateChangeListenerTest" />
 
 </LinearLayout>
