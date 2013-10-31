@@ -48,7 +48,7 @@ public class ScreenUtilsTestCase extends
 			}
 		});
 
-		solo.sleep(2000);
+		solo.sleep(3000);
 	}
 
 }
