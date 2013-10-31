@@ -10,30 +10,31 @@ As such, we collected, tested and refined methods so as to prevent seeking code 
 -------
 ### Overview
 Utilset includes:
+
   * Utilset
-    ** checks if device is rooted
-    ** counts the number of processors(more specifically the number of cores)
-    ** determines if the phone has SMS capability
-    ** etc...     
+    + checks if device is rooted
+    + counts the number of processors(more specifically the number of cores)
+    + determines if the phone has SMS capability
+    + etc...     
   
   * ActivityUtils
-    ** checks if a package user specified is installed
-    ** gets information of base activity package name and class name
+    + checks if a package user specified is installed
+    + gets information of base activity package name and class name
   
   * NetworkUtils
-    ** provides listeners which notify when network state changes, device has phone call, and connection is made
-    ** checks if WiFi is enabled and if WiFi is connected
-    ** checks if Mobile Network (3G/4G) is connected
-    ** obtains IP Address either v4 or v6 form
-    ** etc...
+    + provides listeners which notify when network state changes, device has phone call, and connection is made
+    + checks if WiFi is enabled and if WiFi is connected
+    + checks if Mobile Network (3G/4G) is connected
+    + obtains IP Address in either v4 or v6 form
+    + etc...
   
   * DiskUtils
-    ** obtains external storage path for caching
-    ** obtains external storage path for temp
-    ** obtains MicroSD Card path
+    + obtains external storage path for caching
+    + obtains external storage path for temp
+    + obtains MicroSD Card path
   
   * KeyboardUtils
-    ** Shows, hides, and toggles Software keyboards
+    + Shows, hides, and toggles Software keyboards
 
 -------  
 ### Usage
