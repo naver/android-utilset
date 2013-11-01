@@ -36,6 +36,9 @@
         
         <activity android:name="com.navercorp.utilsettest.network.NetworkListenerTestActivity">
         </activity>
+        
+        <activity android:name="com.navercorp.utilsettest.cipher.CipherTestActivity">
+        </activity>
     </application>
 
 </manifest>

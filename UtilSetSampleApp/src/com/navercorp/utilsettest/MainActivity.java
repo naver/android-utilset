@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.navercorp.utilset.common.UtilSet;
 import com.navercorp.utilset.network.NetworkUtils;
+import com.navercorp.utilsettest.cipher.CipherTestActivity;
 import com.navercorp.utilsettest.common.CommonTestActivity;
 import com.navercorp.utilsettest.input.InputTestActivity;
 import com.navercorp.utilsettest.network.NetworkListenerTestActivity;
@@ -23,6 +24,7 @@ import com.navercorp.utilsettest.ui.ActivityUtilsTestActivity;
 public class MainActivity extends Activity implements OnClickListener {
 	private static Activity activity;
 	
+	Button cipherTestButton;
 	Button utilSetTestButton;
 	Button activityUtilsTestButton;
 	Button diskUtilsTestButton;
@@ -41,6 +43,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		activity = this;
 
+		cipherTestButton = (Button) findViewById(R.id.cipherUtilsTestButton);
+		cipherTestButton.setOnClickListener(this);
+		
 		utilSetTestButton = (Button) findViewById(R.id.utilSetTestButton);
 		utilSetTestButton.setOnClickListener(this);
 		
@@ -75,6 +80,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		Intent i = null;
 		
 		switch (id) {
+		case R.id.cipherUtilsTestButton :
+			i = new Intent(this, CipherTestActivity.class);
+			break;
+		
 		case R.id.utilSetTestButton :
 			i = new Intent(this, CommonTestActivity.class);
 			break;
