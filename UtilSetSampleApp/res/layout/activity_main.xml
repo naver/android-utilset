@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".StringUtilsTestActivity" >
 
     <Button
         android:id="@+id/cipherUtilsTestButton"
@@ -16,10 +16,10 @@
         android:layout_weight="1"
         android:text="CipherUtilsTest" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+<!--     <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" /> -->
 
     <Button
         android:id="@+id/acitivtyUtilsTestButton"
@@ -28,10 +28,10 @@
         android:layout_weight="1"
         android:text="ActivityUtilsTest" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+<!--     <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" /> -->
     
     <Button
         android:id="@+id/diskUtilsButton"
@@ -40,10 +40,10 @@
         android:layout_weight="1"
         android:text="DiskUtilsTest" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+<!--     <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" /> -->
     
     <Button
         android:id="@+id/keyboardUtilsButton"
@@ -52,22 +52,22 @@
         android:layout_weight="1"
         android:text="KeyboardUtilsTest" />
     
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+<!--     <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" /> -->
 
     <Button
         android:id="@+id/networkChangeListenerButton"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="NetworkStateChangeListenerTest" />
+        android:text="NetworkStateListenerTest" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+<!--     <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" /> -->
     
     <Button
         android:id="@+id/networkUtilsButton"
@@ -76,10 +76,10 @@
         android:layout_weight="1"
         android:text="NetworkUtilsTest" />
     
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+<!--     <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" /> -->
 
     <Button
         android:id="@+id/utilSetTestButton"
@@ -87,4 +87,23 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="UtilSetTest" />
+    
+<!--     <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="0dp" -->
+<!--         android:layout_weight="1" /> -->
+
+    <Button
+        android:id="@+id/volumeUtilsTestButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="VolumeUtilsTest" />
+    
+    <Button
+        android:id="@+id/stringUtilsTestButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="StringUtilsTest" />
 </LinearLayout>

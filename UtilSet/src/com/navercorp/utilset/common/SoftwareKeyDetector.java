@@ -1,8 +1,10 @@
 package com.navercorp.utilset.common;
 
+import java.lang.reflect.Method;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
+import android.os.IBinder;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
@@ -20,7 +22,7 @@ public class SoftwareKeyDetector {
 		if (sdkVersion >= Build.VERSION_CODES.GINGERBREAD_MR1 && sdkVersion <= Build.VERSION_CODES.HONEYCOMB_MR2)
 			return true;
 
-		// ICS and above provide convinient function able to determine if the
+		// ICS and above provide convenient function able to determine if the
 		// device has
 		// physical buttons or not.
 		// This function is not available below ICS
@@ -29,5 +31,43 @@ public class SoftwareKeyDetector {
 		boolean hasBackKey = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_BACK);
 		
 		return !hasMenuKey && !hasBackKey;
+	}
+	
+	private boolean mCheckedSoftkeyNavigation;
+	private boolean mHasSoftkeyNavigationBar;
+	private Object mSoftKeyLock = new Object();
+	
+	public boolean getHasSoftkeyNavigationBar() {
+		// Prevent reflection from being called indefinitely 
+		if (mCheckedSoftkeyNavigation) {
+			return mHasSoftkeyNavigationBar;
+		}
+		
+		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+			return false;
+		}
+		
+		try {
+			Class<?> serviceManagerClass = Class.forName("android.os.ServiceManager");
+			Method getService = serviceManagerClass.getDeclaredMethod("getService", String.class);
+			Object ws = getService.invoke(null,  "window");
+			Class<?> wmClassStub = Class.forName("android.view.IWindowManager$Stub");
+			Method asInterface = wmClassStub.getDeclaredMethod("asInterface", IBinder.class);
+			Object iWindowManager = asInterface.invoke(null, (IBinder)ws);
+			Method declaredMethod = iWindowManager.getClass().getDeclaredMethod("hasNavigationBar");
+			
+			synchronized (mSoftKeyLock) {
+				mHasSoftkeyNavigationBar = (Boolean) declaredMethod.invoke(iWindowManager);
+			}
+		}
+		catch (Exception e) {
+			// If this method does not exist, then it may be thought that the device does not have one
+		}
+
+		synchronized (mSoftKeyLock) {
+			mCheckedSoftkeyNavigation = true;
+		}
+		
+		return mHasSoftkeyNavigationBar;
 	}
 }

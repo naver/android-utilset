@@ -174,13 +174,6 @@ public class ActivityUtils {
 		return activity;
 	}
 
-	public static int getDipsFromPixel(Context context, float pixels) {
-		// Get the screen's density scale
-		final float scale = context.getResources().getDisplayMetrics().density;
-		// Convert the dps to pixels, based on density scale
-		return (int)(pixels * scale + 0.5f);
-	}
-
 	public static boolean isIntentAvailable(Context context, Intent intent) {
 		PackageManager packageManager = context.getPackageManager();
 		List<ResolveInfo> resolves = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);

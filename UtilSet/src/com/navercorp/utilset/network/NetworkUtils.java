@@ -18,7 +18,6 @@ import java.nio.channels.UnresolvedAddressException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
-import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -63,7 +62,7 @@ public class NetworkUtils {
     /**
 	 * 
 	 * @param context Context to be used to get network information.<br>
-	 *                To avoid memory leak, pass Application Context as argument. 
+	 *                To avoid memory leak, pass Application Context as argument
 	 */
 	public static NetworkUtils getInstance(Context context) {
 		if (instance == null) {
@@ -502,7 +501,8 @@ public class NetworkUtils {
 	@SuppressWarnings("deprecation")
 	public boolean isAirplaneModeOn() {
 		try {
-			// Commented Build.VERSION_CODES and Settings.Global class because Maven-Android-Plugin does not seem to support API Level 17 and above.
+			// Commented Build.VERSION_CODES and Settings.Global class
+			// because Maven-Android-Plugin does not seem to support API Level 17 and above.
 			// As such, unable to build through Maven.
 			if (Build.VERSION.SDK_INT >= /*Build.VERSION_CODES.*/JELLY_BEAN_MR1) {
 				return Settings.System.getInt(context.getContentResolver(), /*Settings.Global.*/AIRPLANE_MODE_ON, 0) != 0;

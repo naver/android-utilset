@@ -6,13 +6,13 @@ import android.util.Log;
 public class UtilSet {
 	public static final String TAG = "UtilSet";
 
-	private static PhoneNumberChecker phoneNumberHelper;
+	private static PhoneNumberUtils phoneNumberUtils;
 	private static RootChecker rootChecker;
 	private static DeviceTypeDetector deviceTypeHelper;
 	private static SoftwareKeyDetector deviceKeyboardHelper;
 	
 	static {
-		phoneNumberHelper = new PhoneNumberChecker();
+		phoneNumberUtils = new PhoneNumberUtils();
 		rootChecker = new RootChecker();
 		deviceTypeHelper = new DeviceTypeDetector();
 		deviceKeyboardHelper = new SoftwareKeyDetector();
@@ -96,7 +96,7 @@ public class UtilSet {
 	 * @return the number of cores
 	 */
 	public static int getProcessorNumbers() {
-		return ProcessorHelper.getNumCores();
+		return ProcessorUtils.getNumCores();
 	}
 
 	/**
@@ -106,7 +106,16 @@ public class UtilSet {
 	 * @return true if user device has SMS capability; false otherwise
 	 */
 	public static boolean hasSmsCapability(Context context) {
-		return phoneNumberHelper.isAbleToReceiveSms(context);
+		return phoneNumberUtils.isAbleToReceiveSms(context);
+	}
+	
+	/**
+	 * Returns mobile phone number
+	 * @param context Context to be used to get mobile phone number
+	 * @return string containing mobile phone number
+	 */
+	public static String getMobilePhoneNumber(Context context) {
+		return phoneNumberUtils.getMobilePhoneNumber(context);
 	}
 
 	/**
@@ -119,7 +128,7 @@ public class UtilSet {
 	 * @parameter Context any context from Activity or Application except null
 	 * @return String value of Device Unique Id if it succeeds; null if it fails
 	 */
-	public String getDeviceUniqueId(Context context) {
-		throw new UnsupportedOperationException();
-	}
+//	private String getDeviceUniqueId(Context context) {
+//		throw new UnsupportedOperationException();
+//	}
 }

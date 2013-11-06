@@ -1,24 +1,21 @@
 package com.navercorp.utilsettest;
 
-import com.navercorp.utilsettest.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.navercorp.utilset.common.UtilSet;
-import com.navercorp.utilset.network.NetworkUtils;
+import com.navercorp.utilsettest.audio.VolumeUtilsTestActivity;
 import com.navercorp.utilsettest.cipher.CipherTestActivity;
 import com.navercorp.utilsettest.common.CommonTestActivity;
 import com.navercorp.utilsettest.input.InputTestActivity;
 import com.navercorp.utilsettest.network.NetworkListenerTestActivity;
 import com.navercorp.utilsettest.network.NetworkTestActivity;
 import com.navercorp.utilsettest.storage.DiskUtilsTestAcitivity;
+import com.navercorp.utilsettest.string.StringUtilsTestActivity;
 import com.navercorp.utilsettest.ui.ActivityUtilsTestActivity;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -31,6 +28,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	Button keyboardUtilsTestButton;
 	Button networkUtilsTestButton;
 	Button networkListenerTestButton;
+	Button volumeUtilsTestButton;
+	Button stringUtilsTestButton;
 	
 	public static Activity getActivity() {
 		return activity;
@@ -64,6 +63,12 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		networkListenerTestButton = (Button) findViewById(R.id.networkChangeListenerButton);
 		networkListenerTestButton.setOnClickListener(this);
+		
+		volumeUtilsTestButton = (Button) findViewById(R.id.volumeUtilsTestButton);
+		volumeUtilsTestButton.setOnClickListener(this);
+		
+		stringUtilsTestButton = (Button) findViewById(R.id.stringUtilsTestButton);
+		stringUtilsTestButton.setOnClickListener(this);
 	}
 	
 	@Override
@@ -106,6 +111,14 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 		case R.id.networkChangeListenerButton :
 			i = new Intent(this, NetworkListenerTestActivity.class);
+			break;
+			
+		case R.id.volumeUtilsTestButton :
+			i = new Intent(this, VolumeUtilsTestActivity.class);
+			break;
+			
+		case R.id.stringUtilsTestButton :
+			i = new Intent(this, StringUtilsTestActivity.class);
 			break;
 		}
 

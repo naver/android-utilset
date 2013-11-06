@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.regex.Pattern;
 
-class ProcessorHelper {
+class ProcessorUtils {
 	/**
 	http://stackoverflow.com/questions/7962155/how-can-you-detect-a-dual-core-cpu-on-an-android-device-from-code 
 	 * Gets the number of cores available in this device, across all processors.

@@ -11,10 +11,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.util.DisplayMetrics;
 
-/**
- * @author Created by
- * @tag DeviceInfoHelper
- */
 class DeviceTypeDetector {
 	private static final int SCREENLAYOUT_SIZE_XLARGE = 4;
 	private static final int DENSITY_TV = 213;

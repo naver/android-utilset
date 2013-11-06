@@ -1,11 +1,11 @@
 # Android Utilset
 
 ### Introduction
-Utilset is a collection of useful functions to save your valuable time.
-Because there are a ton of different ways to implement a method,
+&nbsp;&nbsp;Utilset is a collection of useful functions to save your valuable time. 
+Because there are a ton of different ways to implement a method,<br>
 we often spend our valuable time to search and test those ways.
-Some may work, but some may not work.
-As such, we collected, tested and refined methods so as to prevent seeking code snippet.
+Some may work, but some may not work.<br>
+&nbsp;&nbsp;As such, we collected, tested and refined methods so as to prevent seeking code snippet.<br>
 
 -------
 ### Overview
@@ -30,19 +30,22 @@ Utilset includes:
   
   * DiskUtils
     + obtains external storage path for caching
-    + obtains external storage path for temp
+    + obtains external storage path for temporary files
     + obtains MicroSD Card path
   
   * KeyboardUtils
-    + Shows, hides, and toggles Software keyboards
-
--------  
-### Usage
-  Download utilset.jar or add utilset dependency in pom.xml if using Maven.
+    + shows, hides, and toggles Software keyboards
+    
+  * CipherUtils
+    + provides simple AES based crypto methods
 
 -------
 ### Download
-The latest version can be downloaded in zip(link needed here) and referenced as a library.
+	! Fix Me : link for jar is needed here
+	! One more thing : repository for dependency is needed
+The latest version can be downloaded in jar and referenced as a library.
+Just add downloaded jar file into libs folder in your android project. 
+
 
 You can also configure pom.xml if using Maven :
 ```xml
@@ -52,6 +55,20 @@ You can also configure pom.xml if using Maven :
 	<version>insert latest version</version>
 </dependency>
 ```
+
+-------  
+### Usage
+Please, refer sample project
+
+-------
+### How to run sample project
+  (1) Download Utilset Maven Project from http://your_id@yobi.navercorp.com:80/weblab/android-utilset<br>
+  (2) Import downloaded project as Maven project in Eclipse (Maven plug-in must be installed to run utilset test project)<br>
+  (3) Right click on utilset-parent in Package Explorer<br>
+  (4) Select Run As and then Maven Build<br>
+  (5) If you run utilset-parent for the first time, then Run Configuration will appear<br>
+  (6) Type clean install to the Goal tab<br>
+  (7) Click run button on the bottom<br>
 
 -------
 ## License

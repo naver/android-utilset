@@ -1,23 +1,19 @@
 package com.navercorp.utilsettest.test;
 
 import android.app.Activity;
-import android.os.Handler;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.SmallTest;
 import android.widget.EditText;
 
 import com.jayway.android.robotium.solo.Solo;
-import com.navercorp.utilsettest.MainActivity;
-import com.navercorp.utilsettest.cipher.CipherTestActivity;
-import com.navercorp.utilset.cipher.CipherUtils;
-import com.navercorp.utilset.ui.ScreenUtils;
 import com.navercorp.utilsettest.R;
+import com.navercorp.utilsettest.cipher.CipherTestActivity;
 
 public class CipherUtilsTestCase extends
 		ActivityInstrumentationTestCase2<CipherTestActivity> {
 	private Solo solo;
-	private String doReMiPaSoLaTiDo = "do re mi pa so la ti do";
-	private String plainText = "I like Genymotion!!! XD";
+	private String seed = "do re mi"; // "do re mi pa so la ti do";
+	private String plainText = "Slow";
 
 	public CipherUtilsTestCase() {
 		// TODO Auto-generated constructor stub
@@ -34,7 +30,7 @@ public class CipherUtilsTestCase extends
 
 	@SmallTest
 	public void testCipher() {
-		final Activity activity = solo.getCurrentActivity();
+		Activity activity = solo.getCurrentActivity();
 
 		EditText seedText = (EditText) activity.findViewById(R.id.seedTextCipherTest);
 		assertEquals(seedText.getId(), R.id.seedTextCipherTest);
@@ -42,15 +38,15 @@ public class CipherUtilsTestCase extends
 		assertEquals(editText.getId(), R.id.plainTextCipherTest);
 		
 		solo.clickOnView(seedText);
-		int size = doReMiPaSoLaTiDo.length();
+		int size = seed.length();
 		for (int i=0;i<size;++i) {
-			solo.enterText(seedText, doReMiPaSoLaTiDo.charAt(i) + "");
+			solo.enterText(seedText, seed.charAt(i) + "");
 		}
 		
 		solo.clickOnView(editText);
 		size = plainText.length();
 		for (int i=0;i<size;++i) {
-		solo.enterText(editText, plainText.charAt(i) + "");
+			solo.enterText(editText, plainText.charAt(i) + "");
 		}
 		
 		solo.clickOnView(activity.findViewById(R.id.encryptButtonCipherTest));
@@ -59,5 +55,4 @@ public class CipherUtilsTestCase extends
 		solo.clickOnView(activity.findViewById(R.id.decryptButtonCipherTest));
 		solo.sleep(1500);
 	}
-
 }

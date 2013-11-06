@@ -69,7 +69,6 @@ public class ActivityUtilsKeepScreenOnFragment extends Fragment {
 		result += "isContextForeground(this) : " + ActivityUtils.isContextForeground(context) + "\n";
 		result += "isTopApplication(MainActivity) : " + ActivityUtils.isTopApplication(MainActivity.getActivity()) + "\n";
 		result += "isContextForeground(MainActivity) : " + ActivityUtils.isContextForeground(MainActivity.getActivity()) + "\n";
-		result += "getDipsFromPixel(100) : " + ActivityUtils.getDipsFromPixel(context, 100) + "\n";
 		result += "*********************************************\n";
 		return result;
 	}

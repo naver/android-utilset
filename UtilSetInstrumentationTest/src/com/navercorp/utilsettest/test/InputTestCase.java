@@ -22,7 +22,7 @@ public class InputTestCase extends ActivityInstrumentationTestCase2<InputTestAct
 	}
 	
 	@SmallTest
-	public void testFirst() {
+	public void testKeyboard() {
 		
 		try {
 			solo.clickOnButton("Show");

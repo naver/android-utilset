@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 public class KeyboardUtils {
-	// private static final String TAG = "UtilSet.KeyboardUtils";
-
 	/**
 	 * Shows keypad
 	 * 

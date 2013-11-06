@@ -64,6 +64,7 @@ public class CommonTestActivity extends Activity {
 		result += "Has Software Keys : " + UtilSet.hasSoftwareKeys(this) + "\n";
 		result += "Processor Number : " + UtilSet.getProcessorNumbers() + "\n";
 		result += "IsSMSAvailable : " + UtilSet.hasSmsCapability(getApplicationContext()) + "\n";
+		result += "getMobilePhoneNumber : " + UtilSet.getMobilePhoneNumber(this) + "\n";
 		result += "*******************************************\n";
 		
 		return result;
