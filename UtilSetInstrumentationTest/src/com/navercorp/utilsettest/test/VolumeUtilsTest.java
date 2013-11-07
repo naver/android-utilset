@@ -1,10 +1,7 @@
 package com.navercorp.utilsettest.test;
 
-import java.util.regex.Matcher;
-
 import com.navercorp.utilset.audio.VolumeUtils;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.test.ApplicationTestCase;
@@ -13,6 +10,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class VolumeUtilsTest extends ApplicationTestCase<Application> {
+	private static final int MAX_VOLUME = 15;
+	private static final int MIN_VOLUME = 0;
+	
 	private Context context;
 	
 	public VolumeUtilsTest() {
@@ -27,9 +27,6 @@ public class VolumeUtilsTest extends ApplicationTestCase<Application> {
 		
 		context = getApplication().getApplicationContext();
 	}
-	
-	private static final int MAX_VOLUME = 15;
-	private static final int MIN_VOLUME = 0;
 	
 	public void testGetMaximumVolume() {
 		assertEquals(MAX_VOLUME, VolumeUtils.getMaximumVolume(context));

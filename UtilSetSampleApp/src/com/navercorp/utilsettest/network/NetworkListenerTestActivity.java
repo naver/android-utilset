@@ -16,7 +16,7 @@ public class NetworkListenerTestActivity extends Activity {
 
 	private TextView wifiStateTextView;
 	private TextView networkStateTextView;
-	private TextView unusedTextView;
+//	private TextView unusedTextView;
 	private ToggleButton toggleWifiButton;
 	private NetworkUtils networkUtils;
 
@@ -38,7 +38,7 @@ public class NetworkListenerTestActivity extends Activity {
 		
 		wifiStateTextView = (TextView) findViewById(R.id.network_listener_test_wifi_state);
 		networkStateTextView = (TextView) findViewById(R.id.network_listener_test_network_state);
-		unusedTextView = (TextView) findViewById(R.id.network_listener_test_unused);
+//		unusedTextView = (TextView) findViewById(R.id.network_listener_test_unused);
 
 		toggleWifiButton = (ToggleButton) findViewById(R.id.network_listener_test_toggle_wifi);
 		toggleWifiButton.setOnCheckedChangeListener(onCheckedChangeListener);

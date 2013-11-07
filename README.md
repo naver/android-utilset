@@ -1,7 +1,7 @@
 # Android Utilset
 
 ### Introduction
-&nbsp;&nbsp;Utilset is a collection of useful functions to save your valuable time. 
+&nbsp;&nbsp;Utilset is collections of useful functions to save your valuable time. 
 Because there are a ton of different ways to implement a method,<br>
 we often spend our valuable time to search and test those ways.
 Some may work, but some may not work.<br>
@@ -12,17 +12,18 @@ Some may work, but some may not work.<br>
 Utilset includes:
 
   * Utilset
-    + checks if device is rooted
+    + checks if a device is rooted
     + counts the number of processors(more specifically the number of cores)
     + determines if the phone has SMS capability
     + etc...     
   
   * ActivityUtils
-    + checks if a package user specified is installed
+    + checks if a user specified package is installed
     + gets information of base activity package name and class name
   
   * NetworkUtils
-    + provides listeners which notify when network state changes, device has phone call, and connection is made
+    + provides listeners which notify when network state changes, , receives a call, or a connection is made
+    
     + checks if WiFi is enabled and if WiFi is connected
     + checks if Mobile Network (3G/4G) is connected
     + obtains IP Address in either v4 or v6 form

@@ -78,7 +78,7 @@ public class NetworkTestActivity extends Activity {
 		result += "getIpAddress(IPv4) : " + networkUtils.getIpAddress(false) + "\n";
 		result += "getIpAddress(IPv6) : " + networkUtils.getIpAddress(true) + "\n";
 		result += "getWifiMacAddress : " + networkUtils.getWifiMacAddress() + "\n";
-		result += "isWifiStpuid : " + networkUtils.isWifiFake() + "\n";
+		result += "isWifiStpuid : " + networkUtils.isWifiFake("173.194.72.105", 80) + "\n";
 		result += "***************************************\n";
 		
 		return result;

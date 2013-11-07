@@ -1,0 +1,123 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 4092 bytes for char in c:\build_area\jdk6_45\hotspot\src\share\vm\utilities/stack.inline.hpp
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:44), pid=9120, tid=8772
+#
+# JRE version: 6.0_45-b06
+# Java VM: Java HotSpot(TM) Client VM (20.45-b01 mixed mode windows-x86 )
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x006f4c00):  VMThread [stack: 0x00760000,0x007b0000] [id=8772]
+
+Stack: [0x00760000,0x007b0000],  sp=0x007afa10,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+[error occurred during error reporting (printing native stack), id 0xc0000005]
+
+VM_Operation (0x0024f318): GenCollectForAllocation, mode: safepoint, requested by thread 0x00529c00
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0070f800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=9084, stack(0x4ab80000,0x4abd0000)]
+  0x0070a800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=8596, stack(0x4aaf0000,0x4ab40000)]
+  0x00709800 JavaThread "Attach Listener" daemon [_thread_blocked, id=7312, stack(0x4aa60000,0x4aab0000)]
+  0x00706800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8984, stack(0x4a9d0000,0x4aa20000)]
+  0x006fe000 JavaThread "Finalizer" daemon [_thread_blocked, id=7172, stack(0x4a740000,0x4a790000)]
+  0x006f9400 JavaThread "Reference Handler" daemon [_thread_blocked, id=8608, stack(0x4a6b0000,0x4a700000)]
+  0x00529c00 JavaThread "main" [_thread_blocked, id=8704, stack(0x00200000,0x00250000)]
+
+Other Threads:
+=>0x006f4c00 VMThread [stack: 0x00760000,0x007b0000] [id=8772]
+  0x00711c00 WatcherThread [stack: 0x4ac10000,0x4ac60000] [id=7584]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00527e10] Threads_lock - owner thread: 0x006f4c00
+[0x00528220] Heap_lock - owner thread: 0x00529c00
+
+Heap
+ def new generation   total 9600K, used 9600K [0x04640000, 0x050a0000, 0x19b90000)
+  eden space 8576K, 100% used [0x04640000, 0x04ea0000, 0x04ea0000)
+  from space 1024K, 100% used [0x04fa0000, 0x050a0000, 0x050a0000)
+  to   space 1024K,   0% used [0x04ea0000, 0x04ea0000, 0x04fa0000)
+ tenured generation   total 22052K, used 22005K [0x19b90000, 0x1b119000, 0x44640000)
+   the space 22052K,  99% used [0x19b90000, 0x1b10d7b8, 0x1b10d800, 0x1b119000)
+ compacting perm gen  total 12288K, used 4513K [0x44640000, 0x45240000, 0x48640000)
+   the space 12288K,  36% used [0x44640000, 0x44aa8658, 0x44aa8800, 0x45240000)
+No shared spaces configured.
+
+Code Cache  [0x02640000, 0x02870000, 0x04640000)
+ total_blobs=1034 nmethods=906 adapters=64 free_code_cache=31284992 largest_free_block=0
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	C:\Program Files (x86)\Java\jdk1.6.0_45\jre\bin\java.exe
+0x774c0000 - 0x77640000 	C:\Windows\SysWOW64\ntdll.dll
+0x763c0000 - 0x764d0000 	C:\Windows\syswow64\kernel32.dll
+0x74e40000 - 0x74e87000 	C:\Windows\syswow64\KERNELBASE.dll
+0x75ee0000 - 0x75f80000 	C:\Windows\syswow64\ADVAPI32.dll
+0x760f0000 - 0x7619c000 	C:\Windows\syswow64\msvcrt.dll
+0x761a0000 - 0x761b9000 	C:\Windows\SysWOW64\sechost.dll
+0x76590000 - 0x76680000 	C:\Windows\syswow64\RPCRT4.dll
+0x74ba0000 - 0x74c00000 	C:\Windows\syswow64\SspiCli.dll
+0x74b90000 - 0x74b9c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x7c340000 - 0x7c396000 	C:\Program Files (x86)\Java\jdk1.6.0_45\jre\bin\msvcr71.dll
+0x6d8e0000 - 0x6db90000 	C:\Program Files (x86)\Java\jdk1.6.0_45\jre\bin\client\jvm.dll
+0x75bb0000 - 0x75cb0000 	C:\Windows\syswow64\USER32.dll
+0x764d0000 - 0x76560000 	C:\Windows\syswow64\GDI32.dll
+0x74e90000 - 0x74e9a000 	C:\Windows\syswow64\LPK.dll
+0x762b0000 - 0x7634d000 	C:\Windows\syswow64\USP10.dll
+0x71be0000 - 0x71c12000 	C:\Windows\system32\WINMM.dll
+0x75cb0000 - 0x75d10000 	C:\Windows\system32\IMM32.DLL
+0x76b30000 - 0x76bfc000 	C:\Windows\syswow64\MSCTF.dll
+0x71f70000 - 0x71fbc000 	C:\Windows\system32\apphelp.dll
+0x6d890000 - 0x6d89c000 	C:\Program Files (x86)\Java\jdk1.6.0_45\jre\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	C:\Program Files (x86)\Java\jdk1.6.0_45\jre\bin\java.dll
+0x6d8d0000 - 0x6d8df000 	C:\Program Files (x86)\Java\jdk1.6.0_45\jre\bin\zip.dll
+0x77490000 - 0x77495000 	C:\Windows\system32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -Xmx1024M 
+java_command: C:\Eclipse\Android SDK\android-sdk\build-tools\19.0.0\lib\dx.jar --dex --output=D:\[Yobi]\android-utilset\UtilSetSampleApp\target\classes.dex D:\[Yobi]\android-utilset\UtilSetSampleApp\target\classes C:\Users\nhn\.m2\repository\com\google\android\support-v4\r7\support-v4-r7.jar C:\Users\nhn\.m2\repository\com\navercorp\utilset\utilset\0.0.1-SNAPSHOT\utilset-0.0.1-SNAPSHOT.jar C:\Users\nhn\.m2\repository\junit\junit\4.10\junit-4.10.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_43
+CLASSPATH=.;
+PATH=c:\Program Files (x86)\AMD APP\bin\x86_64;c:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Java\jdk1.6.0_43\bin;C:\Maven\bin;C:\Eclipse\Android SDK\sdk\platform-tools;C:\Program Files (x86)\Git\cmd;C:\Eclipse\Android SDK\android-sdk\tools;C:\Eclipse\Android SDK\android-sdk\platform-tools;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Subversion\bin;C:\MinGW\bin;ANDROID_NDK_ROOT\platform-tools;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Java\jdk1.6.0_43\jre\bin\server;C:\Program Files\TortoiseGit\bin;C:\Eclipse\Android SDK\android-ndk
+USERNAME=nbp
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt
+
+Memory: 4k page, physical 8330188k(1968020k free), swap 8328328k(3448k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.45-b01) for windows-x86 JRE (1.6.0_45-b06), built on Mar 26 2013 13:40:03 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Wed Nov 06 17:17:35 2013
+elapsed time: 1 seconds
+

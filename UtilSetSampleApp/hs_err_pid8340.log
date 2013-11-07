@@ -1,0 +1,101 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 4092 bytes for char in c:\build_area\jdk6_45\hotspot\src\share\vm\utilities/stack.inline.hpp
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:44), pid=8340, tid=3924
+#
+# JRE version: 6.0_45-b06
+# Java VM: Java HotSpot(TM) Client VM (20.45-b01 mixed mode windows-x86 )
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x023a4c00):  VMThread [stack: 0x4a620000,0x4a670000] [id=3924]
+
+Stack: [0x4a620000,0x4a670000],  sp=0x4a66f810,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+[error occurred during error reporting (printing native stack), id 0xc0000005]
+
+VM_Operation (0x0047f4a0): GenCollectForAllocation, mode: safepoint, requested by thread 0x00d79c00
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x023c1800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=6912, stack(0x4ab80000,0x4abd0000)]
+  0x023ba800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=8144, stack(0x4aaf0000,0x4ab40000)]
+  0x023b9800 JavaThread "Attach Listener" daemon [_thread_blocked, id=280, stack(0x4aa60000,0x4aab0000)]
+  0x023b6800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=9036, stack(0x4a9d0000,0x4aa20000)]
+  0x023ae000 JavaThread "Finalizer" daemon [_thread_blocked, id=7804, stack(0x4a740000,0x4a790000)]
+  0x023a9400 JavaThread "Reference Handler" daemon [_thread_blocked, id=3668, stack(0x4a6b0000,0x4a700000)]
+  0x00d79c00 JavaThread "main" [_thread_blocked, id=5500, stack(0x00430000,0x00480000)]
+
+Other Threads:
+=>0x023a4c00 VMThread [stack: 0x4a620000,0x4a670000] [id=3924]
+  0x023f9400 WatcherThread [stack: 0x4ac10000,0x4ac60000] [id=8488]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00d77e10] Threads_lock - owner thread: 0x023a4c00
+[0x00d78220] Heap_lock - owner thread: 0x00d79c00
+
+Heap
+ def new generation   total 7808K, used 7807K [0x04490000, 0x04d00000, 0x199e0000)
+  eden space 6976K, 100% used [0x04490000, 0x04b60000, 0x04b60000)
+  from space 832K,  99% used [0x04b60000, 0x04c2fff8, 0x04c30000)
+  to   space 832K,   0% used [0x04c30000, 0x04c30000, 0x04d00000)
+ tenured generation   total 34996K, used 34996K [0x199e0000, 0x1bc0d000, 0x44490000)
+   the space 34996K, 100% used [0x199e0000, 0x1bc0d000, 0x1bc0d000, 0x1bc0d000)
+ compacting perm gen  total 12288K, used 4732K [0x44490000, 0x45090000, 0x48490000)
+   the space 12288K,  38% used [0x44490000, 0x4492f118, 0x4492f200, 0x45090000)
+No shared spaces configured.
+
+Code Cache  [0x02410000, 0x02650000, 0x04410000)
+ total_blobs=1077 nmethods=949 adapters=64 free_code_cache=31226816 largest_free_block=0
+
+Dynamic libraries:
+
+[error occurred during error reporting (printing dynamic libraries), id 0xc0000005]
+
+VM Arguments:
+jvm_args: -Xmx1024M 
+java_command: C:\Eclipse\Android SDK\android-sdk\build-tools\19.0.0\lib\dx.jar --dex --output=D:\[Yobi]\android-utilset\UtilSetSampleApp\target\classes.dex D:\[Yobi]\android-utilset\UtilSetSampleApp\target\classes C:\Users\nhn\.m2\repository\com\google\android\support-v4\r7\support-v4-r7.jar C:\Users\nhn\.m2\repository\com\navercorp\utilset\utilset\0.0.1-SNAPSHOT\utilset-0.0.1-SNAPSHOT.jar C:\Users\nhn\.m2\repository\junit\junit\4.10\junit-4.10.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_43
+CLASSPATH=.;
+PATH=c:\Program Files (x86)\AMD APP\bin\x86_64;c:\Program Files (x86)\AMD APP\bin\x86;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;c:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Java\jdk1.6.0_43\bin;C:\Maven\bin;C:\Eclipse\Android SDK\sdk\platform-tools;C:\Program Files (x86)\Git\cmd;C:\Eclipse\Android SDK\android-sdk\tools;C:\Eclipse\Android SDK\android-sdk\platform-tools;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Subversion\bin;C:\MinGW\bin;ANDROID_NDK_ROOT\platform-tools;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Java\jdk1.6.0_43\jre\bin\server;C:\Program Files\TortoiseGit\bin;C:\Eclipse\Android SDK\android-ndk
+USERNAME=nbp
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt
+
+Memory: 4k page, physical 8330188k(1947168k free), swap 8328328k(5112k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.45-b01) for windows-x86 JRE (1.6.0_45-b06), built on Mar 26 2013 13:40:03 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Wed Nov 06 17:18:25 2013
+elapsed time: 2 seconds
+

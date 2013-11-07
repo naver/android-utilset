@@ -31,7 +31,17 @@ public class VolumeUtils {
 	 * @param delta Amount of volume to be changed
 	 */
 	public static void setVolume(Context context, int volume) {
-		adjustMediaVolume(context, volume);
+		adjustMediaVolume(context, volume, 0);
+	}
+	
+	/**
+	 * Sets media volume and displays volume level
+	 * 
+	 * @param context Context
+	 * @param delta Amount of volume to be changed
+	 */
+	public static void setVolumeWithLevel(Context context, int volume) {
+		adjustMediaVolume(context, volume, AudioManager.FLAG_SHOW_UI);
 	}
 	
 	/**
@@ -40,7 +50,16 @@ public class VolumeUtils {
 	 * @param context
 	 */
 	public static void increaseVolume(Context context) {
-		adjustMediaVolume(context, getCurrentVolume(context) + 1);
+		adjustMediaVolume(context, getCurrentVolume(context) + 1, 0);
+	}
+	
+	/**
+	 * Increases media volume and displays volume level
+	 * 
+	 * @param context
+	 */
+	public static void increaseVolumeWithLevel(Context context) {
+		adjustMediaVolume(context, getCurrentVolume(context) + 1, AudioManager.FLAG_SHOW_UI);
 	}
 	
 	/**
@@ -49,7 +68,16 @@ public class VolumeUtils {
 	 * @param context
 	 */
 	public static void decreaseVolume(Context context) {
-		adjustMediaVolume(context, getCurrentVolume(context) - 1);
+		adjustMediaVolume(context, getCurrentVolume(context) - 1, 0);
+	}
+	
+	/**
+	 * Decreases media volume and displays volume level
+	 * 
+	 * @param context
+	 */
+	public static void decreaseVolumeWithLevel(Context context) {
+		adjustMediaVolume(context, getCurrentVolume(context) - 1, AudioManager.FLAG_SHOW_UI);
 	}
 
 	/** Returns maximum volume the media volume can have
@@ -70,7 +98,7 @@ public class VolumeUtils {
 		return 0;
 	}
 	
-	private static void adjustMediaVolume(Context context, int volume) {
+	private static void adjustMediaVolume(Context context, int volume, int flag) {
 		final int MAX_VOLUME = getMaximumVolume(context);
 		final int MIN_VOLUME = 0;
 
@@ -82,7 +110,7 @@ public class VolumeUtils {
 		
 		AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 		if (audioManager != null) {
-			audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, volume, 0);
+			audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, volume, flag);
 		}
 	}
 }

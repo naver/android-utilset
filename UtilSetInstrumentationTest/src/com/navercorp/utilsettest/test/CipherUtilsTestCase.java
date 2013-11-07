@@ -2,7 +2,6 @@ package com.navercorp.utilsettest.test;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.SmallTest;
 import android.widget.EditText;
 
 import com.jayway.android.robotium.solo.Solo;
@@ -27,8 +26,12 @@ public class CipherUtilsTestCase extends
 
 		solo = new Solo(getInstrumentation(), getActivity());
 	}
+	
+	public void tearDown() throws Exception
+	{
+        solo.finishOpenedActivities();
+	}
 
-	@SmallTest
 	public void testCipher() {
 		Activity activity = solo.getCurrentActivity();
 

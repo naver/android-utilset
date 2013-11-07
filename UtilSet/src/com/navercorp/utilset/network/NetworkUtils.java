@@ -661,7 +661,7 @@ public class NetworkUtils {
 	}
 	
 	/** Returns IP Address<br>
-	 * Requires READ_PHONE_STATE, ACCESS_WIFI_STATE permissions<br>
+	 * Requires READ_PHONE_STATE, ACCESS_WIFI_STATE and INTERNET permissions<br>
 	 * 
 	 * @param ipv6 Option to choose IP address type
 	 * @return IP address made up of IPv6 if parameter ipv6 is true or IPv4 if parameter ipv6 is false; null if it do not have IP address
@@ -731,14 +731,16 @@ public class NetworkUtils {
 	}
 	
 	/**
-	 * Check if WiFi currently connected is either rogue or unable to route
+	 * Checks if currently connected Access Point is either rogue or incapable of routing packet
 	 * 
-	 * @return true if currently connected WiFi is abnormal; false otherwise
+	 * @param ipAddress Any valid IP addresses will work to check if the device is connected to properly working AP
+	 * @param port Port number bound with ipAddress parameter
+	 * @return true if currently connected AP is not working normally; false otherwise
 	 */
-	public boolean isWifiFake() {
+	public boolean isWifiFake(String ipAddress, int port) {
 		try {
 			SocketChannel socketChannel = SocketChannel.open();
-			socketChannel.connect(new InetSocketAddress("173.194.126.131", 80));
+			socketChannel.connect(new InetSocketAddress(ipAddress, port));
 		} catch (IOException e) {
 			Log.d(TAG, "Current Wifi is stupid!!! by IOException");
 			return true;
@@ -746,7 +748,6 @@ public class NetworkUtils {
 			Log.d(TAG, "Current Wifi is stupid!!! by InetSocketAddress");
 			return true;
 		}
-		
 		return false;
 	}
 }

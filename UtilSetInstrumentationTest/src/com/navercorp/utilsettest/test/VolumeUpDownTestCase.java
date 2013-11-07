@@ -4,16 +4,16 @@ package com.navercorp.utilsettest.test;
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.Button;
+import com.navercorp.utilsettest.R;
 
 import com.jayway.android.robotium.solo.Solo;
 import com.navercorp.utilsettest.audio.VolumeUtilsTestActivity;
-import com.navercorp.utilsettest.R;
 
 public class VolumeUpDownTestCase extends ActivityInstrumentationTestCase2<VolumeUtilsTestActivity> {
 	private Solo solo;
 	private Activity activity;
-	Button volumeUpButton;
-	Button volumeDownButton;
+	private Button volumeUpButton;
+	private Button volumeDownButton;
 	
 	public VolumeUpDownTestCase() {
 		super(VolumeUtilsTestActivity.class);
@@ -29,6 +29,11 @@ public class VolumeUpDownTestCase extends ActivityInstrumentationTestCase2<Volum
 		volumeDownButton = (Button) activity.findViewById(R.id.volumeDownButton);
 	}
 	
+	public void tearDown() throws Exception
+	{
+        solo.finishOpenedActivities();
+	}
+
 	public void testVolumeUpAndDown() {
 		solo.clickOnView(volumeUpButton);
 		solo.sleep(500);

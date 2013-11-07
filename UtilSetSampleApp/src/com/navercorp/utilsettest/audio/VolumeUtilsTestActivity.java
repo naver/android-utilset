@@ -1,7 +1,5 @@
 package com.navercorp.utilsettest.audio;
 
-import static org.junit.Assert.*;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -52,10 +50,10 @@ public class VolumeUtilsTestActivity extends Activity {
 			int id = v.getId();
 			
 			if (id == R.id.volumeUpButton) {
-				VolumeUtils.increaseVolume(context);
+				VolumeUtils.increaseVolumeWithLevel(context);
 			}
 			else if (id == R.id.volumeDownButton) {
-				VolumeUtils.decreaseVolume(context);
+				VolumeUtils.decreaseVolumeWithLevel(context);
 			}
 			
 			setCurrentVolume(VolumeUtils.getCurrentVolume(context));

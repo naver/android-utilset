@@ -2,11 +2,13 @@ package com.navercorp.utilsettest;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.navercorp.utilsettest.audio.VolumeUtilsTestActivity;
 import com.navercorp.utilsettest.cipher.CipherTestActivity;
@@ -51,7 +53,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		activityUtilsTestButton = (Button) findViewById(R.id.acitivtyUtilsTestButton);
 		activityUtilsTestButton.setOnClickListener(this);
 		
-		
 		diskUtilsTestButton = (Button) findViewById(R.id.diskUtilsButton);
 		diskUtilsTestButton.setOnClickListener(this);
 		
@@ -69,6 +70,37 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		stringUtilsTestButton = (Button) findViewById(R.id.stringUtilsTestButton);
 		stringUtilsTestButton.setOnClickListener(this);
+		
+		initButtonColor();
+	}
+	
+	private void initButtonColor() {
+		setButtonColor(cipherTestButton, 0);
+		setButtonColor(utilSetTestButton, 1);
+		setButtonColor(activityUtilsTestButton, 2);
+		setButtonColor(diskUtilsTestButton, 3);
+		setButtonColor(keyboardUtilsTestButton, 4);
+		setButtonColor(networkUtilsTestButton, 5);
+		setButtonColor(networkListenerTestButton, 6);
+		setButtonColor(volumeUtilsTestButton, 7);
+		setButtonColor(stringUtilsTestButton, 8);
+	}
+	
+	private void setButtonColor(Button button, int index) {
+		ButtonColor bc = ButtonColorList.getButtonColor(index);
+		
+		GradientDrawable gd = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[] {bc.getE(), bc.getC() });
+		gd.setCornerRadius(0f);
+		gd.setStroke(1, bc.getE());
+		gd.setCornerRadius(3f);
+		
+		button.setBackground(gd);
+		button.setTextColor(bc.getTextColor());
+		button.setShadowLayer(1f, 1f, 1f, bc.getE());
+		LinearLayout.LayoutParams params = (android.widget.LinearLayout.LayoutParams) button.getLayoutParams();
+		
+		params.setMargins(5, 5, 5, 5);
+		button.setLayoutParams(params);
 	}
 	
 	@Override

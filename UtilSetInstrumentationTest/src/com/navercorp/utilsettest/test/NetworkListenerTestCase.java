@@ -20,6 +20,11 @@ public class NetworkListenerTestCase extends ActivityInstrumentationTestCase2<Ne
 		
 		solo = new Solo(getInstrumentation(), getActivity());
 	}
+	
+	public void tearDown() throws Exception
+	{
+        solo.finishOpenedActivities();
+	}
 
 	public void testNetworkListener() {
 		solo.sleep(500);

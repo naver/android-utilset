@@ -10,10 +10,6 @@ import com.navercorp.utilset.ui.ActivityUtils;
 
 public class ActivityUtilsTest extends ApplicationTestCase<Application> {
 	private static final String NOT_INSTALLED_PACKAGE = "seventh.son.of.a.seventh.son";
-//	private static final String BASE_ACTIVITY_PACKAGE_NAME = "com.navercorp.utilsettest";
-//	private static final String BASE_ACTIVITY_CLASS_NAME = "com.navercorp.utilsettest.MainActivity";
-//	private static final String TOP_ACTIVITY_PACKAGE_NAME = "com.navercorp.utilsettest";
-//	private static final String TOP_ACTIVITY_CLASS_NAME = "com.navercrop.utiltesttest.ui.ActivityUtilsTestActivity";
 	private Context context;
 	
 	public ActivityUtilsTest() {
@@ -32,19 +28,13 @@ public class ActivityUtilsTest extends ApplicationTestCase<Application> {
 		Assert.assertFalse(ActivityUtils.isPackageInstalled(context, NOT_INSTALLED_PACKAGE));
 	}
 	
-//	public void testGetBaseActivityPackageName() {
-//		Assert.assertEquals(BASE_ACTIVITY_PACKAGE_NAME, ActivityUtils.getBaseActivityPackageName(context));
-//	}
-//	
-//	public void testGetBaseActivityClassName() {
-//		Assert.assertEquals(BASE_ACTIVITY_CLASS_NAME, ActivityUtils.getBaseActivityClassName(context));
-//	}
-//	
-//	public void testGetTopActivityPackageName() {
-//		Assert.assertEquals(TOP_ACTIVITY_PACKAGE_NAME, ActivityUtils.getTopActivityPackageName(context));
-//	}
-//	
-//	public void testGetTopActivityClassName() {
-//		assertEquals(TOP_ACTIVITY_CLASS_NAME, ActivityUtils.getTopActivityClassName(context));
-//	}
+	// Android Instrumentation Test is executed on the android launcher and that launcher can be different for each manufacturer.
+	public void testIsTopApplication() {
+		assertFalse(ActivityUtils.isTopApplication(context));
+	}
+	
+	public void testIsContextForeground() {
+		assertTrue(ActivityUtils.isContextForeground(context));
+	}
+
 }
