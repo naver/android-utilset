@@ -37,9 +37,18 @@
         >
 
         <TextView
+            android:id="@+id/informationTextStringUtils"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Compressed String" />
+        
+        <TextView
             android:id="@+id/compressedTextStringUtils"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="4"
             android:text=" " />
 
     </LinearLayout>

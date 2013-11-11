@@ -1,5 +1,8 @@
 package com.navercorp.utilsettest.test;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.FutureTask;
+
 import android.app.Activity;
 import android.os.Handler;
 import android.test.ActivityInstrumentationTestCase2;
@@ -34,22 +37,41 @@ public class ScreenUtilsTestCase extends
 
 	public void testSetBrightness() {
 		final Activity activity = solo.getCurrentActivity();
-
+		
+		final CountDownLatch latchForDimness = new CountDownLatch(1);
+		final CountDownLatch latchForBrightness = new CountDownLatch(1);
+		
 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
 				ScreenUtils.setScreenBrightness(activity, 0.04f);
+				latchForDimness.countDown();
 			}
 		}, 500);
 		
-		handler.postDelayed(new Runnable() {
+		try {
+			latchForDimness.await();
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		handler.post(new Runnable() {
 			@Override
 			public void run() {
 				ScreenUtils.setScreenBrightness(activity, 1.0f);
+				latchForBrightness.countDown();
 			}
-		}, 1500);
-
-		solo.sleep(3000);
+		});
+		
+		try {
+			latchForBrightness.await();
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

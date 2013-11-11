@@ -46,14 +46,21 @@
 				<groupId>com.navercorp.utilset</groupId>
 				<artifactId>utilset</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
-<!-- 				<scope>system</scope> -->
-<!-- 				<systemPath>${basedir}/repo/utilset-0.0.1-SNAPSHOT.jar</systemPath> -->
+				<!-- <scope>system</scope> -->
+				<!-- <systemPath>${basedir}/repo/utilset-0.0.1-SNAPSHOT.jar</systemPath> -->
+			</dependency>
+
+			<dependency>
+				<groupId>org.robolectric</groupId>
+				<artifactId>robolectric</artifactId>
+				<version>2.2</version>
+				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<build>
-	    <sourceDirectory>src</sourceDirectory>
+		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
 		<resources>
 			<resource>
@@ -63,34 +70,34 @@
 				</excludes>
 			</resource>
 		</resources>
-	    
+
 		<pluginManagement>
 			<plugins>
-			    <!-- UtilSet을 Multimodule로 넣었으므로 더 이상 필요가 없음 -->
-<!-- 			    <plugin> -->
-<!-- 					<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 					<artifactId>maven-install-plugin</artifactId> -->
-<!-- 					<version>2.3.1</version> -->
-<!-- 					<executions> -->
-<!-- 						<execution> -->
-<!-- 							<id>utilset</id> -->
-<!-- 							<phase>clean</phase> -->
-<!-- 							<goals> -->
-<!-- 								<goal>install-file</goal> -->
-<!-- 							</goals> -->
-<!-- 							<configuration> -->
-<!-- 								<groupId>com.nhncorp.utilset</groupId> -->
-<!-- 								<artifactId>utilset</artifactId> -->
-<!-- 								<version>0.0.1-SNAPSHOT</version> -->
-<!-- 								<packaging>jar</packaging> -->
-<!-- 								<file>${basedir}/repo/utilset-0.0.1-SNAPSHOT.jar</file> -->
-<!-- 								<createChecksum>true</createChecksum> -->
-<!-- 								<generatePom>true</generatePom> -->
-<!-- 							</configuration> -->
-<!-- 						</execution> -->
-<!-- 					</executions> -->
-<!-- 				</plugin> -->
-				
+				<!-- UtilSet을 Multimodule로 넣었으므로 더 이상 필요가 없음 -->
+				<!-- <plugin> -->
+				<!-- <groupId>org.apache.maven.plugins</groupId> -->
+				<!-- <artifactId>maven-install-plugin</artifactId> -->
+				<!-- <version>2.3.1</version> -->
+				<!-- <executions> -->
+				<!-- <execution> -->
+				<!-- <id>utilset</id> -->
+				<!-- <phase>clean</phase> -->
+				<!-- <goals> -->
+				<!-- <goal>install-file</goal> -->
+				<!-- </goals> -->
+				<!-- <configuration> -->
+				<!-- <groupId>com.nhncorp.utilset</groupId> -->
+				<!-- <artifactId>utilset</artifactId> -->
+				<!-- <version>0.0.1-SNAPSHOT</version> -->
+				<!-- <packaging>jar</packaging> -->
+				<!-- <file>${basedir}/repo/utilset-0.0.1-SNAPSHOT.jar</file> -->
+				<!-- <createChecksum>true</createChecksum> -->
+				<!-- <generatePom>true</generatePom> -->
+				<!-- </configuration> -->
+				<!-- </execution> -->
+				<!-- </executions> -->
+				<!-- </plugin> -->
+
 				<plugin>
 					<artifactId>maven-jarsigner-plugin</artifactId>
 					<version>1.2</version>
@@ -161,7 +168,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<modules>
-			    <module>UtilSet</module>
+				<module>UtilSet</module>
 				<module>UtilSetSampleApp</module>
 				<module>UtilSetInstrumentationTest</module>
 			</modules>
@@ -175,7 +182,7 @@
 				</property>
 			</activation>
 			<modules>
-			    <module>UtilSet</module>
+				<module>UtilSet</module>
 				<module>UtilSetSampleApp</module>
 				<module>UtilSetInstrumentationTest</module>
 			</modules>

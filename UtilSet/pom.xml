@@ -47,7 +47,16 @@
             <groupId>com.google.android</groupId>
             <artifactId>support-v4</artifactId>
         </dependency>
-
+        
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.robolectric</groupId>
+			<artifactId>robolectric</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
