@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="volume_utils_test">
+	    This test simulates Media Volume Control.
+	</string>
+	
+	<string name="cipher_utils_test">
+	    This test simulates simple AES based encryption and decryption.
+	</string>
+	
+	<string name="volume_up_down_test">
+	    This test simulates simple AES based encryption and decryption.
+	</string>
+	
+	<string name="utilset_test">
+	</string>
+	
+	<string name="keyboard_utils_test">
+	</string>
+	
+	<string name="network_listener_test">
+	</string>
+	
+	<string name="network_utils_test">
+	</string>
+	
+	<string name="disk_utils_test">
+	</string>
+	
+	<string name="string_utils_test">
+	</string>
+	
+	<string name="activity_utils_test">
+	</string>
+</resources>

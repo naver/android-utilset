@@ -29,10 +29,10 @@
         <activity android:name="com.navercorp.utilsettest.storage.DiskUtilsTestAcitivity">
         </activity>
         
-        <activity android:name="com.navercorp.utilsettest.input.InputTestActivity">
+        <activity android:name="com.navercorp.utilsettest.input.KeyboardUtilsTestActivity">
         </activity>
         
-        <activity android:name="com.navercorp.utilsettest.network.NetworkTestActivity">
+        <activity android:name="com.navercorp.utilsettest.network.NetworkUtilsTestActivity">
         </activity>
         
         <activity android:name="com.navercorp.utilsettest.network.NetworkListenerTestActivity">

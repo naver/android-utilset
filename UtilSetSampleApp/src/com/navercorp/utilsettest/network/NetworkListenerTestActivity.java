@@ -1,8 +1,8 @@
 package com.navercorp.utilsettest.network;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -12,7 +12,7 @@ import android.widget.ToggleButton;
 import com.navercorp.utilset.network.NetworkUtils;
 import com.navercorp.utilsettest.R;
 
-public class NetworkListenerTestActivity extends Activity {
+public class NetworkListenerTestActivity extends FragmentActivity {
 
 	private TextView wifiStateTextView;
 	private TextView networkStateTextView;

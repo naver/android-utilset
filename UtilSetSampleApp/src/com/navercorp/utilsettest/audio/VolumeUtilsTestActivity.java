@@ -1,8 +1,8 @@
 package com.navercorp.utilsettest.audio;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -11,12 +11,13 @@ import android.widget.TextView;
 import com.navercorp.utilset.audio.VolumeUtils;
 import com.navercorp.utilsettest.R;
 
-public class VolumeUtilsTestActivity extends Activity {
+public class VolumeUtilsTestActivity extends FragmentActivity {
+	
 	private Button volumeUpButton;
 	private Button volumeDownButton;
 	private TextView currentVolumeTextView;
 	private Context context;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

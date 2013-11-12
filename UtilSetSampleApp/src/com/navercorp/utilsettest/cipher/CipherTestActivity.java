@@ -1,7 +1,7 @@
 package com.navercorp.utilsettest.cipher;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -10,7 +10,7 @@ import android.widget.EditText;
 import com.navercorp.utilset.cipher.CipherUtils;
 import com.navercorp.utilsettest.R;
 
-public class CipherTestActivity extends Activity implements OnClickListener {
+public class CipherTestActivity extends FragmentActivity implements OnClickListener {
 	EditText plainTextCipherTest;
 	EditText seedTextCipherTest;
 	Button encryptButtonCipherTest;

@@ -1,7 +1,7 @@
 package com.navercorp.utilsettest.string;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.navercorp.utilset.string.StringUtils;
 import com.navercorp.utilsettest.R;
 
-public class StringUtilsTestActivity extends Activity {
+public class StringUtilsTestActivity extends FragmentActivity {
 	EditText uncompressedText;
 	TextView compressedText;
 	Button submit;

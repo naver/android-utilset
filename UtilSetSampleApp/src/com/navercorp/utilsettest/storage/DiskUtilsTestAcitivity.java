@@ -1,15 +1,15 @@
 package com.navercorp.utilsettest.storage;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
 import com.navercorp.utilset.storage.DiskUtils;
 import com.navercorp.utilsettest.R;
 
-public class DiskUtilsTestAcitivity extends Activity {
+public class DiskUtilsTestAcitivity extends FragmentActivity {
 	private TextView textViewDiskUtils;
 	private Context context;
 	AsyncTask<Void, Void, String> diskUtilsTask;

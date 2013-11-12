@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,14 +14,14 @@ import android.widget.LinearLayout;
 import com.navercorp.utilsettest.audio.VolumeUtilsTestActivity;
 import com.navercorp.utilsettest.cipher.CipherTestActivity;
 import com.navercorp.utilsettest.common.CommonTestActivity;
-import com.navercorp.utilsettest.input.InputTestActivity;
+import com.navercorp.utilsettest.input.KeyboardUtilsTestActivity;
 import com.navercorp.utilsettest.network.NetworkListenerTestActivity;
-import com.navercorp.utilsettest.network.NetworkTestActivity;
+import com.navercorp.utilsettest.network.NetworkUtilsTestActivity;
 import com.navercorp.utilsettest.storage.DiskUtilsTestAcitivity;
 import com.navercorp.utilsettest.string.StringUtilsTestActivity;
 import com.navercorp.utilsettest.ui.ActivityUtilsTestActivity;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends FragmentActivity implements OnClickListener {
 	private static Activity activity;
 	
 	Button cipherTestButton;
@@ -134,11 +135,11 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 			
 		case R.id.keyboardUtilsButton :
-			i = new Intent(this, InputTestActivity.class);
+			i = new Intent(this, KeyboardUtilsTestActivity.class);
 			break;
 			
 		case R.id.networkUtilsButton :
-			i = new Intent(this, NetworkTestActivity.class);
+			i = new Intent(this, NetworkUtilsTestActivity.class);
 			break;
 			
 		case R.id.networkChangeListenerButton :

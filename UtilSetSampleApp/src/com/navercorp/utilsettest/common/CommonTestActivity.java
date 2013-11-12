@@ -1,14 +1,14 @@
 package com.navercorp.utilsettest.common;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
 import com.navercorp.utilset.common.UtilSet;
 import com.navercorp.utilsettest.R;
 
-public class CommonTestActivity extends Activity {
+public class CommonTestActivity extends FragmentActivity {
 	TextView textViewUtilSet;
 	AsyncTask<Void, Void, String> utilSetTask;
 

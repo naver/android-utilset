@@ -9,6 +9,8 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+import android.util.Log;
+
 public class AesCipher implements CipherObject {
 	private final static int JELLY_BEAN_MR1 = 17;
 
