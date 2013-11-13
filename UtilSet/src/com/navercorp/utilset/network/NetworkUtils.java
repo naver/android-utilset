@@ -18,6 +18,8 @@ import java.nio.channels.UnresolvedAddressException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
+import com.navercorp.utilset.exception.InternalExceptionHandler;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -369,7 +371,7 @@ public class NetworkUtils {
 			
 			return wm.isWifiEnabled();
 		} catch (Exception e) {
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "isWifiEnabled");
 		}
 
 		return false;
@@ -510,7 +512,7 @@ public class NetworkUtils {
 			
 			return Settings.System.getInt(context.getContentResolver(), Settings.System.AIRPLANE_MODE_ON, 0) != 0;
 		} catch (Exception e) {
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "isAirplaneModeOn");
 		}
 
 		return false;
@@ -528,7 +530,7 @@ public class NetworkUtils {
 			final int simState = telMgr.getSimState();
 			return simState;
 		} catch (Exception e) {
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "getSimState");
 		}
 
 		return TelephonyManager.SIM_STATE_UNKNOWN;
@@ -550,7 +552,7 @@ public class NetworkUtils {
 							}
 						}
 					} catch (Exception e) {
-						e.printStackTrace();
+						InternalExceptionHandler.handlingException(e, getClass(), "listenRoamingState");
 					}
 				}
 			};
@@ -565,7 +567,7 @@ public class NetworkUtils {
 			SharedPreferences prefs = context.getSharedPreferences(PHONE_STATER_PREFS, 0);
 			return prefs.getBoolean(KEY_ROAMING_ON, false);
 		} catch (Exception e) {
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "isRoamingOn");
 		}
 
 		return false;
@@ -577,7 +579,7 @@ public class NetworkUtils {
 			prefs.putBoolean(KEY_ROAMING_ON, bRoamingOn);
 			prefs.commit();
 		} catch (Exception e) {
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "setRoamingOn");
 		}
 	}
 

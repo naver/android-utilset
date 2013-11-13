@@ -9,7 +9,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import android.util.Log;
+import com.navercorp.utilset.exception.InternalExceptionHandler;
 
 public class AesCipher implements CipherObject {
 	private final static int JELLY_BEAN_MR1 = 17;
@@ -21,7 +21,7 @@ public class AesCipher implements CipherObject {
 			byte[] result = encrypt(rawKey, plaintext.getBytes());
 			return toHex(result);
 		} catch (Exception e) {
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "encrypt");
 			return null;
 		}
 	}
@@ -34,7 +34,7 @@ public class AesCipher implements CipherObject {
 			byte[] result = decrypt(rawKey, enc);
 			return new String(result);
 		} catch (Exception e) {
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "decrypt");
 			return null;
 		}
 	}

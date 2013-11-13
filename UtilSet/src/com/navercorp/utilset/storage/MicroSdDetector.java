@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.navercorp.utilset.exception.InternalExceptionHandler;
+
 import android.os.Environment;
 import android.os.StatFs;
 
@@ -75,8 +77,7 @@ class MicroSdDetector {
 				}
 			}
 		} catch (Exception e) {
-			// Auto-generated catch block
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, MicroSdDetector.class, "readMountsFile");
 		}
 
 		return mMounts;
@@ -112,8 +113,7 @@ class MicroSdDetector {
 				}
 			}
 		} catch (Exception e) {
-			// Auto-generated catch block
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, MicroSdDetector.class, "readVoldFile");
 		}
 
 		return mVold;

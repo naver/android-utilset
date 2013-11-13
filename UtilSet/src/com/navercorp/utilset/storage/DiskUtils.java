@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import com.navercorp.utilset.exception.InternalExceptionHandler;
 import com.navercorp.utilset.storage.MicroSdDetector;
 
 import android.content.Context;
@@ -84,7 +85,7 @@ public final class DiskUtils {
 			copyFromInputStreamToOutputStream(arrayInputStream, new FileOutputStream(file));
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, DiskUtils.class, "createAndCopyContentToFile");
 			// String msg = e.getMessage();
 			return false;
 		}
@@ -152,14 +153,14 @@ public final class DiskUtils {
 				text.append('\n');
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, DiskUtils.class, "getFileContent");
 			return null;
 		} finally {
 			if (br != null)
 				try {
 					br.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					InternalExceptionHandler.handlingException(e, DiskUtils.class, "getFileContent");
 					return null;
 				}
 		}

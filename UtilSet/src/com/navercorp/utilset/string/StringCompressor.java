@@ -10,12 +10,12 @@ import java.net.URLDecoder;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+import com.navercorp.utilset.exception.InternalExceptionHandler;
+
 import android.net.Uri;
 import android.util.Log;
 
 class StringCompressor {
-	private static final String TAG = "StringCompressor";
-	
 	private static final int BUFFER_SIZE = 2 * 1024;
 	
 	public String compress(String str) {
@@ -42,8 +42,7 @@ class StringCompressor {
 			
 			compressBase64EncodeStr = new String(Base64.encode(baos.toByteArray(), Base64.DEFAULT));
 		} catch (Exception e) {
-			Log.e(TAG, "compress() : " + e.getMessage());
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "compress");
 		} finally {
 			try {
 				if (is != null) {
@@ -54,7 +53,7 @@ class StringCompressor {
 					gzos.close();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				InternalExceptionHandler.handlingException(e, getClass(), "compress");
 			}
 		}
 		
@@ -66,7 +65,7 @@ class StringCompressor {
 		try {
 			dst = URLDecoder.decode(src, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			Log.e("UtilSet", "An UnsupportedEncodingException occured in " + StringCompressor.class + ".urlDecode. However, it does not terminate app and continues decode with default encoding character set.");
 			dst = Uri.decode(src);
 //			 dst = URLDecoder.decode(src);
 		}
@@ -97,8 +96,7 @@ class StringCompressor {
 			
 			decompressStr = new String(baos.toByteArray(), "UTF-8");
 		} catch (Exception e) {
-			Log.e(TAG, "decompress() : " + e.getMessage());
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "decompress(String)");
 		} finally {
 			try {
 				if (baos != null) {
@@ -109,7 +107,7 @@ class StringCompressor {
 					gzis.close();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				InternalExceptionHandler.handlingException(e, getClass(), "decompress(String)");
 			}
 		}
 		
@@ -139,8 +137,7 @@ class StringCompressor {
 			
 			retIs = new ByteArrayInputStream(baos.toByteArray());
 		} catch (Exception e) {
-			Log.e(TAG, "decompress() : " + e.getMessage());
-			e.printStackTrace();
+			InternalExceptionHandler.handlingException(e, getClass(), "decompress(InputStream)");
 		} finally {
 			try {
 				if (baos != null) {
@@ -151,7 +148,7 @@ class StringCompressor {
 					gzis.close();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				InternalExceptionHandler.handlingException(e, getClass(), "decompress(InputStream)");
 			}
 		}
 		
