@@ -70,17 +70,21 @@ public enum Introduction {
 	
 	abstract public String getIntroduction();
 	
-	static public void showIntroductionDialog(FragmentActivity fa, Introduction introduction) {
-		IntroductionDialogController idc = IntroductionDialogFactory.getInstance(fa, introduction.getIntroduction());
+	static public void showIntroductionDialog(FragmentActivity fa, Introduction introduction, int time) {
+		IntroductionDialogController idc = IntroductionDialogFactory.getInstance(fa, introduction.getIntroduction(), time);
 		
 		try {
 			Thread.sleep(500);
 			idc.show();
-			Thread.sleep(5000);
-			idc.dismiss();
 			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	static public void showIntroductionDialog(FragmentActivity fa, Introduction introduction) {
+		showIntroductionDialog(fa, introduction, DEFAULT_TIME);
+	}
+	
+	private static int DEFAULT_TIME = 5000;
 }

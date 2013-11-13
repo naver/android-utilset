@@ -118,10 +118,10 @@
 						<sdk>
 							<platform>17</platform>
 						</sdk>
-						<emulator>
-							<avd>23</avd>
-							<wait>10000</wait>
-						</emulator>
+<!-- 						<emulator> -->
+<!-- 							<avd>23</avd> -->
+<!-- 							<wait>10000</wait> -->
+<!-- 						</emulator> -->
 						<zipalign>
 							<verbose>true</verbose>
 						</zipalign>

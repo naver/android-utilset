@@ -10,8 +10,8 @@ import com.navercorp.utilsettest.introduction.Introduction;
 public class CipherUtilsTestCase extends
 		ActivityInstrumentationTestCase2<CipherTestActivity> {
 	private Solo solo;
-	private String seed = "do re mi"; // "do re mi pa so la ti do";
-	private String plainText = "Slow";
+	private String seed = "do re mi pa"; // "do re mi pa so la ti do";
+	private String plainText = "so la ti do";
 	private FragmentActivity activity;
 
 	public CipherUtilsTestCase() {

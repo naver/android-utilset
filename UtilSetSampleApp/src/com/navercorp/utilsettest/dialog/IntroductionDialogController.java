@@ -7,13 +7,17 @@ public class IntroductionDialogController {
 	private IntroductionDialogFragment idf;
 	private FragmentManager fm;
 
-	public IntroductionDialogController(FragmentManager fm, String description) {
-		this.idf = new IntroductionDialogFragment("What is this test for", description);
+	public IntroductionDialogController(FragmentManager fm, String description, int time) {
+		this.idf = new IntroductionDialogFragment("What is this test for", description, time);
 		this.fm = fm;
 	}
 	
 	public void show() {
         idf.show(fm, TAG);
+	}
+	
+	public boolean isShowing() {
+		return idf.isShowing();
 	}
 	
 	public void dismiss() {

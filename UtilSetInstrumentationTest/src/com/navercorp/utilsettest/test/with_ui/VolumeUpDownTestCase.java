@@ -38,7 +38,7 @@ public class VolumeUpDownTestCase extends ActivityInstrumentationTestCase2<Volum
 	public void testVolumeUpAndDown() {
 		solo.waitForActivity(activity.getClass().getSimpleName());
 		
-		Introduction.showIntroductionDialog(activity, Introduction.VolumeUpDownTestCase_testVolumeUpAndDown);
+		Introduction.showIntroductionDialog(activity, Introduction.VolumeUpDownTestCase_testVolumeUpAndDown, 2500);
 		
 //		IntroductionDialogController idc = IntroductionDialogFactory.getInstance(activity, Introduction.VolumeUpDownTestCase.getIntroduction());
 //		idc.show();

@@ -41,7 +41,7 @@ public class ScreenUtilsTestCase extends
 	public void testSetBrightness() {
 		solo.waitForActivity(activity.getClass().getSimpleName());
 		
-		Introduction.showIntroductionDialog(activity, Introduction.ScreenUtilsTestCase_testSetBrightness);
+		Introduction.showIntroductionDialog(activity, Introduction.ScreenUtilsTestCase_testSetBrightness, 2500);
 		
 		final CountDownLatch latchForDimness = new CountDownLatch(1);
 		final CountDownLatch latchForBrightness = new CountDownLatch(1);
@@ -49,7 +49,6 @@ public class ScreenUtilsTestCase extends
 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				ScreenUtils.setScreenBrightness(activity, 0.04f);
 				latchForDimness.countDown();
 			}
@@ -59,7 +58,6 @@ public class ScreenUtilsTestCase extends
 			latchForDimness.await();
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -75,7 +73,6 @@ public class ScreenUtilsTestCase extends
 			latchForBrightness.await();
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
