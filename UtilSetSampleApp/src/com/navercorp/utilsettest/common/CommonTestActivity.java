@@ -61,7 +61,6 @@ public class CommonTestActivity extends FragmentActivity {
 		result += "DeviceType : " + UtilSet.getDeviceType(this).toString() + "\n";
 		result += "IsRooted : " + UtilSet.isRooted() + "\n";
 		result += "LauncherType : " + UtilSet.getLauncherType(this).toString() +"\n";
-		result += "Has Software Keys : " + UtilSet.hasSoftwareKeys(this) + "\n";
 		result += "Processor Number : " + UtilSet.getProcessorNumbers() + "\n";
 		result += "IsSMSAvailable : " + UtilSet.hasSmsCapability(getApplicationContext()) + "\n";
 		result += "getMobilePhoneNumber : " + UtilSet.getMobilePhoneNumber(this) + "\n";

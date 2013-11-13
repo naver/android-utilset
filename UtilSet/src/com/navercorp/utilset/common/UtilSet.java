@@ -9,13 +9,11 @@ public class UtilSet {
 	private static PhoneNumberUtils phoneNumberUtils;
 	private static RootChecker rootChecker;
 	private static DeviceTypeDetector deviceTypeHelper;
-	private static SoftwareKeyDetector deviceKeyboardHelper;
 	
 	static {
 		phoneNumberUtils = new PhoneNumberUtils();
 		rootChecker = new RootChecker();
 		deviceTypeHelper = new DeviceTypeDetector();
-		deviceKeyboardHelper = new SoftwareKeyDetector();
 	}
 	
 	/**
@@ -81,14 +79,6 @@ public class UtilSet {
 		return LauncherTypeDetector.getType(context);
 	}
 
-	/**
-	 * Determines if the device has software keys.
-	 * 
-	 * @return true if device has software keys; false otherwise
-	 */
-	public static boolean hasSoftwareKeys(Context context) {
-		return deviceKeyboardHelper.hasSoftwareKeys(context);
-	}
 
 	/**
 	 * Returns the number of cores of device.

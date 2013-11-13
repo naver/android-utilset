@@ -1,4 +1,4 @@
-package com.navercorp.utilset.common;
+package com.navercorp.utilset.input;
 
 import java.lang.reflect.Method;
 import android.annotation.TargetApi;

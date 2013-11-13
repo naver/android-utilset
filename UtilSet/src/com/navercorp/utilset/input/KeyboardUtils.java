@@ -9,6 +9,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 public class KeyboardUtils {
+	private static SoftwareKeyDetector deviceKeyboardHelper;
+
+	static {
+		deviceKeyboardHelper = new SoftwareKeyDetector();
+	}
+	
 	/**
 	 * Shows keypad
 	 * 
@@ -84,5 +90,14 @@ public class KeyboardUtils {
 
 		Timer timer = new Timer();
 		timer.schedule(task, delay);
+	}
+	
+	/**
+	 * Determines if the device has software keys.
+	 * 
+	 * @return true if device has software keys; false otherwise
+	 */
+	public static boolean hasSoftwareKeys(Context context) {
+		return deviceKeyboardHelper.hasSoftwareKeys(context);
 	}
 }
