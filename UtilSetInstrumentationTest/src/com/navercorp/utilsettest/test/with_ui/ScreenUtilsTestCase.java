@@ -17,13 +17,11 @@ public class ScreenUtilsTestCase extends
 	private FragmentActivity activity;
 
 	public ScreenUtilsTestCase() {
-		// TODO Auto-generated constructor stub
 		super(MainActivity.class);
 	}
 
 	@Override
 	protected void setUp() throws Exception {
-		// TODO Auto-generated method stub
 		super.setUp();
 
 		activity = getActivity();
@@ -45,6 +43,8 @@ public class ScreenUtilsTestCase extends
 		
 		final CountDownLatch latchForDimness = new CountDownLatch(1);
 		final CountDownLatch latchForBrightness = new CountDownLatch(1);
+		
+		solo.waitForDialogToClose(5000);
 		
 		handler.postDelayed(new Runnable() {
 			@Override

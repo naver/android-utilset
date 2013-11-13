@@ -39,6 +39,9 @@ Utilset includes:
     
   * CipherUtils
     + provides simple AES based crypto methods
+    
+  * StringUtils
+    + provides string compression/decompression methods
 
 -------
 ### Download

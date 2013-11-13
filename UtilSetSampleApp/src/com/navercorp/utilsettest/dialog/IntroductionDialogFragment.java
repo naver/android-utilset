@@ -72,10 +72,6 @@ public class IntroductionDialogFragment extends DialogFragment {
         
         DisplayMetrics displaymetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        int width = displaymetrics.widthPixels;
-        int height = displaymetrics.heightPixels;
-//        dialog.getWindow().setLayout(width*2/3, height*2/3);
-        
         dialog.getWindow().setLayout(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         
 
