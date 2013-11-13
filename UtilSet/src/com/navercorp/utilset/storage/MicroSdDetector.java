@@ -123,15 +123,6 @@ class MicroSdDetector {
 	private static boolean checkMicroSDCard(String fileSystemName) {
 		StatFs statFs = new StatFs(fileSystemName);
 
-//		long totalSize = 0; 
-//		
-//		if (Build.VERSION.SDK_INT >= JELLY_BEAN_MR2) {
-//			totalSize = (long) statFs.getBlockSizeLong() * statFs.getBlockCountLong();
-//		}
-//		else {
-//			totalSize = (long) statFs.getBlockSize() * statFs.getBlockCount();
-//		}
-		
 		long totalSize = (long) statFs.getBlockSize() * statFs.getBlockCount();
 
 		if (totalSize < GIGABYTE) {
