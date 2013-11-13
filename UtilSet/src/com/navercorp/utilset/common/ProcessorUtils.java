@@ -37,7 +37,7 @@ class ProcessorUtils {
 			return files.length;
 
 		} catch(Exception e) {
-			//JVM 상황에 따라 Core수가 달라질 수 있다.
+			// The number of cores can vary with JVM status
 			return Runtime.getRuntime().availableProcessors();
 		}
 	}
