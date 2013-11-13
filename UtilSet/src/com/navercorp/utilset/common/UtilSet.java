@@ -117,18 +117,4 @@ public class UtilSet {
 	public static String getMobilePhoneNumber(Context context) {
 		return phoneNumberUtils.getMobilePhoneNumber(context);
 	}
-
-	/**
-	 * Returns device unique id. Firstly, This function tries to use IMEI as
-	 * unique identifier. If it turns out that IMEI is not available, it tries
-	 * to use ANDROID_ID as unique identifier. Either IMEI or ANDROID_ID is
-	 * acquired at all, then it hashes obtained values with MD5 hash algorithm.
-	 * The result of this operation will be a device unique ID.
-	 * 
-	 * @parameter Context any context from Activity or Application except null
-	 * @return String value of Device Unique Id if it succeeds; null if it fails
-	 */
-//	private String getDeviceUniqueId(Context context) {
-//		throw new UnsupportedOperationException();
-//	}
 }
