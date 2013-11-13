@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.navercorp.utilset</groupId>
 	<artifactId>utilset-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<packaging>pom</packaging>
 	<name>UtilSet - Parent</name>
 
@@ -45,7 +45,7 @@
 			<dependency>
 				<groupId>com.navercorp.utilset</groupId>
 				<artifactId>utilset</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.1</version>
 				<!-- <scope>system</scope> -->
 				<!-- <systemPath>${basedir}/repo/utilset-0.0.1-SNAPSHOT.jar</systemPath> -->
 			</dependency>
