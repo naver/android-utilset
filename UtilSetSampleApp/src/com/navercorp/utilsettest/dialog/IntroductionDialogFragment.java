@@ -1,7 +1,5 @@
 package com.navercorp.utilsettest.dialog;
 
-import org.junit.Assert;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
