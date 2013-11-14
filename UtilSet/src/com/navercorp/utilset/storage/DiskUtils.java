@@ -168,12 +168,4 @@ public final class DiskUtils {
 		}
 		return text.toString();
 	}
-	
-	/**
-	 * Returns the path of MicroSD Card
-	 * @return Root path of MicroSD Card; null if no MicroSD card is inserted
-	 */
-	public static String getMicroSDCardPath() {	
-		return MicroSdDetector.getMicroSDCardDirectory();
-	}
 }

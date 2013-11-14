@@ -63,7 +63,6 @@ public class DiskUtilsTestAcitivity extends FragmentActivity {
 		result += "getExternalDirPath : " + DiskUtils.getExternalDirPath(context) + "\n";
 		result += "getExternalTemporaryDirPath : " + DiskUtils.getExternalTemporaryDirPath(context) + "\n";
 		result += "getExternalContextRootDir : " + DiskUtils.getExternalContextRootDir(context) + "\n";
-		result += "getSDCardPath : " + DiskUtils.getMicroSDCardPath() + "\n";
 		result += "*****************************************" + "\n";
 		return result;
 	}
