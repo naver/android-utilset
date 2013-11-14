@@ -3,6 +3,11 @@ package com.navercorp.utilset.common;
 import android.content.Context;
 import android.util.Log;
 
+/**
+ * 
+ * @author jaemin.woo
+ *
+ */
 public class UtilSet {
 	public static final String TAG = "UtilSet";
 
@@ -12,7 +17,6 @@ public class UtilSet {
 		phoneNumberUtils = new PhoneNumberUtils();
 	}
 	
-	// TODO FIXME Do not work properly.
 	/**
 	 * Prevents a problem that AsyncTask connects to incorrect Looper
 	 * and then throws Exception. <br>

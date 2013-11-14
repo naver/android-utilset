@@ -8,6 +8,11 @@ import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+/**
+ * 
+ * @author jaemin.woo
+ *
+ */
 public class KeyboardUtils {
 	private static SoftwareKeyDetector deviceKeyboardHelper;
 

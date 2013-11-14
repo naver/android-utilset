@@ -13,6 +13,11 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.view.WindowManager;
 
+/**
+ * 
+ * @author jaemin.woo
+ *
+ */
 public class ActivityUtils {
 //	private static final String TAG = "UtilSet.ActivityUtils";
 

@@ -3,6 +3,11 @@ package com.navercorp.utilset.common;
 import android.content.Context;
 import android.telephony.TelephonyManager;
 
+/**
+ * 
+ * @author jaemin.woo
+ *
+ */
 class PhoneNumberUtils {
 	public String getMobilePhoneNumber(Context context) {
 		TelephonyManager telManager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE); 

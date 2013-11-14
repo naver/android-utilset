@@ -4,6 +4,8 @@ import android.util.Log;
 
 /**
  * This class is only for internal exception handling
+ * 
+ * @author jaemin.woo
  */
 public class InternalExceptionHandler {
 	private static final String TAG = "UtilSet";

@@ -5,6 +5,7 @@ package com.navercorp.utilset.string;
  * StringUtils provides string related function<br>
  * By using compressString and deompressString, string long and has repeated part can be shrunk  
  *
+ * @author jaemin.woo
  */
 public class StringUtils {
 	private static StringCompressor stringCompressor;

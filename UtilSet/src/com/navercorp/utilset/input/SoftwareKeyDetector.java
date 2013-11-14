@@ -9,6 +9,11 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 
+/**
+ * 
+ * @author jaemin.woo
+ *
+ */
 class SoftwareKeyDetector {
 	@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 	public boolean hasSoftwareKeys(Context context) {

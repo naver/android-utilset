@@ -11,6 +11,10 @@ import javax.crypto.spec.SecretKeySpec;
 
 import com.navercorp.utilset.exception.InternalExceptionHandler;
 
+/**
+ * @author jaemin.woo<br>
+ *
+ */
 public class AesCipher implements CipherObject {
 	private final static int JELLY_BEAN_MR1 = 17;
 

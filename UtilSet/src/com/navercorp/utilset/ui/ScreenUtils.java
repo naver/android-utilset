@@ -5,6 +5,11 @@ import android.content.Context;
 import android.provider.Settings;
 import android.view.WindowManager;
 
+/**
+ * 
+ * @author jaemin.woo
+ *
+ */
 public class ScreenUtils {
 	
 	/**

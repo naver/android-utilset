@@ -6,6 +6,8 @@ import android.media.AudioManager;
 /**
  * Controls Media Volume
  * 
+ * @author jaemin.woo
+ * 
  */
 public class VolumeUtils {
 	public interface OnVolumeChangedListener {

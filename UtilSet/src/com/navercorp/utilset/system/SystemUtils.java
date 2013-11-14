@@ -2,7 +2,11 @@ package com.navercorp.utilset.system;
 
 import android.content.Context;
 
-
+/**
+ * 
+ * @author jaemin.woo
+ *
+ */
 public class SystemUtils {
 	private static RootChecker rootChecker;
 	private static DeviceTypeDetector deviceTypeHelper;

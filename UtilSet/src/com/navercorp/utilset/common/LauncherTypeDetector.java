@@ -5,6 +5,9 @@ import java.util.List;
 import android.content.Context;
 import android.os.Build;
 
+/**
+ * @author jaemin.woo
+ */
 class LauncherTypeDetector {
 	private static List<String> EXCEPT_DEVICES = new ArrayList<String>();
 	

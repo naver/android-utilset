@@ -1,4 +1,5 @@
 package com.navercorp.utilset.common;
+
 public enum LauncherType {
 	/** Samsung Default Home */
 	SAMSUNG_SMALL("com.sec.android.app.twlauncher.LauncherApplication", 140),

@@ -21,6 +21,8 @@ import android.os.Environment;
  * External disk do not necessarily mean that it is a SD Card.<br>
  * Any large size of space can be external disk.<br>
  * As such, do not make assumptions that you are working on SDCard. 
+ * 
+ * @author jaemin.woo
  */
 public final class DiskUtils {
 	private static final String TEMPORARY_FOLDER = "/temp/";

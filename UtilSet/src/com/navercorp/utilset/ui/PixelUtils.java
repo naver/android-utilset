@@ -9,8 +9,9 @@ package com.navercorp.utilset.ui;
 import android.content.Context;
 
 /**
- * @author Created by
- * @tag DisplayUtil
+ * 
+ * @author jaemin.woo
+ * 
  */
 public class PixelUtils {
 	private static final float ROUND_FACTOR = 0.5f;

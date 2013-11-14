@@ -42,6 +42,8 @@ import android.util.Log;
 /** This class provides network related methods
  * In order to use this class, some permissions such as
  * READ_PHONE_STATE, ACCESS_NETWORK_STATE are required
+ * 
+ * @author jaemin.woo 
  */
 public class NetworkUtils {
 	private static final String PHONE_STATER_PREFS = "PHONE_STATER_PREFS";

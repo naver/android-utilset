@@ -1,5 +1,8 @@
 package com.navercorp.utilset.cipher;
 
+/**
+ * @author jaemin.woo
+ */
 class CipherObjectFactory {
 	private CipherObjectFactory() {}
 	
