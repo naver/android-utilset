@@ -1,12 +1,5 @@
 bin
 gen
 .settings
-temp
-.settings
-bin
-gen
-bin
-gen
-.settings
-.settings
-git remve head.txt
+.claspath
+.project
