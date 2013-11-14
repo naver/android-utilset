@@ -10,11 +10,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import com.navercorp.utilset.exception.InternalExceptionHandler;
-import com.navercorp.utilset.storage.MicroSdDetector;
-
 import android.content.Context;
 import android.os.Environment;
+
+import com.navercorp.utilset.exception.InternalExceptionHandler;
 
 /**
  * <b>Cautious!</b><br>
