@@ -12,8 +12,6 @@ Some may work, but some may not work.<br>
 Utilset includes:
 
   * Utilset
-    + checks if a device is rooted
-    + counts the number of processors(more specifically the number of cores)
     + determines if the phone has SMS capability
     + etc...     
   
@@ -36,13 +34,19 @@ Utilset includes:
   
   * KeyboardUtils
     + shows, hides, and toggles Software keyboards
+    + checks if a device has software menu/home/back button
     
   * CipherUtils
-    + provides simple AES based crypto methods
+    + provides simple AES based cryptographic methods
     
   * StringUtils
     + provides string compression/decompression methods
 
+  * SystemUtils
+    + checks if a device is rooted
+    + counts the number of processors(more specifically the number of cores)
+    + determines whether the device is mobile phone or not
+    
 -------
 ### Download
 	! Fix Me : link for jar is needed here

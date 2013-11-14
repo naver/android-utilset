@@ -1,4 +1,4 @@
-package com.navercorp.utilset.common;
+package com.navercorp.utilset.system;
 
 import java.io.BufferedReader;
 import java.io.File;

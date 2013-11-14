@@ -19,6 +19,7 @@ import com.navercorp.utilsettest.network.NetworkListenerTestActivity;
 import com.navercorp.utilsettest.network.NetworkUtilsTestActivity;
 import com.navercorp.utilsettest.storage.DiskUtilsTestAcitivity;
 import com.navercorp.utilsettest.string.StringUtilsTestActivity;
+import com.navercorp.utilsettest.system.SystemUtilsTestActivity;
 import com.navercorp.utilsettest.ui.ActivityUtilsTestActivity;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
@@ -33,6 +34,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	Button networkListenerTestButton;
 	Button volumeUtilsTestButton;
 	Button stringUtilsTestButton;
+	Button systemUtilsTestButton;
 	
 	public static Activity getActivity() {
 		return activity;
@@ -72,6 +74,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		stringUtilsTestButton = (Button) findViewById(R.id.stringUtilsTestButton);
 		stringUtilsTestButton.setOnClickListener(this);
 		
+		systemUtilsTestButton = (Button) findViewById(R.id.systemUtilsTestButton);
+		systemUtilsTestButton.setOnClickListener(this);
+		
 		initButtonColor();
 	}
 	
@@ -85,6 +90,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		setButtonColor(networkListenerTestButton, 6);
 		setButtonColor(volumeUtilsTestButton, 7);
 		setButtonColor(stringUtilsTestButton, 8);
+		setButtonColor(systemUtilsTestButton, 9);
 	}
 	
 	private void setButtonColor(Button button, int index) {
@@ -152,6 +158,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 			
 		case R.id.stringUtilsTestButton :
 			i = new Intent(this, StringUtilsTestActivity.class);
+			break;
+			
+		case R.id.systemUtilsTestButton :
+			i = new Intent(this, SystemUtilsTestActivity.class);
 			break;
 		}
 

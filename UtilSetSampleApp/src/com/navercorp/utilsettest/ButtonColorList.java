@@ -17,6 +17,7 @@ public class ButtonColorList {
 			add(new ButtonColor("Kelly green", 0xFF49b700, 0xFF255c00, 0xFFffffff));
 			add(new ButtonColor("Teal", 0xFF338594, 0xFF004d5b, 0xFFffffff));
 			add(new ButtonColor("Peace", 0xFF3794dd, 0xFF0b5794, 0xFFffffff));
+			add(new ButtonColor("Azure", 0xFF0085ff, 0xFF004b8f, 0xFFffffff));
 		}
 	});
 

@@ -1,4 +1,4 @@
-package com.navercorp.utilset.common;
+package com.navercorp.utilset.system;
 
 /**
  * There are two types of android device, tablet and handset<br>

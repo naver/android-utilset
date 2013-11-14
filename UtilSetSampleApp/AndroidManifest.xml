@@ -49,6 +49,9 @@
         
         <activity android:name="com.navercorp.utilsettest.string.StringUtilsTestActivity">
         </activity>
+        
+        <activity android:name="com.navercorp.utilsettest.system.SystemUtilsTestActivity">
+        </activity>
     </application>
 
 </manifest>

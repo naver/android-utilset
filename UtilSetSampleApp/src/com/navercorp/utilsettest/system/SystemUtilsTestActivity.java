@@ -1,4 +1,4 @@
-package com.navercorp.utilsettest.common;
+package com.navercorp.utilsettest.system;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -6,19 +6,20 @@ import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
 import com.navercorp.utilset.common.UtilSet;
+import com.navercorp.utilset.system.SystemUtils;
 import com.navercorp.utilsettest.R;
 
-public class CommonTestActivity extends FragmentActivity {
-	TextView textViewUtilSet;
+public class SystemUtilsTestActivity extends FragmentActivity {
+	TextView textViewSystemUtils;
 	AsyncTask<Void, Void, String> utilSetTask;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_utilset);
+		setContentView(R.layout.activity_systemutils);
 		
-		textViewUtilSet = (TextView) findViewById(R.id.textViewUtilSetTest);
+		textViewSystemUtils = (TextView) findViewById(R.id.textViewSystemUtils);
 	}
 	
 	@Override
@@ -36,7 +37,7 @@ public class CommonTestActivity extends FragmentActivity {
 			@Override
 			protected void onPostExecute(String result) {
 				// TODO Auto-generated method stub
-				textViewUtilSet.setText(result);
+				textViewSystemUtils.setText(result);
 			}
 			
 		};
@@ -58,13 +59,12 @@ public class CommonTestActivity extends FragmentActivity {
 		UtilSet.loadAsyncTaskClass();
 		
 		String result = "*************** UtilSetTest ***************\n";
-		result += "LauncherType : " + UtilSet.getLauncherType(this).toString() +"\n";
-		result += "IsSMSAvailable : " + UtilSet.hasSmsCapability(getApplicationContext()) + "\n";
-		result += "getMobilePhoneNumber : " + UtilSet.getMobilePhoneNumber(this) + "\n";
+		result += "getProcessorNumbers : " + SystemUtils.getProcessorNumbers() +"\n";
+		result += "getDeviceType : " + SystemUtils.getDeviceType(this) + "\n";
+		result += "isRooted : " + SystemUtils.isRooted() + "\n";
 		result += "*******************************************\n";
 		
 		return result;
 		
 	}
-
 }
