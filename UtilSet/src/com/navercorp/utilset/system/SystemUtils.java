@@ -2,6 +2,8 @@ package com.navercorp.utilset.system;
 
 import android.content.Context;
 
+import com.navercorp.utilset.device.DeviceType;
+
 /**
  * 
  * @author jaemin.woo
@@ -9,11 +11,9 @@ import android.content.Context;
  */
 public class SystemUtils {
 	private static RootChecker rootChecker;
-	private static DeviceTypeDetector deviceTypeHelper;
 	
 	static {
 		rootChecker = new RootChecker();
-		deviceTypeHelper = new DeviceTypeDetector();
 	}
 	
 	/**
@@ -41,18 +41,5 @@ public class SystemUtils {
 	 */
 	public static int getProcessorNumbers() {
 		return ProcessorUtils.getNumCores();
-	}
-	
-	/**
-	 * Gives type information of user device.
-	 * 
-	 * @param context Context derived from Activity. ApplicationContext can not be used to take advantage of this function.
-	 * 
-	 * @return DeviceType.Tablet if the screen size is equal to or larger than
-	 *         XLarge, which is defined as display size from 7 to 10 inches; <br>
-	 *         DeviceType.Handset if the screen size is smaller than XLarge
-	 */
-	public static DeviceType getDeviceType(Context context) {
-		return deviceTypeHelper.getDeviceType(context);
 	}
 }

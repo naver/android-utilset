@@ -119,7 +119,6 @@ class MicroSdDetector {
 		return mVold;
 	}
 
-	@SuppressWarnings("deprecation")
 	private static boolean checkMicroSDCard(String fileSystemName) {
 		StatFs statFs = new StatFs(fileSystemName);
 

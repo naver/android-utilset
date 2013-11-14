@@ -1,4 +1,4 @@
-package com.navercorp.utilset.system;
+package com.navercorp.utilset.device;
 /*
  * DeviceInfoHelper.java
  *

@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.navercorp.utilsettest.common.CommonTestActivity">
+        <activity android:name="com.navercorp.utilsettest.device.DeviceUtilsTestActivity">
         </activity>
         
         <activity android:name="com.navercorp.utilsettest.ui.ActivityUtilsTestActivity">

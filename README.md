@@ -11,7 +11,8 @@ Some may work, but some may not work.<br>
 ### Overview
 Utilset includes:
 
-  * Utilset
+  * DeviceUtils
+    + determines whether the device is mobile phone or not 
     + determines if the phone has SMS capability
     + etc...     
   
@@ -21,7 +22,6 @@ Utilset includes:
   
   * NetworkUtils
     + provides listeners which notify when network state changes, , receives a call, or a connection is made
-    
     + checks if WiFi is enabled and if WiFi is connected
     + checks if Mobile Network (3G/4G) is connected
     + obtains IP Address in either v4 or v6 form
@@ -45,7 +45,7 @@ Utilset includes:
   * SystemUtils
     + checks if a device is rooted
     + counts the number of processors(more specifically the number of cores)
-    + determines whether the device is mobile phone or not
+   
     
 -------
 ### Download

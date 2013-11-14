@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 
 import com.navercorp.utilsettest.audio.VolumeUtilsTestActivity;
 import com.navercorp.utilsettest.cipher.CipherTestActivity;
-import com.navercorp.utilsettest.common.CommonTestActivity;
+import com.navercorp.utilsettest.device.DeviceUtilsTestActivity;
 import com.navercorp.utilsettest.input.KeyboardUtilsTestActivity;
 import com.navercorp.utilsettest.network.NetworkListenerTestActivity;
 import com.navercorp.utilsettest.network.NetworkUtilsTestActivity;
@@ -50,7 +50,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		cipherTestButton = (Button) findViewById(R.id.cipherUtilsTestButton);
 		cipherTestButton.setOnClickListener(this);
 		
-		utilSetTestButton = (Button) findViewById(R.id.utilSetTestButton);
+		utilSetTestButton = (Button) findViewById(R.id.deviceUtilsTestButton);
 		utilSetTestButton.setOnClickListener(this);
 		
 		activityUtilsTestButton = (Button) findViewById(R.id.acitivtyUtilsTestButton);
@@ -128,8 +128,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 			i = new Intent(this, CipherTestActivity.class);
 			break;
 		
-		case R.id.utilSetTestButton :
-			i = new Intent(this, CommonTestActivity.class);
+		case R.id.deviceUtilsTestButton :
+			i = new Intent(this, DeviceUtilsTestActivity.class);
 			break;
 			
 		case R.id.acitivtyUtilsTestButton :

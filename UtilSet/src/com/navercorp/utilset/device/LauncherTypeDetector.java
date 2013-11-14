@@ -1,4 +1,4 @@
-package com.navercorp.utilset.common;
+package com.navercorp.utilset.device;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
-import com.navercorp.utilset.common.UtilSet;
 import com.navercorp.utilset.system.SystemUtils;
 import com.navercorp.utilsettest.R;
 
@@ -39,7 +38,6 @@ public class SystemUtilsTestActivity extends FragmentActivity {
 				// TODO Auto-generated method stub
 				textViewSystemUtils.setText(result);
 			}
-			
 		};
 		
 		utilSetTask.execute();
@@ -56,11 +54,8 @@ public class SystemUtilsTestActivity extends FragmentActivity {
 	}
 
 	public String utilSetTest() {
-		UtilSet.loadAsyncTaskClass();
-		
 		String result = "*************** UtilSetTest ***************\n";
 		result += "getProcessorNumbers : " + SystemUtils.getProcessorNumbers() +"\n";
-		result += "getDeviceType : " + SystemUtils.getDeviceType(this) + "\n";
 		result += "isRooted : " + SystemUtils.isRooted() + "\n";
 		result += "*******************************************\n";
 		

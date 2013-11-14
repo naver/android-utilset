@@ -36,6 +36,8 @@ public class NetworkListenerTestCase extends ActivityInstrumentationTestCase2<Ne
 		
 		Introduction.showIntroductionDialog(activity, Introduction.NetworkListenerTestCase_showIntroductionDialog);
 		
+		solo.waitForDialogToClose(10000);
+		
 		solo.sleep(500);
 		solo.clickOnView(solo.getView(R.id.network_listener_test_toggle_wifi));
 		solo.sleep(5000);

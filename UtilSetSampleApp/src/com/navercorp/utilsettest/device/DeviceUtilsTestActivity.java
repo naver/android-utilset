@@ -1,24 +1,24 @@
-package com.navercorp.utilsettest.common;
+package com.navercorp.utilsettest.device;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
-import com.navercorp.utilset.common.UtilSet;
+import com.navercorp.utilset.device.DeviceUtils;
 import com.navercorp.utilsettest.R;
 
-public class CommonTestActivity extends FragmentActivity {
+public class DeviceUtilsTestActivity extends FragmentActivity {
 	TextView textViewUtilSet;
-	AsyncTask<Void, Void, String> utilSetTask;
+	AsyncTask<Void, Void, String> deviceUtilsTask;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_utilset);
+		setContentView(R.layout.activity_deviceutils);
 		
-		textViewUtilSet = (TextView) findViewById(R.id.textViewUtilSetTest);
+		textViewUtilSet = (TextView) findViewById(R.id.textViewDeviceUtilsTest);
 	}
 	
 	@Override
@@ -26,7 +26,7 @@ public class CommonTestActivity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		super.onResume();
 		
-		utilSetTask = new AsyncTask<Void, Void, String>() {
+		deviceUtilsTask = new AsyncTask<Void, Void, String>() {
 			@Override
 			protected String doInBackground(Void... params) {
 				// TODO Auto-generated method stub
@@ -41,7 +41,7 @@ public class CommonTestActivity extends FragmentActivity {
 			
 		};
 		
-		utilSetTask.execute();
+		deviceUtilsTask.execute();
 	}
 	
 	@Override
@@ -49,18 +49,16 @@ public class CommonTestActivity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		super.onPause();
 		
-		utilSetTask.cancel(true);
+		deviceUtilsTask.cancel(true);
 		
-		utilSetTask = null;
+		deviceUtilsTask = null;
 	}
 
 	public String utilSetTest() {
-		UtilSet.loadAsyncTaskClass();
-		
 		String result = "*************** UtilSetTest ***************\n";
-		result += "LauncherType : " + UtilSet.getLauncherType(this).toString() +"\n";
-		result += "IsSMSAvailable : " + UtilSet.hasSmsCapability(getApplicationContext()) + "\n";
-		result += "getMobilePhoneNumber : " + UtilSet.getMobilePhoneNumber(this) + "\n";
+		result += "LauncherType : " + DeviceUtils.getLauncherType(this).toString() +"\n";
+		result += "IsSMSAvailable : " + DeviceUtils.hasSmsCapability(getApplicationContext()) + "\n";
+		result += "getDeviceType : " + DeviceUtils.getDeviceType(this) + "\n";
 		result += "*******************************************\n";
 		
 		return result;

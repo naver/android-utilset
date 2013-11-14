@@ -79,10 +79,10 @@
                 android:layout_height="wrap_content"
                 android:text="DiskUtilsTest" />
             <Button
-                android:id="@+id/utilSetTestButton"
+                android:id="@+id/deviceUtilsTestButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="UtilSetTest" />
+                android:text="DeviceUtilsTest" />
         </LinearLayout>
     </LinearLayout>
 
