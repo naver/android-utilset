@@ -12,7 +12,7 @@ import android.content.Context;
  * @author Created by
  * @tag DisplayUtil
  */
-public class DisplayUtils {
+public class PixelUtils {
 	/**
 	 * Converts Pixel to DP<br>
 	 * @param pixel Pixel
@@ -26,7 +26,7 @@ public class DisplayUtils {
 	}
 
 	/**
-	 * Converts DP to Pixel
+	 * Converts DP to Pixel<br>
 	 * 
 	 * @param  dp DP
 	 * @return Pixel
