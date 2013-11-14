@@ -14,13 +14,13 @@ import android.content.Context;
  */
 public class DisplayUtils {
 	/**
-	 * Converts Pixel to DP
-	 * 
+	 * Converts Pixel to DP<br>
 	 * @param pixel Pixel
 	 * @return DP
+	 * @see <a href="http://developer.android.com/guide/practices/screens_support.html#dips-pels">http://developer.android.com/guide/practices/screens_support.html#dips-pels</a>
 	 */
 	public static int getDpFromPixel(Context context, int pixel) {
-		float scale = context.getResources().getDisplayMetrics().density; // 화면의 밀도를 구한다.
+		float scale = context.getResources().getDisplayMetrics().density; // get display density
 
 		return (int)(pixel / scale);
 	}
@@ -30,6 +30,7 @@ public class DisplayUtils {
 	 * 
 	 * @param  dp DP
 	 * @return Pixel
+	 * @see <a href="http://developer.android.com/guide/practices/screens_support.html#dips-pels">http://developer.android.com/guide/practices/screens_support.html#dips-pels</a>
 	 */
 	public static int getPixelFromDP(Context context, int dp) {
 		// Get the screen's density scale		
