@@ -13,6 +13,7 @@ import android.content.Context;
  * @tag DisplayUtil
  */
 public class PixelUtils {
+	private static final float ROUND_FACTOR = 0.5f;
 	/**
 	 * Converts Pixel to DP<br>
 	 * @param pixel Pixel
@@ -37,6 +38,8 @@ public class PixelUtils {
 		float scale = context.getResources().getDisplayMetrics().density;
 
 		// Convert the dps to pixels, based on density scale
-		return (int)(dp * scale + 0.5f);
+		// because dp*scale is cast as an integer value, this will cause the result to be truncated.
+		// Therefore, Adding ROUND_FACTOR helps the result to have properly rounded integer value.
+		return (int)(dp * scale + ROUND_FACTOR);
 	}
 }
