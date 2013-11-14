@@ -8,6 +8,7 @@ import com.navercorp.utilset.cipher.CipherMode;
  * Provides basic encryption and decryption methods<br>
  * Default cipher algorithm is AES and currently algorithms other than AES are not provided 
  *
+ * @author jaemin.woo
  */
 public class CipherUtils {
 	CipherMode cipherMode;

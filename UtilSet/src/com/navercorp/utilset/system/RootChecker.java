@@ -29,8 +29,8 @@ class RootChecker {
 		try {
 			File file = new File(fullPath);
 			return file.exists();
-		} catch (Exception e) { // 혹시나 발생할 exception을 위한 방어 로직
-			Log.e(TAG, fullPath + "를 존재 유무를 확인하는 중 오류가 발생하였습니다.", e);
+		} catch (Exception e) {
+			Log.e(TAG, "An error occured while checking " + fullPath, e);
 			return false;
 		}
 	}

@@ -12,7 +12,7 @@ import javax.crypto.spec.SecretKeySpec;
 import com.navercorp.utilset.exception.InternalExceptionHandler;
 
 /**
- * @author jaemin.woo<br>
+ * @author jaemin.woo
  *
  */
 public class AesCipher implements CipherObject {
