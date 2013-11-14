@@ -7,6 +7,14 @@
 	<version>1.0</version>
 	<packaging>pom</packaging>
 	<name>UtilSet - Parent</name>
+	
+	<distributionManagement>
+		<repository>
+			<id>nhncorp</id>
+			<name>Naver Corp. Repository</name>
+			<url>dav:http://repo.nhncorp.com/maven2</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencyManagement>
 		<dependencies>
@@ -61,6 +69,14 @@
 	</dependencyManagement>
 
 	<build>
+	    <extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav-jackrabbit</artifactId>
+				<version>1.0</version>
+			</extension>
+		</extensions>
+		
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
 		<resources>
@@ -71,6 +87,33 @@
 				</excludes>
 			</resource>
 		</resources>
+		
+		<plugins>
+		    <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 
 		<pluginManagement>
 			<plugins>
