@@ -90,21 +90,7 @@
 				<configuration>
 					<test>
 						<skip>false</skip>
-						<!--<instrumentationPackage>packageName</instrumentationPackage> -->
-
-						<!--<instrumentationRunner>className</instrumentationRunner> -->
-						<!--<debug>true|false</debug> -->
-						<!--<coverage>true|false</coverage> -->
-						<!--<logonly>true|false</logonly> avd -->
-						<!--<testsize>small|medium|large</testsize> -->
 						<createReport>true</createReport>
-						<!-- <classes> -->
-						<!-- <class>InputTestCase</class> -->
-						<!-- <class>ScreenUtilsTestCase</class> -->
-						<!-- </classes> -->
-						<!-- <packages> -->
-						<!-- <package>com.navercorp.utilsetinstrumentationtest</package> -->
-						<!-- </packages> -->
 					</test>
 				</configuration>
 				<extensions>true</extensions>

@@ -41,7 +41,6 @@ public class DiskUtilsTestAcitivity extends FragmentActivity {
 				// TODO Auto-generated method stub
 				textViewDiskUtils.setText(result);
 			}
-			
 		};
 		
 		diskUtilsTask.execute();

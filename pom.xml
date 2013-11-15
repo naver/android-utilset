@@ -54,8 +54,6 @@
 				<groupId>com.navercorp.utilset</groupId>
 				<artifactId>utilset</artifactId>
 				<version>1.0</version>
-				<!-- <scope>system</scope> -->
-				<!-- <systemPath>${basedir}/repo/utilset-0.0.1-SNAPSHOT.jar</systemPath> -->
 			</dependency>
 
 			<dependency>
@@ -117,7 +115,7 @@
 
 		<pluginManagement>
 			<plugins>
-				<!-- UtilSet을 Multimodule로 넣었으므로 더 이상 필요가 없음 -->
+				<!-- When separating UtilSet from Multimodule project, This will be required -->
 				<!-- <plugin> -->
 				<!-- <groupId>org.apache.maven.plugins</groupId> -->
 				<!-- <artifactId>maven-install-plugin</artifactId> -->
@@ -161,10 +159,6 @@
 						<sdk>
 							<platform>17</platform>
 						</sdk>
-<!-- 						<emulator> -->
-<!-- 							<avd>23</avd> -->
-<!-- 							<wait>10000</wait> -->
-<!-- 						</emulator> -->
 						<zipalign>
 							<verbose>true</verbose>
 						</zipalign>
@@ -206,7 +200,6 @@
 
 	<profiles>
 		<profile>
-			<!-- the standard profile runs the instrumentation tests -->
 			<id>standard</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
