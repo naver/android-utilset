@@ -8,7 +8,7 @@ class ProcessorUtils {
 	/**
 	http://stackoverflow.com/questions/7962155/how-can-you-detect-a-dual-core-cpu-on-an-android-device-from-code 
 	 * Gets the number of cores available in this device, across all processors.
-	 * Requires: Ability to peruse the filesystem at "/sys/devices/system/cpu"
+	 * Requires: Ability to peruse the file system at "/sys/devices/system/cpu"
 	 * @return The number of cores, or Runtime.getRuntime().availableProcessors() if failed to get result
 	 */
 	public static int getNumCores() {

@@ -152,20 +152,6 @@ public class ActivityUtils {
 		return activity;
 	}
 
-	/*
-	private static ComponentName getTaskActivity(Context context, int index) {
-		ActivityManager am = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
-		if (am == null) {
-			return null;
-		}
-		List<RunningTaskInfo> info = am.getRunningTasks(index + 1);
-		if (info == null || info.size() <= index) {
-			return null;
-		}
-		ComponentName activity = info.get(index).topActivity;
-		return activity;
-	} */	
-
 	private static ComponentName getBaseActivity(Context context) {
 		ActivityManager am = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
 		if (am == null) {

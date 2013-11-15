@@ -1,8 +1,5 @@
 package com.navercorp.utilset.system;
 
-import android.content.Context;
-
-import com.navercorp.utilset.device.DeviceType;
 
 /**
  * 
