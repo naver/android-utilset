@@ -40,12 +40,6 @@ public class VolumeUpDownTestCase extends ActivityInstrumentationTestCase2<Volum
 		
 		Introduction.showIntroductionDialog(activity, Introduction.VolumeUpDownTestCase_testVolumeUpAndDown, 2500);
 		
-//		IntroductionDialogController idc = IntroductionDialogFactory.getInstance(activity, Introduction.VolumeUpDownTestCase.getIntroduction());
-//		idc.show();
-//		solo.sleep(3000);
-//		idc.dismiss();
-//		solo.sleep(500);
-		
 		solo.clickOnView(volumeUpButton);
 		solo.sleep(500);
 		solo.clickOnView(volumeUpButton);

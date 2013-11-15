@@ -24,8 +24,9 @@ import com.navercorp.utilset.exception.InternalExceptionHandler;
  * @author jaemin.woo
  */
 public final class DiskUtils {
-	private static final String TEMPORARY_FOLDER = "/temp/";
-	private static final String CACHE_FOLDER = "/cache/";
+	private static final String DATA_FOLDER = "/Android/data/";
+	protected static final String TEMPORARY_FOLDER = "/temp/";
+	protected static final String CACHE_FOLDER = "/cache/";
 
 	/**
 	 * Checks if External storage is mounted
@@ -41,7 +42,7 @@ public final class DiskUtils {
 	 * @return String containing cache directory name
 	 */
 	public static String getExternalDirPath(Context context) {
-		return Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/" + context.getPackageName() + CACHE_FOLDER;
+		return Environment.getExternalStorageDirectory().getAbsolutePath() + DATA_FOLDER + context.getPackageName() + CACHE_FOLDER;
 	}
 
 	/**
@@ -50,7 +51,7 @@ public final class DiskUtils {
 	 * @return String containing temporary directory name
 	 */
 	public static String getExternalTemporaryDirPath(Context context) {
-		return Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/" + context.getPackageName() + TEMPORARY_FOLDER;
+		return Environment.getExternalStorageDirectory().getAbsolutePath() + DATA_FOLDER + context.getPackageName() + TEMPORARY_FOLDER;
 	}
 
 
@@ -60,7 +61,7 @@ public final class DiskUtils {
 	 * @return String containing external root directory name
 	 */
 	public static String getExternalContextRootDir(Context context) {
-		return Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/" + context.getPackageName();
+		return Environment.getExternalStorageDirectory().getAbsolutePath() + DATA_FOLDER + context.getPackageName();
 	}
 
 	/**
