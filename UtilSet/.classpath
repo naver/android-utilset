@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="test"/>
+	<classpathentry including="**/*.java" kind="src" path="src"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/android/android/4.1.1.4/android-4.1.1.4.jar" sourcepath="M2_REPO/com/google/android/android/4.1.1.4/android-4.1.1.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/com/google/android/android/4.1.1.4/android-4.1.1.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/ant/ant/1.8.0/ant-1.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/ant/ant-launcher/1.8.0/ant-launcher-1.8.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/ow2/asm/asm/4.1/asm-4.1.jar" sourcepath="M2_REPO/org/ow2/asm/asm/4.1/asm-4.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar" sourcepath="M2_REPO/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar" sourcepath="M2_REPO/org/ow2/asm/asm-commons/4.1/asm-commons-4.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar" sourcepath="M2_REPO/org/ow2/asm/asm-tree/4.1/asm-tree-4.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/ow2/asm/asm-tree/4.1/asm-tree-4.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar" sourcepath="M2_REPO/org/ow2/asm/asm-util/4.1/asm-util-4.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/ow2/asm/asm-util/4.1/asm-util-4.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar" sourcepath="M2_REPO/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.3/commons-codec-1.3.jar" sourcepath="M2_REPO/commons-codec/commons-codec/1.3/commons-codec-1.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/easytesting/fest-reflect/1.4.1/fest-reflect-1.4.1.jar" sourcepath="M2_REPO/org/easytesting/fest-reflect/1.4.1/fest-reflect-1.4.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/easytesting/fest-reflect/1.4.1/fest-reflect-1.4.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/easytesting/fest-util/1.2.5/fest-util-1.2.5.jar" sourcepath="M2_REPO/org/easytesting/fest-util/1.2.5/fest-util-1.2.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/easytesting/fest-util/1.2.5/fest-util-1.2.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar" sourcepath="M2_REPO/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar" sourcepath="M2_REPO/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/json/json/20080701/json-20080701.jar" sourcepath="M2_REPO/org/json/json/20080701/json-20080701-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/json/json/20080701/json-20080701-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/4.10/junit-4.10.jar" sourcepath="M2_REPO/junit/junit/4.10/junit-4.10-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/junit/junit/4.10/junit-4.10-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-ant-tasks/2.1.3/maven-ant-tasks-2.1.3.jar" sourcepath="M2_REPO/org/apache/maven/maven-ant-tasks/2.1.3/maven-ant-tasks-2.1.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-ant-tasks/2.1.3/maven-ant-tasks-2.1.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar" sourcepath="M2_REPO/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar" sourcepath="M2_REPO/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar" sourcepath="M2_REPO/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar" sourcepath="M2_REPO/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar" sourcepath="M2_REPO/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar" sourcepath="M2_REPO/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar" sourcepath="M2_REPO/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar" sourcepath="M2_REPO/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar" sourcepath="M2_REPO/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/nekohtml/nekohtml/1.9.6.2/nekohtml-1.9.6.2.jar" sourcepath="M2_REPO/nekohtml/nekohtml/1.9.6.2/nekohtml-1.9.6.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/nekohtml/nekohtml/1.9.6.2/nekohtml-1.9.6.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/objenesis/objenesis/1.3/objenesis-1.3.jar" sourcepath="M2_REPO/org/objenesis/objenesis/1.3/objenesis-1.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/objenesis/objenesis/1.3/objenesis-1.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1.jar" sourcepath="M2_REPO/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar" sourcepath="M2_REPO/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar" sourcepath="M2_REPO/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar" sourcepath="M2_REPO/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/robolectric/robolectric/2.2/robolectric-2.2.jar" sourcepath="M2_REPO/org/robolectric/robolectric/2.2/robolectric-2.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/robolectric/robolectric/2.2/robolectric-2.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.jar" sourcepath="M2_REPO/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/com/google/android/support-v4/r7/support-v4-r7.jar" sourcepath="M2_REPO/com/google/android/support-v4/r7/support-v4-r7-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/com/google/android/support-v4/r7/support-v4-r7-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/com/ximpleware/vtd-xml/2.11/vtd-xml-2.11.jar" sourcepath="M2_REPO/com/ximpleware/vtd-xml/2.11/vtd-xml-2.11-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/com/ximpleware/vtd-xml/2.11/vtd-xml-2.11-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/wagon/wagon-file/1.0-beta-6/wagon-file-1.0-beta-6.jar" sourcepath="M2_REPO/org/apache/maven/wagon/wagon-file/1.0-beta-6/wagon-file-1.0-beta-6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/wagon/wagon-file/1.0-beta-6/wagon-file-1.0-beta-6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/wagon/wagon-http-lightweight/1.0-beta-6/wagon-http-lightweight-1.0-beta-6.jar" sourcepath="M2_REPO/org/apache/maven/wagon/wagon-http-lightweight/1.0-beta-6/wagon-http-lightweight-1.0-beta-6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/wagon/wagon-http-lightweight/1.0-beta-6/wagon-http-lightweight-1.0-beta-6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/wagon/wagon-http-shared/1.0-beta-6/wagon-http-shared-1.0-beta-6.jar" sourcepath="M2_REPO/org/apache/maven/wagon/wagon-http-shared/1.0-beta-6/wagon-http-shared-1.0-beta-6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/wagon/wagon-http-shared/1.0-beta-6/wagon-http-shared-1.0-beta-6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.jar" sourcepath="M2_REPO/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/nekohtml/xercesMinimal/1.9.6.2/xercesMinimal-1.9.6.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar" sourcepath="M2_REPO/xpp3/xpp3/1.1.4c/xpp3-1.1.4c-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/benelog/.m2/repository/xpp3/xpp3/1.1.4c/xpp3-1.1.4c-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
