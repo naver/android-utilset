@@ -26,7 +26,7 @@ public class CipherUtils {
 	/**
 	 * 
 	 * @param seed Seed string which is used for encryption and decryption  
-	 * @param plaintext String to be encrypted
+	 * @param plainText String to be encrypted
 	 * @return encrypted text
 	 */
 	public String encrypt(String seed, String plainText) {

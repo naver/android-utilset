@@ -668,7 +668,7 @@ public class NetworkUtils {
 	 * 
 	 * @param ipv6 Option to choose IP address type
 	 * @return IP address made up of IPv6 if parameter ipv6 is true or IPv4 if parameter ipv6 is false; null if it do not have IP address
-	 * @throw RuntimeException when it fails due to poor network condition
+	 * @throws RuntimeException when it fails due to poor network condition
 	 */
 	public String getIpAddress(boolean ipv6) {
 		try {

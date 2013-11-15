@@ -19,7 +19,7 @@ public class VolumeUtils {
 	/**
 	 * Returns current media volume
 	 * @param context
-	 * @return
+	 * @return current volume
 	 */
 	public static int getCurrentVolume(Context context) {
 		AudioManager mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
@@ -30,7 +30,7 @@ public class VolumeUtils {
 	 * Sets media volume
 	 * 
 	 * @param context Context
-	 * @param delta Amount of volume to be changed
+	 * @param volume volume to be changed
 	 */
 	public static void setVolume(Context context, int volume) {
 		adjustMediaVolume(context, volume, 0);
@@ -40,7 +40,7 @@ public class VolumeUtils {
 	 * Sets media volume and displays volume level
 	 * 
 	 * @param context Context
-	 * @param delta Amount of volume to be changed
+	 * @param volume volume to be changed
 	 */
 	public static void setVolumeWithLevel(Context context, int volume) {
 		adjustMediaVolume(context, volume, AudioManager.FLAG_SHOW_UI);

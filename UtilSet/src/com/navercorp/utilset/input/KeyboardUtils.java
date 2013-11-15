@@ -58,7 +58,7 @@ public class KeyboardUtils {
 	}
 
 	/**
-	 * Delayed version of {@link #hideSoftKeyboard(Activity, View)
+	 * Delayed version of {@link #hideSoftKeyboard(Context, View)
 	 * hideSoftKeyboard} method
 	 * 
 	 * @param context
@@ -78,7 +78,7 @@ public class KeyboardUtils {
 	}
 
 	/**
-	 * Delayed version of {@link #showSoftKeyboard(Activity, View)
+	 * Delayed version of {@link #showSoftKeyboard(Context, View)
 	 * showSoftKeyboard} method
 	 * 
 	 * @param context

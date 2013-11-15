@@ -43,9 +43,9 @@ public class DeviceUtils {
 	}
 
 	/**
-	 * Determines if user device has capability of SMS.
+	 * Determines if user device has capability of SMS.<p>
 	 * 
-	 * @required READ_PHONE_STATE Permission must be set to use this function
+	 * Requires READ_PHONE_STATE Permission must be set to use this function
 	 * @param context
 	 *            Context to derive device information
 	 * @return true if user device has SMS capability; false otherwise

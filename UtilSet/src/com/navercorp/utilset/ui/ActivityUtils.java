@@ -49,8 +49,8 @@ public class ActivityUtils {
 		activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 	}
 
-	/** Returns Package name of base activity.
-	 * @required GET_TASK permission
+	/** Returns Package name of base activity.<p>
+	 * Requires GET_TASK permission
 	 * @param context Context to get base activity information
 	 * @return String containing base package name
 	 */
