@@ -15,7 +15,7 @@ import com.navercorp.utilset.exception.InternalExceptionHandler;
 import android.net.Uri;
 import android.util.Log;
 
-class StringCompressor {
+public class StringCompressor {
 	private static final int BUFFER_SIZE = 2 * 1024;
 	
 	public String compress(String str) {

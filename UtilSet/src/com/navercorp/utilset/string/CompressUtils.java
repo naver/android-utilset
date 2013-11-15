@@ -7,7 +7,7 @@ package com.navercorp.utilset.string;
  *
  * @author jaemin.woo
  */
-public class StringUtils {
+public class CompressUtils {
 	private static StringCompressor stringCompressor;
 	
 	static {

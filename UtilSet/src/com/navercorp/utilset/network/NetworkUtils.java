@@ -18,8 +18,6 @@ import java.nio.channels.UnresolvedAddressException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 
-import com.navercorp.utilset.exception.InternalExceptionHandler;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -37,6 +35,8 @@ import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+
+import com.navercorp.utilset.exception.InternalExceptionHandler;
 
 
 /** This class provides network related methods
@@ -502,7 +502,6 @@ public class NetworkUtils {
 	private static final int JELLY_BEAN_MR1 = 17;
 	private static final String AIRPLANE_MODE_ON = "airplane_mode_on";
 	
-	@SuppressWarnings("deprecation")
 	public boolean isAirplaneModeOn() {
 		try {
 			// Commented Build.VERSION_CODES and Settings.Global class

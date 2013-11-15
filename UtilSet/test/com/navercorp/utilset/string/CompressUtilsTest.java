@@ -18,7 +18,7 @@ import org.robolectric.shadows.ShadowLog;
  */
 @RunWith(RobolectricTestRunner.class)
 @Config(manifest=Config.NONE)
-public class StringUtilsTest {
+public class CompressUtilsTest {
 	private static String LONG_LONG_STRING = "qwertyuiopassdfghjklxcvbnm!@#$%^&*()";
 
 	@Before
@@ -28,16 +28,16 @@ public class StringUtilsTest {
 
 	@Test
 	public void shouldCompressString() {
-		String compressed = StringUtils.compressString(LONG_LONG_STRING);
+		String compressed = CompressUtils.compressString(LONG_LONG_STRING);
 		assertThat(compressed, is(not(LONG_LONG_STRING)));
 	}
 	
 	@Test
 	public void shouoldRestoreCompressedStringToOriginalString() {
-		String compressed = StringUtils.compressString(LONG_LONG_STRING);
+		String compressed = CompressUtils.compressString(LONG_LONG_STRING);
 		assertThat(compressed, is(not(LONG_LONG_STRING)));
 		
-		String restored = StringUtils.decompressString(compressed);
+		String restored = CompressUtils.decompressString(compressed);
 		assertThat(restored, is(not(compressed)));
 		assertEquals(LONG_LONG_STRING, restored);
 	}

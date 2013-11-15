@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.navercorp.utilset.string.StringUtils;
+import com.navercorp.utilset.string.CompressUtils;
 import com.navercorp.utilsettest.R;
 
 public class StringUtilsTestActivity extends FragmentActivity {
@@ -32,7 +32,7 @@ public class StringUtilsTestActivity extends FragmentActivity {
 		@Override
 		public void onClick(View v) {
 			String s = uncompressedText.getText().toString();
-			String compressed = StringUtils.compressString(s);
+			String compressed = CompressUtils.compressString(s);
 			compressedText.setText(compressed);
 		}
 	};
