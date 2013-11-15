@@ -12,17 +12,6 @@
 	<packaging>jar</packaging>
 	<name>UtilSet</name>
 
-	<repositories>
-		<repository>
-			<id>android.support-mvn-repo</id>
-			<url>https://raw.github.com/kmchugh/android.support/mvn-repo</url>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-			</snapshots>
-		</repository>
-	</repositories>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<android.version>4.1.1.4</android.version>
@@ -52,16 +41,16 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-all</artifactId>
-			<scope>provided</scope>
-		</dependency>
 		
 		<dependency>
 			<groupId>org.robolectric</groupId>
 			<artifactId>robolectric</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -77,6 +66,12 @@
 			</plugin>
 
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+			</plugin>
+
+
+			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 				<artifactId>android-maven-plugin</artifactId>
 				<extensions>true</extensions>
@@ -88,6 +83,7 @@
 					</sdk>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>
