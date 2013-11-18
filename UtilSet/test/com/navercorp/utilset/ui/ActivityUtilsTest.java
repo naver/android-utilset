@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
+import org.robolectric.res.builder.RobolectricPackageManager;
 import org.robolectric.shadows.ShadowActivityManager;
 import org.robolectric.shadows.ShadowLog;
 
@@ -18,6 +19,7 @@ import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.pm.PackageInfo;
 
 /**
  *
@@ -28,8 +30,8 @@ import android.content.Context;
 @Config(manifest = Config.NONE)
 public class ActivityUtilsTest {
 	private Context context;
-	private static final String NON_EXISTENT_INSTALLED_PACKAGE = "seventh.son.of.a.seventh.son";
-	private static final String BASE_ACTIVITY_PACKAGE = "com.navercorp.utilset";
+	private static final String NOT_INSTALLED_PACKAGE = "seventh.son.of.a.seventh.son";
+	private static final String INSTALLED_PACKAGE = "com.navercorp.utilset";
 
 	@Before
 	public void setUp() {
@@ -38,16 +40,30 @@ public class ActivityUtilsTest {
 	}
 
 	@Test
-	public void shouldNotReturnTrueForNonExistentInstalledPackage() {
-		assertFalse(ActivityUtils.isPackageInstalled(context,
-				NON_EXISTENT_INSTALLED_PACKAGE));
+	public void shouldNotReturnTrueForNotInstalledPackage() {
+		boolean installed = ActivityUtils.isPackageInstalled(context, NOT_INSTALLED_PACKAGE);
+		assertThat(installed, is(false));
+	}
+
+	@Test
+	public void shouldReturnTrueForInstalledPackage() {
+		addInstalledPackage(INSTALLED_PACKAGE);
+		boolean installed = ActivityUtils.isPackageInstalled(context, INSTALLED_PACKAGE);
+		assertThat(installed, is(true));
 	}
 	
 	@Test
 	public void shouldGetBaseActivityPakcageName() {
-		setBaseActivityPackage(BASE_ACTIVITY_PACKAGE);
+		setBaseActivityPackage(INSTALLED_PACKAGE);
 		String packageName = ActivityUtils.getBaseActivityPackageName(context);
-		assertThat(packageName, is(BASE_ACTIVITY_PACKAGE));
+		assertThat(packageName, is(INSTALLED_PACKAGE));
+	}
+	
+	private void addInstalledPackage(String packageName) {
+		RobolectricPackageManager pm = Robolectric.packageManager;
+		PackageInfo packInfo = new PackageInfo();
+		packInfo.packageName = packageName;
+		pm.addPackage(packInfo);
 	}
 	
 	private void setBaseActivityPackage(String packageName) {
