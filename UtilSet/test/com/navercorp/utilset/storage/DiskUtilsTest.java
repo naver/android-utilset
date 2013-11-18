@@ -29,26 +29,15 @@ public class DiskUtilsTest {
 		this.context = Robolectric.application;
 	}
 	
-	public boolean isExternalStorageMounted() {
-		return DiskUtils.isExternalStorageMounted();
-	}
-	
 	@Test
-	public void shouldReturnExternalDirectoryPathIfExternalStorageIsMounted() {
-		if (!isExternalStorageMounted())
-			return;
-		
+	public void shouldReturnExternalDirectoryPath() {
 		String root = DiskUtils.getExternalContextRootDir(context);
 		assertNotNull(root);
 	}
 	
 	@Test
-	public void shouldReturnExternalContextRootDirectoryIfExternalStorageIsMounted() {
-		if (!isExternalStorageMounted())
-			return;
-		
+	public void shouldReturnExternalContextRootDirectory() {
 		String root = DiskUtils.getExternalContextRootDir(context);
-		assertNotNull(root);
 		
 		String path = DiskUtils.getExternalDirPath(context);
 		assertNotNull(path);
@@ -57,12 +46,8 @@ public class DiskUtilsTest {
 	}
 	
 	@Test
-	public void shouldReturnExternalTemporaryDirectoryPathIfExternalStorageIsMounted() {
-		if (!isExternalStorageMounted())
-			return;
-		
+	public void shouldReturnExternalTemporaryDirectoryPath() {
 		String root = DiskUtils.getExternalContextRootDir(context);
-		assertNotNull(root);
 		
 		String path = DiskUtils.getExternalTemporaryDirPath(context);
 		assertNotNull(path);

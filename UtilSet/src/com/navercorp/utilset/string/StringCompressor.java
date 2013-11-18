@@ -14,6 +14,17 @@ import java.util.zip.GZIPOutputStream;
 import android.net.Uri;
 import android.util.Log;
 
+/**
+ * It is easy to be confused by the result that the compressed string is not shorter than original one.<br>
+ * When string to be compressed neither lengthy nor repeated at all, then that is not the case for this method to be utilized. 
+ * Long repeated string is where this method really shines.<p>
+ * Look at these examples.<br>
+ * A long repeated string 'aaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbcccccccccc' will be compressed into 'H4slAAAAAAAAAEtMxAKSslBkOAAA0lkFljMAAAA=' which is shorter than original one.
+ * In contrast, A short but not repeated string 'abcdefghijklmnopqrstuvwxyz' will be compressed into 'H4slAAAAAAAAAEtMSk5JTUvPyMzKzsnNyy8oLCouKS0rr6isAgC9UCdMGgAAAA==' which is longer than original string.
+ * 
+ * @author jaemin.woo
+ *
+ */
 public class StringCompressor {
 	private static final int BUFFER_SIZE = 2 * 1024;
 

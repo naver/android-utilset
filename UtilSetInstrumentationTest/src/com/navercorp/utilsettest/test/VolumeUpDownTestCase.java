@@ -1,4 +1,4 @@
-package com.navercorp.utilsettest.test.with_ui;
+package com.navercorp.utilsettest.test;
 
 
 import android.support.v4.app.FragmentActivity;

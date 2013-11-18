@@ -30,7 +30,11 @@ public final class DiskUtils {
 	}
 
 	/**
-	 * Returns directory name to cache data in the external storage
+	 * Returns directory name to save cache data in the external storage<p>
+	 * 
+	 * This method always returns path of external storage even if it does not exist.<br>
+	 * As such, make sure to call isExternalStorageMounted method as state-testing method and then call this function only if state-testing method returns true.
+	 * 
 	 * @param context Context to get external storage information
 	 * @return String containing cache directory name
 	 */
@@ -39,7 +43,11 @@ public final class DiskUtils {
 	}
 
 	/**
-	 * Returns directory name for temporary files in the external storage for temporary
+	 * Returns directory name to save temporary files in the external storage for temporary<p>
+	 * 
+	 * This method always returns path of external storage even if it does not exist.<br>
+	 * As such, make sure to call isExternalStorageMounted method as state-testing method and then call this function only if state-testing method returns true.
+	 * 
 	 * @param context Context to get external storage information
 	 * @return String containing temporary directory name
 	 */
@@ -49,7 +57,11 @@ public final class DiskUtils {
 
 
 	/**
-	 * Returns root directory of the external storage.
+	 * Returns root directory of the external storage.<p>
+	 * 
+	 * This method always returns path of external storage even if it does not exist.<br>
+	 * As such, make sure to call isExternalStorageMounted method as state-testing method and then call this function only if state-testing method returns true.
+	 * 
 	 * @param context Context to get external storage information
 	 * @return String containing external root directory name
 	 */
