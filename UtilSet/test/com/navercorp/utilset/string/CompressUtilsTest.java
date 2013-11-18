@@ -1,9 +1,7 @@
 package com.navercorp.utilset.string;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.not;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.MatcherAssert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -33,12 +31,12 @@ public class CompressUtilsTest {
 	}
 	
 	@Test
-	public void shouoldRestoreCompressedStringToOriginalString() {
+	public void shouldRestoreCompressedStringToOriginalString() {
 		String compressed = CompressUtils.compressString(LONG_LONG_STRING);
 		assertThat(compressed, is(not(LONG_LONG_STRING)));
 		
 		String restored = CompressUtils.decompressString(compressed);
 		assertThat(restored, is(not(compressed)));
-		assertEquals(LONG_LONG_STRING, restored);
+		assertThat(restored, is(LONG_LONG_STRING));		
 	}
 }
