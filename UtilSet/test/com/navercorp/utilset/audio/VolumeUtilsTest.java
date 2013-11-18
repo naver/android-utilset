@@ -1,7 +1,7 @@
 package com.navercorp.utilset.audio;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.MatcherAssert.*;
 
 import org.junit.Before;
 import org.junit.Test;

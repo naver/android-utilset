@@ -127,8 +127,9 @@ public class ActivityUtils {
 
 		ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
 		List<RunningAppProcessInfo> appProcesses = activityManager.getRunningAppProcesses();
+		int pid = getPid();
 		for (RunningAppProcessInfo appProcess : appProcesses) {
-			if (appProcess.pid == getPid()) {
+			if (appProcess.pid == pid) {
 				return appProcess.importance == RunningAppProcessInfo.IMPORTANCE_FOREGROUND;
 			}
 		}

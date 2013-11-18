@@ -1,7 +1,9 @@
 package com.navercorp.utilset.string;
 
-import static org.hamcrest.Matchers.*;
-import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.lessThan;
+import static org.hamcrest.Matchers.not;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +20,7 @@ import org.robolectric.shadows.ShadowLog;
 @Config(manifest=Config.NONE)
 public class CompressUtilsTest {
 	private static String LONG_LONG_STRING = "qwertyuiopassdfghjklxcvbnm!@#$%^&*()";
+	private static String STRING_TO_BE_COMPRESSED_EFFECTIVELY = "aaaaaaaaaabbbbbbbbbbccccccccccddddddddddeeeeeeeeeeffffffffffgggggggggg";
 
 	@Before
 	public void setUp() {
@@ -38,5 +41,11 @@ public class CompressUtilsTest {
 		String restored = CompressUtils.decompressString(compressed);
 		assertThat(restored, is(not(compressed)));
 		assertThat(restored, is(LONG_LONG_STRING));		
+	}
+	
+	@Test
+	public void shouldCompressShorterThanOriginalStringAsItHasDumbLongRepeatedContents() {
+		String compressed = CompressUtils.compressString(STRING_TO_BE_COMPRESSED_EFFECTIVELY);
+		assertThat(compressed.length(), is(lessThan(STRING_TO_BE_COMPRESSED_EFFECTIVELY.length())));
 	}
 }
