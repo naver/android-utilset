@@ -6,8 +6,13 @@ import android.os.Environment;
 /**
  * <b>Cautious!</b><br>
  * External disk do not necessarily mean that it is a SD Card.<br>
+ * 
  * Any large size of space can be external disk.<br>
- * As such, do not make assumptions that you are working on SDCard. 
+ * As such, do not make assumptions that you are working on SDCard.<br>
+ * 
+ * getMicroSDPath method that finds MicroSDCard path if it exists has been removed since it depends on /system/etc/vold.fstab file.<br>
+ * Because that file was removed as of JELLY_BEAN_MR2, this function could not work as solid as it should do.<br>
+ * For that reason, this method is excluded.
  * 
  * @author jaemin.woo
  */
