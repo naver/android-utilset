@@ -4,13 +4,14 @@ import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import com.navercorp.utilset.exception.InternalExceptionHandler;
+import android.util.Log;
 
 /**
  * 
@@ -18,6 +19,7 @@ import com.navercorp.utilset.exception.InternalExceptionHandler;
  *
  */
 public class FileUtils {
+	private static final String TAG = "FileUtils";
 	/**
 	 * Utility method to create and copy the content to a file system.
 	 *
@@ -27,24 +29,33 @@ public class FileUtils {
 	 * @return true if file was created successfully otherwise false
 	 */
 	public static boolean createAndCopyContentToFile(String destFilePath, String fileName, InputStream source) {
-		try {
-
+			ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
+			
 			File file = new File(destFilePath);
 			file.mkdirs();
-
-			ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
-			copyFromInputStreamToOutputStream(source, arrayOutputStream);
-
+			try {
+				copyFromInputStreamToOutputStream(source, arrayOutputStream);
+			} catch (IOException e) {
+				Log.e(TAG, "Failed to copy InputStream to OutputStream");
+				return false;
+			}
+			
 			ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(arrayOutputStream.toByteArray());
 
 			file = new File(destFilePath + File.separator + fileName);
-			copyFromInputStreamToOutputStream(arrayInputStream, new FileOutputStream(file));
+			try {
+				copyFromInputStreamToOutputStream(arrayInputStream, new FileOutputStream(file));
+			} catch (FileNotFoundException e) {
+				Log.e(TAG, String.format("Failed to open output file \"%s\"", fileName));
+				file.delete();
+				return false;
+			} catch (IOException e) {
+				Log.e(TAG, String.format("Exception occured while writing file \"%s\"", fileName));
+				file.delete();
+				return false;
+			}
+			
 			return true;
-		} catch (Exception e) {
-			InternalExceptionHandler.handlingException(e, DiskUtils.class, "createAndCopyContentToFile");
-			// String msg = e.getMessage();
-			return false;
-		}
 	}
 	
 	private static long copyFromInputStreamToOutputStream(InputStream input, OutputStream output) throws IOException {
@@ -109,17 +120,18 @@ public class FileUtils {
 				text.append('\n');
 			}
 		} catch (IOException e) {
-			InternalExceptionHandler.handlingException(e, DiskUtils.class, "getFileContent");
+			Log.e(TAG, String.format("Error occured while reading contents from \"%s\"", file.getName()));
 			return null;
 		} finally {
 			if (br != null)
 				try {
 					br.close();
 				} catch (IOException e) {
-					InternalExceptionHandler.handlingException(e, DiskUtils.class, "getFileContent");
-					return null;
+					// This barely happens
+					throw new RuntimeException(String.format("Failed to close filed \"%s\"", file.getName()));
 				}
 		}
+		
 		return text.toString();
 	}
 }

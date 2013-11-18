@@ -1,15 +1,17 @@
 package com.navercorp.utilset.cipher;
 
-import java.security.GeneralSecurityException;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.security.SecureRandom;
 
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-
-import com.navercorp.utilset.exception.InternalExceptionHandler;
 
 /**
  * @author jaemin.woo
@@ -20,44 +22,39 @@ public class AesCipher implements CipherObject {
 
 	@Override
 	public String encrypt(String seed, String plaintext) {
-		try {
-			byte[] rawKey = getRawKey(seed.getBytes());
-			byte[] result = encrypt(rawKey, plaintext.getBytes());
-			return toHex(result);
-		} catch (Exception e) {
-			InternalExceptionHandler.handlingException(e, getClass(), "encrypt");
-			return null;
-		}
+		byte[] rawKey = getRawKey(seed.getBytes());
+		byte[] result = encrypt(rawKey, plaintext.getBytes());
+		return toHex(result);
 	}
 
 	@Override
 	public String decrypt(String seed, String ciphertext) {
-		try {
-			byte[] rawKey = getRawKey(seed.getBytes());
-			byte[] enc = toByte(ciphertext);
-			byte[] result = decrypt(rawKey, enc);
-			return new String(result);
-		} catch (Exception e) {
-			InternalExceptionHandler.handlingException(e, getClass(), "decrypt");
-			return null;
-		}
+		byte[] rawKey = getRawKey(seed.getBytes());
+		byte[] enc = toByte(ciphertext);
+		byte[] result = decrypt(rawKey, enc);
+		return new String(result);
+		
 	}
 
-	private static byte[] getRawKey(byte[] seed) throws GeneralSecurityException {
+	private static byte[] getRawKey(byte[] seed) {
 		KeyGenerator kgen = null;
 
 		try {
 			kgen = KeyGenerator.getInstance("AES");
 			SecureRandom sr = null;
 			if (android.os.Build.VERSION.SDK_INT >= JELLY_BEAN_MR1) {
-				sr = SecureRandom.getInstance("SHA1PRNG", "Crypto");
+				sr = SecureRandom.getInstance("SHA1PRNG", "Crypto");	
 			} else {
 				sr = SecureRandom.getInstance("SHA1PRNG");
 			}
 			sr.setSeed(seed);
 			kgen.init(128, sr); // 192 and 256 bits may not be available
-		} catch (NoSuchAlgorithmException ex) {
+		} catch (NoSuchAlgorithmException e) {
 			// Impossible
+		} catch (NoSuchProviderException e) {
+			// Android whose version is equal or above than JELLY_BEAN_MR1 provides Crypto provider
+			// If it doesn't, this method can work as it is supposed to do
+			throw new RuntimeException(e);
 		}
 
 		if (kgen != null) {
@@ -68,19 +65,53 @@ public class AesCipher implements CipherObject {
 		}
 	}
 
-	private byte[] encrypt(byte[] raw, byte[] clear) throws Exception {
+	private byte[] encrypt(byte[] raw, byte[] clear) {
 		SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
-		Cipher cipher = Cipher.getInstance("AES");
-		cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
-		byte[] encrypted = cipher.doFinal(clear);
+		Cipher cipher;
+		byte [] encrypted = null;
+		try {
+			cipher = Cipher.getInstance("AES");
+			cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
+			encrypted = cipher.doFinal(clear);
+		} catch (NoSuchAlgorithmException e) {
+			// Android provides AES Encryption by default
+		}
+		// Exceptions under here occurs because of programming error
+		catch (NoSuchPaddingException e) {
+			throw new RuntimeException(e);
+		} catch (InvalidKeyException e) {
+			throw new RuntimeException(e);
+		} catch (IllegalBlockSizeException e) {
+			throw new RuntimeException(e);
+		} catch (BadPaddingException e) {
+			throw new RuntimeException(e);
+		}
+		
 		return encrypted;
 	}
 
-	private byte[] decrypt(byte[] raw, byte[] encrypted) throws Exception {
+	private byte[] decrypt(byte[] raw, byte[] encrypted) {
 		SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
-		Cipher cipher = Cipher.getInstance("AES");
-		cipher.init(Cipher.DECRYPT_MODE, skeySpec);
-		byte[] decrypted = cipher.doFinal(encrypted);
+		Cipher cipher;
+		byte [] decrypted = null;
+		try {
+			cipher = Cipher.getInstance("AES");
+			cipher.init(Cipher.DECRYPT_MODE, skeySpec);
+			decrypted = cipher.doFinal(encrypted);
+		} catch (NoSuchAlgorithmException e) {
+			// Can't be happened
+		}
+		// Exceptions under here occurs because of programming error
+		catch (NoSuchPaddingException e) {
+			throw new RuntimeException(e);
+		} catch (InvalidKeyException e) {
+			throw new RuntimeException(e);
+		} catch (IllegalBlockSizeException e) {
+			throw new RuntimeException(e);
+		} catch (BadPaddingException e) {
+			throw new RuntimeException(e);
+		}
+		
 		return decrypted;
 	}
 

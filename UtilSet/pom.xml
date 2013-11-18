@@ -64,20 +64,6 @@
 					<target />
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
-				<artifactId>android-maven-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<androidManifestFile>${project.basedir}/AndroidManifest.xml</androidManifestFile>
-					<sdk>
-						<platform>${android.platform}</platform>
-						<path>${android.home}</path>
-					</sdk>
-				</configuration>
-			</plugin>
-
 		</plugins>
 	</build>
 </project>
