@@ -1,7 +1,5 @@
 package com.navercorp.utilsettest.test.without_ui;
 
-import org.junit.Assert;
-
 import android.app.Application;
 import android.content.Context;
 import android.test.ApplicationTestCase;
@@ -9,7 +7,6 @@ import android.test.ApplicationTestCase;
 import com.navercorp.utilset.ui.ActivityUtils;
 
 public class ActivityUtilsTest extends ApplicationTestCase<Application> {
-	private static final String NOT_INSTALLED_PACKAGE = "seventh.son.of.a.seventh.son";
 	private Context context;
 	
 	public ActivityUtilsTest() {
@@ -22,10 +19,6 @@ public class ActivityUtilsTest extends ApplicationTestCase<Application> {
 		super.setUp();
 		createApplication();
 		context = getApplication();
-	}
-	
-	public void testPackageNotInstalled() {
-		Assert.assertFalse(ActivityUtils.isPackageInstalled(context, NOT_INSTALLED_PACKAGE));
 	}
 	
 	// Android Instrumentation Test is executed on the android launcher and the launcher name can be different for each manufacturer.
