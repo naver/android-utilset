@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
 import com.navercorp.utilset.ui.ActivityUtils;
+import com.navercorp.utilset.ui.ScreenUtils;
 import com.navercorp.utilsettest.R;
 
 public class ActivityUtilsTestActivity extends FragmentActivity implements ActionBar.TabListener {
@@ -36,10 +37,10 @@ public class ActivityUtilsTestActivity extends FragmentActivity implements Actio
 			public void onPageSelected(int position) {
 				// TODO Auto-generated method stub
 				if (position == 0) {
-					ActivityUtils.setScreenOn(ActivityUtilsTestActivity.this);
+					ScreenUtils.setScreenOn(ActivityUtilsTestActivity.this);
 				}
 				else if (position == 1) {
-					ActivityUtils.clearScreenOn(ActivityUtilsTestActivity.this);
+					ScreenUtils.clearScreenOn(ActivityUtilsTestActivity.this);
 				}
 				 actionBar.setSelectedNavigationItem(position);
 			}
@@ -50,7 +51,7 @@ public class ActivityUtilsTestActivity extends FragmentActivity implements Actio
 			actionBar.addTab(actionBar.newTab().setText(pagerAdapter.getPageTitle(i)).setTabListener(this));
 		}
 		
-		ActivityUtils.setScreenOn(this);
+		ScreenUtils.setScreenOn(this);
 	}
 	
 	@Override

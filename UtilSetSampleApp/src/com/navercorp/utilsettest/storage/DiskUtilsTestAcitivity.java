@@ -1,5 +1,8 @@
 package com.navercorp.utilsettest.storage;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
+
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -7,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
 import com.navercorp.utilset.storage.DiskUtils;
+import com.navercorp.utilset.storage.FileUtils;
 import com.navercorp.utilsettest.R;
 
 public class DiskUtilsTestAcitivity extends FragmentActivity {
