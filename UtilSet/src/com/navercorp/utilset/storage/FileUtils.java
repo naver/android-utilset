@@ -95,9 +95,7 @@ public class FileUtils {
 	 */
 	public static boolean delete(String path) {
 		File file = new File(path);
-		System.out.println("!!!" +path);
 		if (file.exists()) {
-			System.out.println("!!!" +path);
 			return file.delete();
 		}
 		
