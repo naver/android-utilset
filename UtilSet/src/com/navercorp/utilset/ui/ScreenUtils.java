@@ -30,4 +30,22 @@ public class ScreenUtils {
 	public static void setScreenOffTimeout(Context context, int millis) {
 		Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, millis);
 	}
+	
+	/**
+	 * Prevents screen from being turned off.
+	 * 
+	 * @param activity
+	 */
+	public static void setScreenOn(Activity activity) {
+		activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+	}
+	
+	/**
+	 * Let screen to be turned off
+	 * 
+	 * @param activity
+	 */
+	public static void clearScreenOn(Activity activity) {
+		activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+	}
 }

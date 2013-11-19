@@ -36,19 +36,6 @@ public class ActivityUtils {
 		}
 	}
 	
-	/**
-	 * Prevents screen from being turned off.
-	 * 
-	 * @param activity Activity to get window reference
-	 */
-	public static void setScreenOn(Activity activity) {
-		activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-	}
-	
-	public static void clearScreenOn(Activity activity) {
-		activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-	}
-
 	/** Returns Package name of base activity.<p>
 	 * Requires GET_TASK permission
 	 * @param context Context to get base activity information

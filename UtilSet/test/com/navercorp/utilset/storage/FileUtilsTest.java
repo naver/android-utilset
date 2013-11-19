@@ -1,6 +1,6 @@
 package com.navercorp.utilset.storage;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayInputStream;
@@ -12,6 +12,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
@@ -63,7 +64,7 @@ public class FileUtilsTest {
     }
 
     @Test
-    public void shouldGetFalseWhenDeleteNonExistedFile(){
+    public void shouldGetFalseWhenDeleteNonExistentFile(){
     	// given
     	String path = "This is a wrong path";
 

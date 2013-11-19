@@ -60,7 +60,7 @@ public class ActivityUtilsTest {
 	public void shouldAddKeepScreenOnFlag() {
 		TestActivity activity = createActivity(TestActivity.class);
 		
-		ActivityUtils.setScreenOn(activity);
+		ScreenUtils.setScreenOn(activity);
 
 		boolean flag = getFlag(activity, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		assertThat(flag, is(true));
@@ -70,7 +70,7 @@ public class ActivityUtilsTest {
 	public void shouldClearKeepScreenOnFlag() {
 		TestActivity activity = createActivity(TestActivity.class);
 		
-		ActivityUtils.clearScreenOn(activity);
+		ScreenUtils.clearScreenOn(activity);
 
 		boolean flag = getFlag(activity, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		assertThat(flag, is(false));

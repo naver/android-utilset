@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import org.junit.Assert;
+
 import android.util.Log;
 
 /**
@@ -46,13 +48,19 @@ public class FileUtils {
 			try {
 				copyFromInputStreamToOutputStream(arrayInputStream, new FileOutputStream(file));
 			} catch (FileNotFoundException e) {
-				Log.e(TAG, String.format("Failed to open output file \"%s\"", fileName));
+				Log.e(TAG, String.format("Failed to open output file \"%s\"", file.getAbsolutePath()));
 				file.delete();
 				return false;
 			} catch (IOException e) {
-				Log.e(TAG, String.format("Exception occured while writing file \"%s\"", fileName));
+				Log.e(TAG, String.format("Exception occured while writing file \"%s\"", file.getAbsolutePath()));
 				file.delete();
 				return false;
+			} finally {
+				try {
+					arrayOutputStream.close();
+				} catch (IOException e) {
+					throw new RuntimeException("Exception occured while closing arrayOutputStream");
+				}
 			}
 			
 			return true;
@@ -63,6 +71,9 @@ public class FileUtils {
 		if (count > Integer.MAX_VALUE) {
 			return -1;
 		}
+		
+		output.close();
+		
 		return (int)count;
 	}
 	
@@ -86,7 +97,9 @@ public class FileUtils {
 	 */
 	public static boolean delete(String path) {
 		File file = new File(path);
+		System.out.println("!!!" +path);
 		if (file.exists()) {
+			System.out.println("!!!" +path);
 			return file.delete();
 		}
 		
