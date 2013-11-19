@@ -14,12 +14,16 @@ import org.robolectric.annotation.Config;
 import org.robolectric.res.builder.RobolectricPackageManager;
 import org.robolectric.shadows.ShadowActivityManager;
 import org.robolectric.shadows.ShadowLog;
+import org.robolectric.shadows.ShadowWindow;
+import org.robolectric.util.ActivityController;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageInfo;
+import android.view.WindowManager;
 
 /**
  *
@@ -53,6 +57,32 @@ public class ActivityUtilsTest {
 	}
 	
 	@Test
+	public void shouldAddKeepScreenOnFlag() {
+		// given
+		TestActivity activity = createActivity(TestActivity.class);
+		
+		// when
+		ActivityUtils.setScreenOn(activity);
+
+		// then 
+		boolean flag = getFlag(activity, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		assertThat(flag, is(true));
+	}
+	
+	@Test
+	public void shouldClearKeepScreenOnFlag() {
+		// given
+		TestActivity activity = createActivity(TestActivity.class);
+		
+		// when
+		ActivityUtils.clearScreenOn(activity);
+
+		// then 
+		boolean flag = getFlag(activity, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		assertThat(flag, is(false));
+	}
+
+	@Test
 	public void shouldGetBaseActivityPakcageName() {
 		setBaseActivityPackage(INSTALLED_PACKAGE);
 		String packageName = ActivityUtils.getBaseActivityPackageName(context);
@@ -72,5 +102,20 @@ public class ActivityUtilsTest {
 		RunningTaskInfo info = new RunningTaskInfo();
 		info.baseActivity = new ComponentName(packageName, "test");
 		shadowAm.setTasks(Arrays.asList(info));
+	}
+
+
+	private <T extends Activity> T createActivity(Class<T> activityClass) {
+		ActivityController<T> controller = Robolectric.buildActivity(activityClass);
+		controller.create();
+		return controller.get();
+	}
+
+	private boolean getFlag(TestActivity activity, int flagToMatch) {
+		ShadowWindow window = Robolectric.shadowOf(activity.getWindow());
+		return window.getFlag(flagToMatch);
+	}
+
+	static class TestActivity extends Activity {
 	}
 }
