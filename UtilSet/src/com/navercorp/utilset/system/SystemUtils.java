@@ -32,7 +32,9 @@ public class SystemUtils {
 	}
 	
 	/**
-	 * Returns the number of cores of device.
+	 * Returns the number of cores of device.<br>
+	 * Until JELLY_BEAN_MR1, It is possible for processors to be off-line for power saving purpose and those off-line CPUs may not be counted.<br>
+	 * Use this method if Runtime.availableProcessors() seems not to return exact core numbers.
 	 * 
 	 * @return the number of cores
 	 */
