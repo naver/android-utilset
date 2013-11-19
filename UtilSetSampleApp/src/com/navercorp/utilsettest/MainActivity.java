@@ -16,7 +16,7 @@ import com.navercorp.utilsettest.cipher.CipherTestActivity;
 import com.navercorp.utilsettest.device.DeviceUtilsTestActivity;
 import com.navercorp.utilsettest.input.KeyboardUtilsTestActivity;
 import com.navercorp.utilsettest.network.NetworkListenerTestActivity;
-import com.navercorp.utilsettest.network.NetworkUtilsTestActivity;
+import com.navercorp.utilsettest.network.NetworkMonitorTestActivity;
 import com.navercorp.utilsettest.storage.DiskUtilsTestAcitivity;
 import com.navercorp.utilsettest.string.StringUtilsTestActivity;
 import com.navercorp.utilsettest.system.SystemUtilsTestActivity;
@@ -145,7 +145,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 			break;
 			
 		case R.id.networkUtilsButton :
-			i = new Intent(this, NetworkUtilsTestActivity.class);
+			i = new Intent(this, NetworkMonitorTestActivity.class);
 			break;
 			
 		case R.id.networkChangeListenerButton :

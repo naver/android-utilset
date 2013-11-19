@@ -11,7 +11,7 @@ public enum LauncherType {
 	SMASUNG_GALAXY3_4("com.sec.android.app.launchercom.android.launcher2.LauncherApplication", 200),
 	
 	/** ICS Default Launcher */
-	ICS_DEFAULT("com.android.launcher2.LauncherApplication", 150),
+	ICS_JELLY_BEAN_DEFAULT("com.android.launcher2.LauncherApplication", 150),
 	
 	/** Gingerbread Default Launcher */
 	GINGERBREAD_DEFAULT("com.android.launcher2.LauncherApplication", 125),

@@ -44,7 +44,7 @@ public class CompressUtilsTest {
 	}
 	
 	@Test
-	public void shouldCompressShorterThanOriginalStringAsItHasDumbLongRepeatedContents() {
+	public void shouldCompressShorterThanOriginalStringAsItHasDumbSoLongRepeatedContents() {
 		String compressed = CompressUtils.compressString(STRING_TO_BE_COMPRESSED_EFFECTIVELY);
 		assertThat(compressed.length(), is(lessThan(STRING_TO_BE_COMPRESSED_EFFECTIVELY.length())));
 	}

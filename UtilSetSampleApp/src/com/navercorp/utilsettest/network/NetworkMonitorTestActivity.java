@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
-import com.navercorp.utilset.network.NetworkUtils;
+import com.navercorp.utilset.network.NetworkMonitor;
 import com.navercorp.utilsettest.R;
 
-public class NetworkUtilsTestActivity extends FragmentActivity {
-	NetworkUtils networkUtils;
+public class NetworkMonitorTestActivity extends FragmentActivity {
+	NetworkMonitor networkUtils;
 	TextView textView;
 	AsyncTask<Void, Void, String> networkUtilsTask;
 	
@@ -19,7 +19,7 @@ public class NetworkUtilsTestActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_networkutils);
 		
-		networkUtils = NetworkUtils.getInstance(this);
+		networkUtils = NetworkMonitor.getInstance(this);
 		textView = (TextView) findViewById(R.id.textViewNetworkUtils);
 	}
 	
@@ -28,7 +28,7 @@ public class NetworkUtilsTestActivity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		
-		NetworkUtils.destroy();
+		NetworkMonitor.destroy();
 	}
 
 	@Override

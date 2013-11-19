@@ -32,7 +32,7 @@
         <activity android:name="com.navercorp.utilsettest.input.KeyboardUtilsTestActivity">
         </activity>
         
-        <activity android:name="com.navercorp.utilsettest.network.NetworkUtilsTestActivity">
+        <activity android:name="com.navercorp.utilsettest.network.NetworkMonitorTestActivity">
         </activity>
         
         <activity android:name="com.navercorp.utilsettest.network.NetworkListenerTestActivity">

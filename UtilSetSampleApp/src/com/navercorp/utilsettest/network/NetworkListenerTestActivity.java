@@ -9,7 +9,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.navercorp.utilset.network.NetworkUtils;
+import com.navercorp.utilset.network.NetworkMonitor;
 import com.navercorp.utilsettest.R;
 
 public class NetworkListenerTestActivity extends FragmentActivity {
@@ -18,9 +18,9 @@ public class NetworkListenerTestActivity extends FragmentActivity {
 	private TextView networkStateTextView;
 //	private TextView unusedTextView;
 	private ToggleButton toggleWifiButton;
-	private NetworkUtils networkUtils;
+	private NetworkMonitor networkUtils;
 
-	private NetworkUtils.INetworkStateChangedListener networkStateChangedListener = new NetworkUtils.INetworkStateChangedListener() {
+	private NetworkMonitor.NetworkStateChangedListener networkStateChangedListener = new NetworkMonitor.NetworkStateChangedListener() {
 		@Override
 		public void onNetworkStateChanged() {
 			Log.d("UtilSet", "NetworkStateChanged");
@@ -34,7 +34,7 @@ public class NetworkListenerTestActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_network_listener);
 
-		networkUtils = NetworkUtils.getInstance(this);
+		networkUtils = NetworkMonitor.getInstance(this);
 		
 		wifiStateTextView = (TextView) findViewById(R.id.network_listener_test_wifi_state);
 		networkStateTextView = (TextView) findViewById(R.id.network_listener_test_network_state);
@@ -76,7 +76,7 @@ public class NetworkListenerTestActivity extends FragmentActivity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		NetworkUtils.destroy();
+		NetworkMonitor.destroy();
 		networkUtils = null;
 	}
 

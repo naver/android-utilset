@@ -34,7 +34,7 @@ class LauncherTypeDetector {
 
 		for (LauncherType type : LauncherType.values()) {
 			if (packageName.contains(type.packageName)) {
-				if (type == LauncherType.ICS_DEFAULT
+				if (type == LauncherType.ICS_JELLY_BEAN_DEFAULT
 						&& !(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH)) {
 					return LauncherType.GINGERBREAD_DEFAULT;
 				}

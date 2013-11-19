@@ -42,11 +42,11 @@ import android.util.Log;
  * 
  * @author jaemin.woo
  */
-public class NetworkUtils {
+public class NetworkMonitor {
 	private static final String PHONE_STATER_PREFS = "PHONE_STATER_PREFS";
 	private static final String KEY_ROAMING_ON = "KEY_ROAMING_ON";
 	private static final String TAG = "NetworkUtils";
-	private static NetworkUtils instance = null;
+	private static NetworkMonitor instance = null;
 	private static boolean isWifiConnectedPrevious = false;
 
 	private static final int TYPE_MOBILE = 0;
@@ -66,9 +66,9 @@ public class NetworkUtils {
 	 *            Context to be used to get network information.<br>
 	 *            To avoid memory leak, pass Application Context as argument
 	 */
-	public static NetworkUtils getInstance(Context context) {
+	public static NetworkMonitor getInstance(Context context) {
 		if (instance == null) {
-			instance = new NetworkUtils(context);
+			instance = new NetworkMonitor(context);
 		}
 
 		return instance;
@@ -86,15 +86,15 @@ public class NetworkUtils {
 		instance = null;
 	}
 
-	public interface INetworkStateChangedListener {
+	public interface NetworkStateChangedListener {
 		public void onNetworkStateChanged();
 	};
 
-	public interface INetworkConnectedListener {
+	public interface NetworkConnectedListener {
 		public void onNetworkConnected();
 	};
 
-	public interface IPhoneCalledListener {
+	public interface PhoneCalledListener {
 		public void onPhoneCallStateChanged(int state);
 	}
 
@@ -103,9 +103,9 @@ public class NetworkUtils {
 
 	private Context context;
 	private BroadcastReceiver connectivityReceiver = null;
-	private ArrayList<INetworkStateChangedListener> listeners;
-	private ArrayList<INetworkConnectedListener> connectedListeners;
-	private ArrayList<IPhoneCalledListener> callListeners;
+	private ArrayList<NetworkStateChangedListener> listeners;
+	private ArrayList<NetworkConnectedListener> connectedListeners;
+	private ArrayList<PhoneCalledListener> callListeners;
 	private Handler handler;
 	private Runnable networkChangedRunnable;
 	private Runnable networkConnectedRunable;
@@ -113,21 +113,21 @@ public class NetworkUtils {
 	private TelephonyManager telMgr;
 	private PhoneStateListener phoneStateListener = null;
 
-	private NetworkUtils(Context context) {
+	private NetworkMonitor(Context context) {
 		this.context = context;
 		handler = new Handler();
-		listeners = new ArrayList<INetworkStateChangedListener>();
-		connectedListeners = new ArrayList<INetworkConnectedListener>();
-		callListeners = new ArrayList<NetworkUtils.IPhoneCalledListener>();
+		listeners = new ArrayList<NetworkStateChangedListener>();
+		connectedListeners = new ArrayList<NetworkConnectedListener>();
+		callListeners = new ArrayList<NetworkMonitor.PhoneCalledListener>();
 
 		networkChangedRunnable = new Runnable() {
 			@Override
 			public void run() {
-				synchronized (NetworkUtils.this) {
+				synchronized (NetworkMonitor.this) {
 					if (listeners == null) {
 						return;
 					}
-					for (INetworkStateChangedListener l : listeners) {
+					for (NetworkStateChangedListener l : listeners) {
 						l.onNetworkStateChanged();
 					}
 				}
@@ -137,11 +137,11 @@ public class NetworkUtils {
 		networkConnectedRunable = new Runnable() {
 			@Override
 			public void run() {
-				synchronized (NetworkUtils.this) {
+				synchronized (NetworkMonitor.this) {
 					if (connectedListeners == null) {
 						return;
 					}
-					for (INetworkConnectedListener l : connectedListeners) {
+					for (NetworkConnectedListener l : connectedListeners) {
 						l.onNetworkConnected();
 					}
 				}
@@ -180,11 +180,11 @@ public class NetworkUtils {
 		handler.post(new Runnable() {
 			@Override
 			public void run() {
-				synchronized (NetworkUtils.this) {
+				synchronized (NetworkMonitor.this) {
 					if (callListeners == null) {
 						return;
 					}
-					for (IPhoneCalledListener l : callListeners) {
+					for (PhoneCalledListener l : callListeners) {
 						l.onPhoneCallStateChanged(state);
 					}
 				}
@@ -200,7 +200,7 @@ public class NetworkUtils {
 	 *            Listener which implements IPhoneCalledListener
 	 * @return true if already that listener is registered; false otherwise
 	 */
-	public boolean addPhoneCalledListener(IPhoneCalledListener listener) {
+	public boolean addPhoneCalledListener(PhoneCalledListener listener) {
 		synchronized (this) {
 			if (callListeners.contains(listener)) {
 				return true;
@@ -216,7 +216,7 @@ public class NetworkUtils {
 	 *            Listener to be removed
 	 * @return true if it succeeds to remove listener; false otherwise;
 	 */
-	public boolean removePhoneCalledListener(IPhoneCalledListener listener) {
+	public boolean removePhoneCalledListener(PhoneCalledListener listener) {
 		synchronized (this) {
 			if (callListeners.size() == 0) {
 				return false;
@@ -269,7 +269,7 @@ public class NetworkUtils {
 	 * @return true if already that listener is registered; false otherwise
 	 */
 	public boolean addWifiStateChangedListener(
-			INetworkStateChangedListener listener) {
+			NetworkStateChangedListener listener) {
 		synchronized (this) {
 			if (listeners.contains(listener)) {
 				return true;
@@ -287,7 +287,7 @@ public class NetworkUtils {
 	 */
 
 	public boolean removeWifiStateChangedListener(
-			INetworkStateChangedListener listener) {
+			NetworkStateChangedListener listener) {
 		synchronized (this) {
 			if (listeners.size() == 0) {
 				return false;
@@ -312,7 +312,7 @@ public class NetworkUtils {
 	 * @return true if already that listener is registered; false otherwise
 	 */
 	public boolean addNetworkConnectedListener(
-			INetworkConnectedListener listener) {
+			NetworkConnectedListener listener) {
 		synchronized (this) {
 			if (connectedListeners.contains(listener)) {
 				return true;
@@ -329,7 +329,7 @@ public class NetworkUtils {
 	 * @return true if it succeeds to remove listener; false otherwise
 	 */
 	public boolean removeNetworkConnectedListener(
-			INetworkConnectedListener listener) {
+			NetworkConnectedListener listener) {
 		synchronized (this) {
 			if (connectedListeners.size() == 0) {
 				return false;
