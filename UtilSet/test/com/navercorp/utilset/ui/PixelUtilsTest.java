@@ -38,7 +38,7 @@ public class PixelUtilsTest {
 	@Test
 	public void shouldPixelDpFromDp(){
 		Robolectric.setDisplayMetricsDensity(1.5f);
-		int pixel = PixelUtils.getPixelFromDP(context, 33);
+		int pixel = PixelUtils.getPixelFromDp(context, 33);
 		assertThat(pixel, is(50));
 	}
 }

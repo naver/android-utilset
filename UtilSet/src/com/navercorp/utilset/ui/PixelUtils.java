@@ -34,7 +34,7 @@ public class PixelUtils {
 	 * @return Pixel
 	 * @see <a href="http://developer.android.com/guide/practices/screens_support.html#dips-pels">http://developer.android.com/guide/practices/screens_support.html#dips-pels</a>
 	 */
-	public static int getPixelFromDP(Context context, int dp) {
+	public static int getPixelFromDp(Context context, int dp) {
 		// Get the screen's density scale		
 		float scale = context.getResources().getDisplayMetrics().density;
 
