@@ -16,7 +16,7 @@ public class ScreenUtils {
 	 * @param activity
 	 * @param dim 0.004f is the least brightness to work. if it is set below 0.004f, it won't work.
 	 */
-	public static void setScreenBrightness(final Activity activity, float dim) {
+	public static void setScreenBrightness(Activity activity, float dim) {
 		WindowManager.LayoutParams lp=activity.getWindow().getAttributes();
 		lp.screenBrightness = dim;
 		activity.getWindow().setAttributes(lp);
@@ -28,6 +28,6 @@ public class ScreenUtils {
 	 *  
 	 */
 	public static void setScreenOffTimeout(Context context, int millis) {
-		android.provider.Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, millis);
+		Settings.System.putInt(context.getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, millis);
 	}
 }
