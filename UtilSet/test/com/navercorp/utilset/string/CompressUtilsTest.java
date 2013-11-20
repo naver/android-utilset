@@ -20,7 +20,7 @@ import org.robolectric.shadows.ShadowLog;
 @Config(manifest=Config.NONE)
 public class CompressUtilsTest {
 	private static String LONG_LONG_STRING = "qwertyuiopassdfghjklxcvbnm!@#$%^&*()";
-	private static String STRING_TO_BE_COMPRESSED_EFFECTIVELY = "aaaaaaaaaabbbbbbbbbbccccccccccddddddddddeeeeeeeeeeffffffffffgggggggggg";
+	private static String STRING_TO_BE_COMPRESSED_EFFECTIVELY = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 	@Before
 	public void setUp() {
@@ -44,7 +44,7 @@ public class CompressUtilsTest {
 	}
 	
 	@Test
-	public void shouldCompressShorterThanOriginalStringAsItHasDumbSoLongRepeatedContents() {
+	public void shouldCompressShorterThanOriginalStringAsItHasDumbSoLongContents() {
 		String compressed = CompressUtils.compressString(STRING_TO_BE_COMPRESSED_EFFECTIVELY);
 		assertThat(compressed.length(), is(lessThan(STRING_TO_BE_COMPRESSED_EFFECTIVELY.length())));
 	}
