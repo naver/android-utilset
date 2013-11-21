@@ -8,14 +8,6 @@
 	<packaging>pom</packaging>
 	<name>UtilSet - Parent</name>
 
-	<distributionManagement>
-		<repository>
-			<id>nhncorp</id>
-			<name>Naver Corp. Repository</name>
-			<url>dav:http://repo.nhncorp.com/maven2</url>
-		</repository>
-	</distributionManagement>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

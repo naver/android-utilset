@@ -17,7 +17,13 @@ public class DeviceUtils {
 	}
 
 	/**
-	 * Gives type information of user device.
+	 * Gives type information of user device.<br>
+	 * 
+	 * According to the <a href="http://developer.android.com/guide/practices/screens_support.html">Google API guide</a>,
+	 * devices whose screen size is less than 7 inches will be classified as a handset.<br>
+	 * For example, Huge looking mobile phones like Samsung galaxy Note III will be sorted as a handset by this rule.<br>  
+	 * Among the rest, devices with 7 inch screen and LDPI will be classified as a handset too.<br>
+	 * All other devices with 7 or larger screen will be classified as a tablet.
 	 * 
 	 * @param context
 	 *            Context derived from Activity. ApplicationContext can not be

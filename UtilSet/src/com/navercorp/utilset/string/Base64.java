@@ -23,6 +23,8 @@ package com.navercorp.utilset.string;
 
 import java.io.UnsupportedEncodingException;
 
+import android.util.Base64OutputStream;
+
 class Base64 {
 	/**
 	 * Default values for encoder/decoder flags.
