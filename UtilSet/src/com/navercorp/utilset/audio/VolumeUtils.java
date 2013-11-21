@@ -23,7 +23,9 @@ public class VolumeUtils {
 	}
 
 	/**
-	 * Sets media volume
+	 * Sets media volume.<br>
+	 * When setting the value of parameter 'volume' greater than the maximum value of the media volume will not either cause error or throw exception but maximize the media volume.<br>
+	 * Setting the value of volume lower than 0 will minimize the media volume.
 	 * 
 	 * @param context Context
 	 * @param volume volume to be changed
@@ -33,7 +35,9 @@ public class VolumeUtils {
 	}
 	
 	/**
-	 * Sets media volume and displays volume level
+	 * Sets media volume and displays volume level.<br>
+	 * When setting the value of parameter 'volume' greater than the maximum value of the media volume will not either cause error or throw exception but maximize the media volume.<br>
+	 * Setting the value of volume lower than 0 will minimize the media volume.
 	 * 
 	 * @param context Context
 	 * @param volume volume to be changed
