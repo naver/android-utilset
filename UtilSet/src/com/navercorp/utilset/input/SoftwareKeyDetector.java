@@ -38,14 +38,14 @@ class SoftwareKeyDetector {
 		return !hasMenuKey && !hasBackKey;
 	}
 	
-	private boolean mCheckedSoftkeyNavigation;
-	private boolean mHasSoftkeyNavigationBar;
-	private Object mSoftKeyLock = new Object();
+	private boolean softkeyNavigationCalled;
+	private boolean softkeyNavigationBar;
+	private Object lock = new Object();
 	
 	public boolean getHasSoftkeyNavigationBar() {
 		// Prevent reflection from being called indefinitely 
-		if (mCheckedSoftkeyNavigation) {
-			return mHasSoftkeyNavigationBar;
+		if (softkeyNavigationCalled) {
+			return softkeyNavigationBar;
 		}
 		
 		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
@@ -61,18 +61,18 @@ class SoftwareKeyDetector {
 			Object iWindowManager = asInterface.invoke(null, (IBinder)ws);
 			Method declaredMethod = iWindowManager.getClass().getDeclaredMethod("hasNavigationBar");
 			
-			synchronized (mSoftKeyLock) {
-				mHasSoftkeyNavigationBar = (Boolean) declaredMethod.invoke(iWindowManager);
+			synchronized (lock) {
+				softkeyNavigationBar = (Boolean) declaredMethod.invoke(iWindowManager);
 			}
 		}
 		catch (Exception e) {
 			// If this method does not exist, then it may be thought that the device does not have one
 		}
 
-		synchronized (mSoftKeyLock) {
-			mCheckedSoftkeyNavigation = true;
+		synchronized (lock) {
+			softkeyNavigationCalled = true;
 		}
 		
-		return mHasSoftkeyNavigationBar;
+		return softkeyNavigationBar;
 	}
 }
