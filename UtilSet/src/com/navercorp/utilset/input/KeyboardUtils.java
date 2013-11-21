@@ -3,7 +3,6 @@ package com.navercorp.utilset.input;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -14,10 +13,10 @@ import android.view.inputmethod.InputMethodManager;
  *
  */
 public class KeyboardUtils {
-	private static SoftwareKeyDetector deviceKeyboardHelper;
+	private static SoftwareKeyDetector deviceKeyboardDetector;
 
 	static {
-		deviceKeyboardHelper = new SoftwareKeyDetector();
+		deviceKeyboardDetector = new SoftwareKeyDetector();
 	}
 	
 	/**
@@ -103,6 +102,6 @@ public class KeyboardUtils {
 	 * @return true if device has software keys; false otherwise
 	 */
 	public static boolean hasSoftwareKeys(Context context) {
-		return deviceKeyboardHelper.hasSoftwareKeys(context);
+		return deviceKeyboardDetector.hasSoftwareKeys(context);
 	}
 }

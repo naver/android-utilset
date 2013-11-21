@@ -8,12 +8,12 @@ import android.content.Context;
  * 
  */
 public class DeviceUtils {
-	private static DeviceTypeDetector deviceTypeHelper;
+	private static DeviceTypeDetector deviceTypeDetector;
 	private static PhoneNumberUtils phoneNumberUtils;
 
 	static {
 		phoneNumberUtils = new PhoneNumberUtils();
-		deviceTypeHelper = new DeviceTypeDetector();
+		deviceTypeDetector = new DeviceTypeDetector();
 	}
 
 	/**
@@ -28,7 +28,7 @@ public class DeviceUtils {
 	 *         DeviceType.Handset if the screen size is smaller than XLarge
 	 */
 	public static DeviceType getDeviceType(Context context) {
-		return deviceTypeHelper.getDeviceType(context);
+		return deviceTypeDetector.getDeviceType(context);
 	}
 
 	/**
