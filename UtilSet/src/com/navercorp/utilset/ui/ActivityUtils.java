@@ -2,7 +2,6 @@ package com.navercorp.utilset.ui;
 
 import java.util.List;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.app.ActivityManager.RunningTaskInfo;
@@ -11,7 +10,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.view.WindowManager;
 
 /**
  * 
@@ -19,8 +17,6 @@ import android.view.WindowManager;
  *
  */
 public class ActivityUtils {
-//	private static final String TAG = "UtilSet.ActivityUtils";
-
 	/** Checks if a package is installed.
 	 * 
 	 * @param context Context to be used to verify the existence of the package.

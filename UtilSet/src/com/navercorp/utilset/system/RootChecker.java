@@ -46,15 +46,6 @@ class RootChecker {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					process.getInputStream()));
 			
-			// FIXME
-			// This makes result confusing.
-			// The result significantly depends on the delay. 
-			// Without debugging or delay, reader.ready() returns false, which means device is not rooted.
-			// However, in debugging mode, it returns true, so the device proves to be rooted.
-//			if (reader.ready() == false) {
-//				return false;
-//			}
-
 			String result = reader.readLine();
 			if (result.contains("/su") == true) {
 				isRootingFlag = true;

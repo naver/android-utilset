@@ -28,7 +28,6 @@ public class SystemUtils {
 	 */
 	public static boolean isRooted() {
 		return rootChecker.checkRootingDevice();
-//		return rootChecker.isRootAvailable();
 	}
 	
 	/**
