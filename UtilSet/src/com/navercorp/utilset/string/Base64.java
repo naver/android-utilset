@@ -1,8 +1,6 @@
 /*
  * Base64.java
  *
- * Copyright 2007 NHN Corp. All rights Reserved.
- * NHN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 /*
  * Copyright (C) 2010 The Android Open Source Project
