@@ -34,6 +34,9 @@ class ProcessorUtils {
 			File[] files = dir.listFiles(new CpuFilter());
 
 			//Return the number of cores (virtual CPU devices)
+			if (files == null)
+				return 0;
+			
 			return files.length;
 
 		} catch(Exception e) {
