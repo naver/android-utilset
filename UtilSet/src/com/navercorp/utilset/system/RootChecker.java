@@ -48,6 +48,11 @@ class RootChecker {
 					process.getInputStream()));
 			
 			String result = reader.readLine();
+			if (result == null) {
+				Log.d(TAG, "Failed to execute find command to check if a file which is evidence of root exists");
+				throw new RuntimeException("Unable to check if device is rooted");
+			}
+				
 			if (result.contains("/su") == true) {
 				isRootingFlag = true;
 			}

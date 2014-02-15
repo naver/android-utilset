@@ -25,6 +25,7 @@ public class SystemUtils {
 	 * For more detailed implementation, refer to '<a href=https://code.google.com/p/roottools/>RootTools</a>' library.
 	 * 
 	 * @return true if the device is rooted; false otherwise
+	 * @throws RuntimeException if root check fails
 	 */
 	public static boolean isRooted() {
 		return rootChecker.checkRootingDevice();
