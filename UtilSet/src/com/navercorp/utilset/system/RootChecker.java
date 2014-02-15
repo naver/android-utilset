@@ -2,6 +2,7 @@ package com.navercorp.utilset.system;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 import android.util.Log;
@@ -39,11 +40,11 @@ class RootChecker {
 	// Refer : http://lsit81.tistory.com/entry/Android-%EB%A3%A8%ED%8C%85-%EC%97%AC%EB%B6%80-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0
 	public boolean checkRootingDevice() {
 		boolean isRootingFlag = false;
-
+		BufferedReader reader = null;
 		try {
 			Process process = Runtime.getRuntime().exec("find / -name su");
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
+			reader = new BufferedReader(new InputStreamReader(
 					process.getInputStream()));
 			
 			String result = reader.readLine();
@@ -53,6 +54,14 @@ class RootChecker {
 
 		} catch (Exception e) {
 			isRootingFlag = false;
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException e) {
+					Log.d(TAG, "Error occured while closing input stream");
+				}
+			}
 		}
 
 		if (!isRootingFlag) {
