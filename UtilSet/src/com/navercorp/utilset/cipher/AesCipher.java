@@ -13,11 +13,14 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+import android.util.Log;
+
 /**
  * @author jaemin.woo
  *
  */
 public class AesCipher implements CipherObject {
+	private static final String TAG = AesCipher.class.getSimpleName();
 	private final static int JELLY_BEAN_MR1 = 17;
 
 	@Override
@@ -35,6 +38,10 @@ public class AesCipher implements CipherObject {
 		return new String(result);
 		
 	}
+	
+	private static void handleGettingAesFailure() {
+		Log.d(TAG, "Getting AES provider has failed but this can't be happened");
+	}
 
 	private static byte[] getRawKey(byte[] seed) {
 		KeyGenerator kgen = null;
@@ -47,10 +54,15 @@ public class AesCipher implements CipherObject {
 			} else {
 				sr = SecureRandom.getInstance("SHA1PRNG");
 			}
+			if (sr == null) {
+				Log.d(TAG, "Failed to get SecureRandom Crypto Algorithm");
+				return null;
+			}
 			sr.setSeed(seed);
 			kgen.init(128, sr); // 192 and 256 bits may not be available
 		} catch (NoSuchAlgorithmException e) {
 			// Impossible
+			handleGettingAesFailure();
 		} catch (NoSuchProviderException e) {
 			// Android whose version is equal or above than JELLY_BEAN_MR1 provides Crypto provider
 			// If it doesn't, this method can work as it is supposed to do
@@ -75,6 +87,7 @@ public class AesCipher implements CipherObject {
 			encrypted = cipher.doFinal(clear);
 		} catch (NoSuchAlgorithmException e) {
 			// Android provides AES Encryption by default
+			handleGettingAesFailure();
 		}
 		// Exceptions under here occurs because of programming error
 		catch (NoSuchPaddingException e) {
@@ -100,6 +113,7 @@ public class AesCipher implements CipherObject {
 			decrypted = cipher.doFinal(encrypted);
 		} catch (NoSuchAlgorithmException e) {
 			// Can't be happened
+			handleGettingAesFailure();
 		}
 		// Exceptions under here occurs because of programming error
 		catch (NoSuchPaddingException e) {
