@@ -52,6 +52,7 @@ public class StringCompressor {
 					baos.toByteArray(), Base64.DEFAULT));
 		} catch (UnsupportedEncodingException e1) {
 			// This can't be happened
+			throw new RuntimeException("This would never be happened");
 		} catch (IOException e) {
 			throw new RuntimeException(String.format("Exception occured while compressing String \"%s\"", str));
 		} finally {
