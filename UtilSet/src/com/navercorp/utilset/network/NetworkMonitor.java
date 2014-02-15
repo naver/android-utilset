@@ -770,9 +770,7 @@ public class NetworkMonitor {
 					socketChannel.close();
 				} catch (IOException e) {
 					Log.d(TAG, "Error occured while closing SocketChannel");
-					return true;
 				}
-				
 		}
 		return false;
 	}
