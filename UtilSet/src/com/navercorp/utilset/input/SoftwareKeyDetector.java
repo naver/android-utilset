@@ -68,6 +68,7 @@ class SoftwareKeyDetector {
 		}
 		catch (Exception e) {
 			// If this method does not exist, then it may be thought that the device does not have one
+			softkeyNavigationCalled = false;
 		}
 
 		synchronized (lock) {
