@@ -20,7 +20,7 @@ class PhoneNumberUtils {
 		if (phoneNumber == null)
 			return false;
 		
-		if ("".equals(phoneNumber) == false)
+		if (phoneNumber.length() != 0)
 			return true;
 		
 		return false;

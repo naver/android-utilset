@@ -24,7 +24,7 @@ class LauncherTypeDetector {
 	public static LauncherType getType(Context context) {
 		String packageName = LauncherInfo.getName(context);
 		
-		if ("".equals(packageName)) {
+		if (packageName.length() == 0) {
 			return LauncherType.ANDROID;
 		}
 
