@@ -754,8 +754,9 @@ public class NetworkMonitor {
 	 *         otherwise
 	 */
 	public boolean isWifiFake(String ipAddress, int port) {
+		SocketChannel socketChannel = null;
 		try {
-			SocketChannel socketChannel = SocketChannel.open();
+			socketChannel = SocketChannel.open();
 			socketChannel.connect(new InetSocketAddress(ipAddress, port));
 		} catch (IOException e) {
 			Log.d(TAG, "Current Wifi is stupid!!! by IOException");
@@ -763,6 +764,15 @@ public class NetworkMonitor {
 		} catch (UnresolvedAddressException e) {
 			Log.d(TAG, "Current Wifi is stupid!!! by InetSocketAddress");
 			return true;
+		} finally {
+			if (socketChannel != null)
+				try {
+					socketChannel.close();
+				} catch (IOException e) {
+					Log.d(TAG, "Error occured while closing SocketChannel");
+					return true;
+				}
+				
 		}
 		return false;
 	}
