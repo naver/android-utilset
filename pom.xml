@@ -122,21 +122,7 @@
 				</executions>
 			</plugin>
 			
-			<plugin>
-				<groupId>com.klocwork.ps</groupId>
-				<artifactId>kwmaven</artifactId>
-				<executions>
-					<execution>
-						<configuration>
-							<buildspec_filename>../klocwork/kwinject.out</buildspec_filename>
-						</configuration>
-						<phase>validate</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+			
 		</plugins>
 
 		<pluginManagement>
@@ -235,6 +221,28 @@
 	</build>
 
 	<profiles>
+	    <profile>
+			<id>klocwork</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.klocwork.ps</groupId>
+						<artifactId>kwmaven</artifactId>
+						<executions>
+							<execution>
+								<configuration>
+									<buildspec_filename>../klocwork/kwinject.out</buildspec_filename>
+								</configuration>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 		<profile>
 			<id>standard</id>
 			<activation>
