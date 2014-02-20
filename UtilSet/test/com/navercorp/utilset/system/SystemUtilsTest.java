@@ -9,6 +9,7 @@ import org.robolectric.shadows.ShadowLog;
 
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.*;
+import static org.junit.Assert.*;
 
 /**
 *
@@ -25,6 +26,7 @@ public class SystemUtilsTest {
 	
 	@Test
 	public void shouldReturnAtLeastOneAsProcessorNumbers() {
-		assertThat(SystemUtils.getProcessorNumbers(), is(greaterThanOrEqualTo(1)));
+		assertEquals(SystemUtils.getProcessorNumbers(), 4);
+//		assertThat(SystemUtils.getProcessorNumbers(), is(greaterThanOrEqualTo(1)));
 	}
 }

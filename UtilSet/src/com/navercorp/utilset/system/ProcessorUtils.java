@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.regex.Pattern;
 
+import android.util.Log;
+
 class ProcessorUtils {
 	/**
 	http://stackoverflow.com/questions/7962155/how-can-you-detect-a-dual-core-cpu-on-an-android-device-from-code 
@@ -21,7 +23,7 @@ class ProcessorUtils {
 				if(Pattern.matches("cpu[0-9]", pathname.getName())) {
 					return true;
 				}
-
+				
 				return false;
 			}      
 		}
@@ -33,12 +35,11 @@ class ProcessorUtils {
 			//Filter to only list the devices we care about
 			File[] files = dir.listFiles(new CpuFilter());
 
-			//Return the number of cores (virtual CPU devices)
 			if (files == null)
-				return 0;
+				return Runtime.getRuntime().availableProcessors();
 			
+			//Return the number of cores (virtual CPU devices)
 			return files.length;
-
 		} catch(Exception e) {
 			// The number of cores can vary with JVM status
 			return Runtime.getRuntime().availableProcessors();
