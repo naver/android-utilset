@@ -1,15 +1,14 @@
 package com.navercorp.utilset.system;
 
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
-
-import static org.hamcrest.Matchers.*;
-import static org.hamcrest.MatcherAssert.*;
-import static org.junit.Assert.*;
 
 /**
 *
@@ -26,7 +25,6 @@ public class SystemUtilsTest {
 	
 	@Test
 	public void shouldReturnAtLeastOneAsProcessorNumbers() {
-		assertEquals(SystemUtils.getProcessorNumbers(), 4);
-//		assertThat(SystemUtils.getProcessorNumbers(), is(greaterThanOrEqualTo(1)));
+		assertThat(SystemUtils.getProcessorNumbers(), is(greaterThanOrEqualTo(1)));
 	}
 }
