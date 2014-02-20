@@ -12,6 +12,7 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 import android.net.Uri;
+import android.util.Base64;
 import android.util.Log;
 
 /**
