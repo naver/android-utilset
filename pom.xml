@@ -7,6 +7,25 @@
 	<version>1.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>UtilSet - Parent</name>
+	
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+	<licenses>
+		<license>
+			<name>Apache License Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<url>https://github.com/nhnopensource/android-utilset</url>
+		<connection>scm:git:git://github.com/nhnopensource/android-utilset.git</connection>
+		<developerConnection>scm:git:git@github.com:nhnopensource/android-utilset.git</developerConnection>
+	  <tag>HEAD</tag>
+  </scm>
 
 	<dependencyManagement>
 		<dependencies>
