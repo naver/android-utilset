@@ -93,6 +93,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		setButtonColor(systemUtilsTestButton, 9);
 	}
 	
+	private static final int JELLY_BEAN_MR1 = 16;
+	
 	private void setButtonColor(Button button, int index) {
 		ButtonColor bc = ButtonColorList.getButtonColor(index);
 		
@@ -101,7 +103,11 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		gd.setStroke(1, bc.getE());
 		gd.setCornerRadius(3f);
 		
-		button.setBackground(gd);
+		if (android.os.Build.VERSION.SDK_INT >= JELLY_BEAN_MR1)
+			button.setBackground(gd);
+		else
+			button.setBackgroundDrawable(gd);
+		
 		button.setTextColor(bc.getTextColor());
 		button.setShadowLayer(1f, 1f, 1f, bc.getE());
 		LinearLayout.LayoutParams params = (android.widget.LinearLayout.LayoutParams) button.getLayoutParams();
