@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.navercorp.utilset</groupId>
+		<groupId>com.navercorp</groupId>
 		<artifactId>utilset-parent</artifactId>
 		<version>1.0.2-SNAPSHOT</version>
 	</parent>
