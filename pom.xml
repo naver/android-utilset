@@ -7,23 +7,6 @@
 	<packaging>pom</packaging>
 	<name>UtilSet - Parent</name>
 	
-	<distributionManagement>
-    <!-- Publish the versioned releases here -->
-    <repository>
-        <id>sonatype-nexus-staging</id>
-        <name>sonatype-nexus-staging</name>
-        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2
-        </url>
-    </repository>
-    <!-- Publish the versioned releases here -->
-    <snapshotRepository>
-        <id>sonatype-nexus-snapshots</id>
-        <name>sonatype-nexus-snapshots</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots
-        </url>
-    </snapshotRepository>
-	</distributionManagement>
-	
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
