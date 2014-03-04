@@ -193,7 +193,7 @@
 	            <version>2.3.2</version>
 	            <configuration>
 	                <mavenExecutorId>forked-path</mavenExecutorId>
-	                <useReleaseProfile>false</useReleaseProfile>
+	                <tagNameFormat>v@{project.version}</tagNameFormat>
 	            </configuration>
 	        </plugin>
 				
