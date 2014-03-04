@@ -15,13 +15,6 @@
 		<environment>development</environment>
 	</properties>
 	
-	<scm>
-		<url>https://github.com/nhnopensource/android-utilset</url>
-		<connection>scm:git:git://github.com/nhnopensource/android-utilset.git</connection>
-		<developerConnection>scm:git:git@github.com:nhnopensource/android-utilset.git</developerConnection>
-	  <tag>1.0.2-SNAPSHOT</tag>
-    </scm>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.navercorp</groupId>
