@@ -57,18 +57,11 @@ or
 
 You can also configure pom.xml if using Maven :
 ```xml
-<!-- First add repository in pom.xml -->
-<repository>
-          <id>nhncorp</id>
-          <name>Naver Corp. Repository</name>
-          <url>http://repo.nhncorp.com/maven2/</url>
-      </repository>
-      
 <!-- Add utilset dependency in pom.xml -->      
 <dependency>
-	<groupId>com.navercorp.utilset</groupId>
+	<groupId>com.navercorp</groupId>
 	<artifactId>utilset</artifactId>
-	<version>insert latest version</version>
+	<version>1.0.2</version>
 </dependency>
 ```
 
@@ -78,7 +71,7 @@ Please, refer sample project
 
 -------
 ### How to run sample project
-  (1) Download Utilset Maven Project from http://yobi.navercorp.com:80/weblab/android-utilset<br>
+  (1) Download Utilset Maven Project from https://github.com/nhnopensource/android-utilset/releases/tag/v1.0.2<br>
   (2) Import downloaded project as Maven project in Eclipse (Maven plug-in must be installed to run utilset test project)<br>
   (3) Right click on utilset-parent in Package Explorer<br>
   (4) Select Run As and then Maven Build<br>
